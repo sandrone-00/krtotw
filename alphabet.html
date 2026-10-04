@@ -12,7 +12,100 @@
 
 
     <style>
+/* =====================
+   下一階段
+===================== */
 
+.next-section {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    margin-top: 45px;
+
+    margin-bottom: 60px;
+
+    text-align: center;
+
+}
+
+
+.next-section h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.next-section p {
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+}
+
+
+.password-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+
+.password-box input {
+
+    width: 240px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+
+.password-box button {
+
+    border: none;
+
+    background: #333;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.password-box button:hover {
+
+    background: #555;
+
+}
+
+
+#passwordMessage {
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -445,21 +538,39 @@
 
     </div>
 
+<section class="next-section">
 
-
-    <!-- 母音 -->
-
-    <h2 class="section-title">
-        21個基本母音
+    <h2>
+        下一階段
     </h2>
 
+    <p>
+        完成基本子音學習後，
+        輸入老師提供的密碼，
+        解鎖21個基本母音。
+    </p>
 
-    <div
-        class="alphabet-grid"
-        id="vowels"
-    >
+
+    <div class="password-box">
+
+        <input
+            type="password"
+            id="password"
+            placeholder="請輸入密碼"
+        >
+
+        <button onclick="unlockVowels()">
+            解鎖
+        </button>
 
     </div>
+
+
+    <p id="passwordMessage"></p>
+
+</section>
+
+   
 
 
 
@@ -502,7 +613,29 @@
 
 <script>
 
+function unlockVowels() {
 
+    const password =
+        document.getElementById("password").value;
+
+
+    const message =
+        document.getElementById("passwordMessage");
+
+
+    if (password === "choco40") {
+
+        window.location.href =
+            "vowels.html";
+
+    } else {
+
+        message.textContent =
+            "密碼錯誤，請向老師確認密碼。";
+
+    }
+
+}
 /* ============================
    19個基本子音
 ============================ */
