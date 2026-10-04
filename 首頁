@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chocochip Korean 發音學習平台</title>
+
+    <style>
+
+        /* =========================
+           基本設定
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family:
+                Arial,
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background-color: #f7f5f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           導覽列
+        ========================= */
+
+        header {
+            width: 100%;
+            height: 70px;
+
+            background-color: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #333;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 15px;
+        }
+
+
+        nav a:hover {
+            color: #111;
+        }
+
+
+        /* =========================
+           首頁主視覺
+        ========================= */
+
+        .hero {
+            width: 90%;
+            max-width: 1000px;
+
+            margin: 70px auto 60px;
+
+            padding: 80px 30px;
+
+            background-color: #ffffff;
+
+            border-radius: 24px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+        }
+
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
+            color: #333;
+        }
+
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: 500;
+
+            margin-bottom: 25px;
+
+            color: #555;
+        }
+
+
+        .hero p {
+            font-size: 17px;
+
+            color: #777;
+
+            line-height: 2;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           開始按鈕
+        ========================= */
+
+        .start-button {
+            display: inline-block;
+
+            padding: 13px 38px;
+
+            background-color: #333;
+            color: #ffffff;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+
+        .start-button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           課程區域
+        ========================= */
+
+        .courses {
+            width: 90%;
+            max-width: 1000px;
+
+            margin: 0 auto 70px;
+        }
+
+
+        .courses > h2 {
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           課程卡片
+        ========================= */
+
+        .course-list {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .course {
+            background-color: #ffffff;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            min-height: 220px;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+
+            transition: 0.2s;
+        }
+
+
+        .course:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+
+        .course h3 {
+            font-size: 20px;
+
+            margin-bottom: 18px;
+
+            color: #333;
+        }
+
+
+        .course p {
+            color: #777;
+
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+
+        .course a {
+            text-decoration: none;
+
+            color: #333;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+
+        .course a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           平台介紹
+        ========================= */
+
+        .about {
+            text-align: center;
+
+            background-color: #ffffff;
+
+            border-radius: 18px;
+
+            padding: 50px 30px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .about h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .about p {
+            color: #777;
+
+            line-height: 2;
+        }
+
+
+        /* =========================
+           頁尾
+        ========================= */
+
+        footer {
+            width: 100%;
+
+            padding: 35px 20px;
+
+            background-color: #ffffff;
+
+            border-top: 1px solid #eeeeee;
+
+            text-align: center;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           手機版
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+
+                padding: 18px 20px;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            nav {
+                gap: 20px;
+            }
+
+
+            .hero {
+                margin-top: 35px;
+
+                padding: 55px 20px;
+            }
+
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+
+            .hero p {
+                font-size: 15px;
+            }
+
+
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+
+
+            .course {
+                padding: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         導覽列
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+            🇰🇷 Chocochip Korean
+        </div>
+
+
+        <nav>
+
+            <a href="#">
+                首頁
+            </a>
+
+            <a href="#courses">
+                課程內容
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         首頁
+    ========================= -->
+
+    <section class="hero">
+
+        <h1>
+            Chocochip Korean
+        </h1>
+
+
+        <h2>
+            發音學習平台
+        </h2>
+
+
+        <p>
+
+            從韓文40音開始，
+            <br>
+
+            打好韓文發音基礎。
+
+            <br>
+
+            透過日常單字與實際練習，
+            <br>
+
+            一步一步建立韓文發音能力。
+
+        </p>
+
+
+        <a
+            href="#courses"
+            class="start-button"
+        >
+
+            開始學習
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         課程
+    ========================= -->
+
+    <section
+        class="courses"
+        id="courses"
+    >
+
+        <h2>
+            課程內容
+        </h2>
+
+
+        <div class="course-list">
+
+
+            <!-- 第一課 -->
+
+            <div class="course">
+
+                <h3>
+                    01｜韓文40音發音入門
+                </h3>
+
+
+                <p>
+
+                    從韓文40音開始學習，
+
+                    認識基本母音、子音以及發音方式，
+
+                    建立韓文閱讀與發音的基礎。
+
+                </p>
+
+
+                <a href="#">
+
+                    開始學習 →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- 第二課 -->
+
+            <div class="course">
+
+                <h3>
+                    02｜日常單字與發音練習
+                </h3>
+
+
+                <p>
+
+                    學習生活中常見的韓文單字，
+
+                    搭配發音練習，
+
+                    讓學到的單字真正能夠讀出來。
+
+                </p>
+
+
+                <a href="#">
+
+                    開始學習 →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         平台介紹
+    ========================= -->
+
+    <section class="courses">
+
+        <div class="about">
+
+            <h2>
+                Chocochip Korean
+            </h2>
+
+
+            <p>
+
+                不只是記住韓文字母，
+
+                <br>
+
+                而是從正確發音開始，
+
+                <br>
+
+                建立韓文學習的基礎。
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         頁尾
+    ========================= -->
+
+    <footer>
+
+        © 2026 Chocochip Korean
+
+    </footer>
+
+
+</body>
+
+</html>
