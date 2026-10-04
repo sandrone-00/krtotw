@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>韓文40音｜Chocochip Korean</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background: #f7f5f2;
+
+            color: #333;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================
+           導覽列
+        ===================== */
+
+        header {
+
+            height: 70px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        .back {
+
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================
+           主要內容
+        ===================== */
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            padding: 0 20px;
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .title h1 {
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .title p {
+
+            color: #777;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           40音介紹
+        ===================== */
+
+        .intro {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            margin-bottom: 35px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.04);
+        }
+
+
+        .intro h2 {
+
+            margin-bottom: 18px;
+
+            font-size: 24px;
+        }
+
+
+        .intro p {
+
+            color: #666;
+
+            line-height: 2;
+        }
+
+
+        .number {
+
+            display: inline-block;
+
+            background: #333;
+
+            color: white;
+
+            padding: 3px 10px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            margin-right: 8px;
+        }
+
+
+        /* =====================
+           分類標題
+        ===================== */
+
+        .section-title {
+
+            font-size: 25px;
+
+            margin: 45px 0 20px;
+        }
+
+
+        /* =====================
+           字母卡片
+        ===================== */
+
+        .alphabet-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .alphabet-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            border: 2px solid transparent;
+        }
+
+
+        .alphabet-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #ddd;
+        }
+
+
+        .letter {
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+            font-weight: bold;
+        }
+
+
+        .name {
+
+            font-size: 14px;
+
+            color: #666;
+
+            margin-bottom: 12px;
+        }
+
+
+        .sound-button {
+
+            border: none;
+
+            background: #f1f1f1;
+
+            border-radius: 20px;
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+
+        .sound-button:hover {
+
+            background: #e5e5e5;
+        }
+
+
+        /* =====================
+           發音說明
+        ===================== */
+
+        .pronunciation-box {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            margin-top: 45px;
+
+            margin-bottom: 60px;
+
+            text-align: center;
+        }
+
+
+        .pronunciation-box h2 {
+
+            margin-bottom: 15px;
+        }
+
+
+        #selectedLetter {
+
+            font-size: 70px;
+
+            font-weight: bold;
+
+            margin: 15px;
+        }
+
+
+        #selectedInfo {
+
+            color: #666;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           Footer
+        ===================== */
+
+        footer {
+
+            background: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================
+           手機版
+        ===================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 0 20px;
+            }
+
+
+            .title h1 {
+
+                font-size: 30px;
+            }
+
+
+            .alphabet-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🇰🇷 Chocochip Korean
+    </div>
+
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← 返回課程
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- 標題 -->
+
+    <section class="title">
+
+        <h1>
+            韓文40音發音入門
+        </h1>
+
+        <p>
+            從韓文的基本字母開始，
+            認識子音與母音，
+            建立正確的韓文發音基礎。
+        </p>
+
+    </section>
+
+
+
+    <!-- 40音介紹 -->
+
+    <section class="intro">
+
+        <h2>
+            <span class="number">01</span>
+            認識韓文40音
+        </h2>
+
+
+        <p>
+
+            韓文文字稱為「한글（韓글／諺文）」。
+
+            <br><br>
+
+            韓文的基本發音系統由
+            <strong>19個子音</strong>
+            與
+            <strong>21個母音</strong>
+            組成，
+            合計40個基本音。
+
+            <br><br>
+
+            學習韓文的第一步，
+            就是先熟悉這些基本字母的形狀與發音。
+
+        </p>
+
+    </section>
+
+
+
+    <!-- 子音 -->
+
+    <h2 class="section-title">
+        19個基本子音
+    </h2>
+
+
+    <div
+        class="alphabet-grid"
+        id="consonants"
+    >
+
+    </div>
+
+
+
+    <!-- 母音 -->
+
+    <h2 class="section-title">
+        21個基本母音
+    </h2>
+
+
+    <div
+        class="alphabet-grid"
+        id="vowels"
+    >
+
+    </div>
+
+
+
+    <!-- 發音說明 -->
+
+    <section class="pronunciation-box">
+
+        <h2>
+            發音練習
+        </h2>
+
+
+        <div id="selectedLetter">
+            ㄱ
+        </div>
+
+
+        <div id="selectedInfo">
+
+            點擊上面的韓文字母，
+            <br>
+            可以播放發音並查看說明。
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 Chocochip Korean
+
+</footer>
+
+
+
+<script>
+
+
+/* ============================
+   19個基本子音
+============================ */
+
+const consonants = [
+
+    ["ㄱ", "기역", "g / k"],
+
+    ["ㄴ", "니은", "n"],
+
+    ["ㄷ", "디귿", "d / t"],
+
+    ["ㄹ", "리을", "r / l"],
+
+    ["ㅁ", "미음", "m"],
+
+    ["ㅂ", "비읍", "b / p"],
+
+    ["ㅅ", "시옷", "s"],
+
+    ["ㅇ", "이응", "ng"],
+
+    ["ㅈ", "지읒", "j"],
+
+    ["ㅊ", "치읓", "ch"],
+
+    ["ㅋ", "키읔", "k"],
+
+    ["ㅌ", "티읕", "t"],
+
+    ["ㅍ", "피읖", "p"],
+
+    ["ㅎ", "히읗", "h"],
+
+    ["ㄲ", "쌍기역", "kk"],
+
+    ["ㄸ", "쌍디귿", "tt"],
+
+    ["ㅃ", "쌍비읍", "pp"],
+
+    ["ㅆ", "쌍시옷", "ss"],
+
+    ["ㅉ", "쌍지읒", "jj"]
+
+];
+
+
+
+/* ============================
+   21個基本母音
+============================ */
+
+const vowels = [
+
+    ["ㅏ", "아", "a"],
+
+    ["ㅑ", "야", "ya"],
+
+    ["ㅓ", "어", "eo"],
+
+    ["ㅕ", "여", "yeo"],
+
+    ["ㅗ", "오", "o"],
+
+    ["ㅛ", "요", "yo"],
+
+    ["ㅜ", "우", "u"],
+
+    ["ㅠ", "유", "yu"],
+
+    ["ㅡ", "으", "eu"],
+
+    ["ㅣ", "이", "i"],
+
+    ["ㅐ", "애", "ae"],
+
+    ["ㅔ", "에", "e"],
+
+    ["ㅒ", "얘", "yae"],
+
+    ["ㅖ", "예", "ye"],
+
+    ["ㅘ", "와", "wa"],
+
+    ["ㅙ", "왜", "wae"],
+
+    ["ㅚ", "외", "oe"],
+
+    ["ㅝ", "워", "wo"],
+
+    ["ㅞ", "웨", "we"],
+
+    ["ㅟ", "위", "wi"],
+
+    ["ㅢ", "의", "ui"]
+
+];
+
+
+
+/* ============================
+   建立字母卡片
+============================ */
+
+function createCards(
+    data,
+    containerId
+) {
+
+    const container =
+        document.getElementById(containerId);
+
+
+    data.forEach(item => {
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "alphabet-card";
+
+
+        card.innerHTML = `
+
+            <div class="letter">
+                ${item[0]}
+            </div>
+
+            <div class="name">
+                ${item[1]}
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('${item[0]}', '${item[2]}')"
+            >
+
+                🔊 發音
+
+            </button>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+/* ============================
+   顯示發音
+============================ */
+
+function playSound(
+    letter,
+    romanization
+) {
+
+    document.getElementById(
+        "selectedLetter"
+    ).textContent = letter;
+
+
+    document.getElementById(
+        "selectedInfo"
+    ).innerHTML = `
+
+        韓文：${letter}
+
+        <br>
+
+        羅馬拼音：${romanization}
+
+        <br><br>
+
+        🔊 正在播放韓文發音
+
+    `;
+
+
+    /*
+       使用瀏覽器韓文語音功能
+       暫時代替 MP3 發音檔
+    */
+
+    const speech =
+        new SpeechSynthesisUtterance(letter);
+
+
+    speech.lang = "ko-KR";
+
+    speech.rate = 0.7;
+
+    speech.pitch = 1;
+
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+
+/* ============================
+   啟動
+============================ */
+
+createCards(
+    consonants,
+    "consonants"
+);
+
+
+createCards(
+    vowels,
+    "vowels"
+);
+
+
+</script>
+
+
+</body>
+
+</html>
