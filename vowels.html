@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        21個基本母音｜Chocochip Korean
+    </title>
+
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background: #f7f5f2;
+
+            color: #333;
+
+        }
+
+
+        header {
+
+            height: 70px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+
+        .back {
+
+            color: #555;
+
+            text-decoration: none;
+
+        }
+
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            padding: 0 20px;
+
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .title h1 {
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .title p {
+
+            color: #777;
+
+        }
+
+
+        .alphabet-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .alphabet-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            transition: 0.2s;
+
+        }
+
+
+        .alphabet-card:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .letter {
+
+            font-size: 42px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .name {
+
+            color: #777;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .sound-button {
+
+            border: none;
+
+            background: #f1f1f1;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+        }
+
+
+        .sound-button:hover {
+
+            background: #e5e5e5;
+
+        }
+
+
+        footer {
+
+            background: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #999;
+
+            margin-top: 60px;
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .alphabet-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        🇰🇷 Chocochip Korean
+
+    </div>
+
+
+    <a
+        href="alphabet.html"
+        class="back"
+    >
+
+        ← 返回上一階段
+
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <section class="title">
+
+        <h1>
+            21個基本母音
+        </h1>
+
+        <p>
+            學習韓文基本母音與正確發音。
+        </p>
+
+    </section>
+
+
+
+    <div
+        class="alphabet-grid"
+        id="vowels"
+    ></div>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 Chocochip Korean
+
+</footer>
+
+
+
+<script>
+
+
+const vowels = [
+
+    ["ㅏ", "아", "a"],
+
+    ["ㅑ", "야", "ya"],
+
+    ["ㅓ", "어", "eo"],
+
+    ["ㅕ", "여", "yeo"],
+
+    ["ㅗ", "오", "o"],
+
+    ["ㅛ", "요", "yo"],
+
+    ["ㅜ", "우", "u"],
+
+    ["ㅠ", "유", "yu"],
+
+    ["ㅡ", "으", "eu"],
+
+    ["ㅣ", "이", "i"],
+
+    ["ㅐ", "애", "ae"],
+
+    ["ㅔ", "에", "e"],
+
+    ["ㅒ", "얘", "yae"],
+
+    ["ㅖ", "예", "ye"],
+
+    ["ㅘ", "와", "wa"],
+
+    ["ㅙ", "왜", "wae"],
+
+    ["ㅚ", "외", "oe"],
+
+    ["ㅝ", "워", "wo"],
+
+    ["ㅞ", "웨", "we"],
+
+    ["ㅟ", "위", "wi"],
+
+    ["ㅢ", "의", "ui"]
+
+];
+
+
+const container =
+    document.getElementById("vowels");
+
+
+vowels.forEach(item => {
+
+
+    const card =
+        document.createElement("div");
+
+
+    card.className =
+        "alphabet-card";
+
+
+    card.innerHTML = `
+
+        <div class="letter">
+            ${item[0]}
+        </div>
+
+        <div class="name">
+            ${item[1]}
+        </div>
+
+        <div>
+            ${item[2]}
+        </div>
+
+        <br>
+
+        <button
+            class="sound-button"
+            onclick="playSound('${item[0]}')"
+        >
+
+            🔊 發音
+
+        </button>
+
+    `;
+
+
+    container.appendChild(card);
+
+});
+
+
+
+function playSound(letter) {
+
+    const speech =
+        new SpeechSynthesisUtterance(letter);
+
+
+    speech.lang =
+        "ko-KR";
+
+
+    speech.rate =
+        0.7;
+
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
