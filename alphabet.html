@@ -8,104 +8,11 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>韓文40音｜Chocochip Korean</title>
+    <title>基本子音｜Chocochip Korean</title>
 
 
     <style>
-/* =====================
-   下一階段
-===================== */
 
-.next-section {
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 40px;
-
-    margin-top: 45px;
-
-    margin-bottom: 60px;
-
-    text-align: center;
-
-}
-
-
-.next-section h2 {
-
-    margin-bottom: 15px;
-
-}
-
-
-.next-section p {
-
-    color: #777;
-
-    margin-bottom: 25px;
-
-}
-
-
-.password-box {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-}
-
-
-.password-box input {
-
-    width: 240px;
-
-    padding: 12px 15px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-
-}
-
-
-.password-box button {
-
-    border: none;
-
-    background: #333;
-
-    color: white;
-
-    padding: 12px 25px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-}
-
-
-.password-box button:hover {
-
-    background: #555;
-
-}
-
-
-#passwordMessage {
-
-    margin-top: 15px;
-
-    font-size: 14px;
-
-}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -114,7 +21,6 @@
 
 
         body {
-
             font-family:
                 Arial,
                 "Microsoft JhengHei",
@@ -168,6 +74,12 @@
         }
 
 
+        .back:hover {
+
+            color: #000;
+        }
+
+
         /* =====================
            主要內容
         ===================== */
@@ -181,6 +93,10 @@
             padding: 0 20px;
         }
 
+
+        /* =====================
+           標題
+        ===================== */
 
         .title {
 
@@ -272,7 +188,7 @@
 
 
         /* =====================
-           字母卡片
+           子音卡片
         ===================== */
 
         .alphabet-grid {
@@ -295,8 +211,6 @@
             padding: 25px 15px;
 
             text-align: center;
-
-            cursor: pointer;
 
             transition: 0.2s;
 
@@ -332,6 +246,16 @@
         }
 
 
+        .romanization {
+
+            font-size: 13px;
+
+            color: #999;
+
+            margin-bottom: 15px;
+        }
+
+
         .sound-button {
 
             border: none;
@@ -355,46 +279,99 @@
 
 
         /* =====================
-           發音說明
+           下一階段
         ===================== */
 
-        .pronunciation-box {
+        .next-section {
 
             background: white;
 
             border-radius: 20px;
 
-            padding: 35px;
+            padding: 40px;
 
             margin-top: 45px;
 
             margin-bottom: 60px;
 
             text-align: center;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.04);
         }
 
 
-        .pronunciation-box h2 {
+        .next-section h2 {
+
+            font-size: 28px;
 
             margin-bottom: 15px;
         }
 
 
-        #selectedLetter {
+        .next-section p {
 
-            font-size: 70px;
+            color: #777;
 
-            font-weight: bold;
-
-            margin: 15px;
+            margin-bottom: 25px;
         }
 
 
-        #selectedInfo {
+        .password-box {
 
-            color: #666;
+            display: flex;
 
-            line-height: 1.9;
+            justify-content: center;
+
+            gap: 10px;
+        }
+
+
+        .password-box input {
+
+            width: 240px;
+
+            padding: 12px 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+        }
+
+
+        .password-box button {
+
+            border: none;
+
+            background: #333;
+
+            color: white;
+
+            padding: 12px 25px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+
+        .password-box button:hover {
+
+            background: #555;
+        }
+
+
+        #passwordMessage {
+
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            color: #c55;
         }
 
 
@@ -440,8 +417,23 @@
                     repeat(3, 1fr);
             }
 
-        }
 
+            .password-box {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .password-box input {
+
+                width: 100%;
+
+                max-width: 300px;
+            }
+
+        }
 
     </style>
 
@@ -451,384 +443,358 @@
 <body>
 
 
-<header>
+    <!-- 導覽列 -->
 
-    <div class="logo">
-        🇰🇷 Chocochip Korean
-    </div>
+    <header>
 
-
-    <a
-        href="index.html"
-        class="back"
-    >
-        ← 返回課程
-    </a>
-
-</header>
+        <div class="logo">
+            🇰🇷 Chocochip Korean
+        </div>
 
 
+        <a
+            href="course.html"
+            class="back"
+        >
+            ← 返回課程
+        </a>
 
-<main class="container">
-
-
-    <!-- 標題 -->
-
-    <section class="title">
-
-        <h1>
-            韓文40音發音入門
-        </h1>
-
-        <p>
-            從韓文的基本字母開始，
-            認識子音與母音，
-            建立正確的韓文發音基礎。
-        </p>
-
-    </section>
+    </header>
 
 
 
-    <!-- 40音介紹 -->
+    <main class="container">
 
-    <section class="intro">
 
-        <h2>
-            <span class="number">01</span>
-            認識韓文40音
+        <!-- 標題 -->
+
+        <section class="title">
+
+            <h1>
+                韓文40音發音入門
+            </h1>
+
+            <p>
+                從韓文的基本字母開始，
+                認識子音與母音，
+                建立正確的韓文發音基礎。
+            </p>
+
+        </section>
+
+
+
+        <!-- 40音介紹 -->
+
+        <section class="intro">
+
+            <h2>
+
+                <span class="number">
+                    01
+                </span>
+
+                認識韓文40音
+
+            </h2>
+
+
+            <p>
+
+                學習韓文的第一步，
+                就是先熟悉這些基本字母的形狀與發音。
+
+                <br>
+
+                韓文40音包含
+                19個基本子音
+                與
+                21個基本母音。
+
+                <br>
+
+                這一階段我們先從
+                <strong>19個基本子音</strong>
+                開始。
+
+            </p>
+
+        </section>
+
+
+
+        <!-- 19個基本子音 -->
+
+        <h2 class="section-title">
+
+            19個基本子音
+
         </h2>
 
 
-        <p>
-
-       
-
-            學習韓文的第一步，
-            就是先熟悉這些基本字母的形狀與發音。
-
-        </p>
-
-    </section>
-
-
-
-    <!-- 子音 -->
-
-    <h2 class="section-title">
-        19個基本子音
-    </h2>
-
-
-    <div
-        class="alphabet-grid"
-        id="consonants"
-    >
-
-    </div>
-
-<section class="next-section">
-
-    <h2>
-        下一階段
-    </h2>
-
-    <p>
-        完成基本子音學習後，
-        輸入老師提供的密碼，
-        解鎖21個基本母音。
-    </p>
-
-
-    <div class="password-box">
-
-        <input
-            type="password"
-            id="password"
-            placeholder="請輸入密碼"
+        <div
+            class="alphabet-grid"
+            id="consonants"
         >
 
-        <button onclick="unlockVowels()">
-            解鎖
-        </button>
+        </div>
 
-    </div>
 
 
-    <p id="passwordMessage"></p>
+        <!-- 下一階段 -->
 
-</section>
+        <section class="next-section">
 
-   
+            <h2>
+                下一階段
+            </h2>
 
 
+            <p>
 
-    <!-- 發音說明 -->
+                完成基本子音學習後，
+                輸入老師提供的密碼，
+                解鎖21個基本母音。
 
+            </p>
 
 
-</main>
+            <div class="password-box">
 
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="請輸入密碼"
+                    onkeydown="checkEnter(event)"
+                >
 
 
-<footer>
+                <button
+                    onclick="unlockVowels()"
+                >
+                    解鎖
+                </button>
 
-    © 2026 Chocochip Korean
-
-</footer>
-
-
-
-<script>
-
-function unlockVowels() {
-
-    const password =
-        document.getElementById("password").value;
-
-
-    const message =
-        document.getElementById("passwordMessage");
-
-
-    if (password === "choco40") {
-
-        window.location.href =
-            "vowels.html";
-
-    } else {
-
-        message.textContent =
-            "密碼錯誤，請向老師確認密碼。";
-
-    }
-
-}
-/* ============================
-   19個基本子音
-============================ */
-
-const consonants = [
-
-    ["ㄱ", "기역", "g / k"],
-
-    ["ㄴ", "니은", "n"],
-
-    ["ㄷ", "디귿", "d / t"],
-
-    ["ㄹ", "리을", "r / l"],
-
-    ["ㅁ", "미음", "m"],
-
-    ["ㅂ", "비읍", "b / p"],
-
-    ["ㅅ", "시옷", "s"],
-
-    ["ㅇ", "이응", "ng"],
-
-    ["ㅈ", "지읒", "j"],
-
-    ["ㅊ", "치읓", "ch"],
-
-    ["ㅋ", "키읔", "k"],
-
-    ["ㅌ", "티읕", "t"],
-
-    ["ㅍ", "피읖", "p"],
-
-    ["ㅎ", "히읗", "h"],
-
-    ["ㄲ", "쌍기역", "kk"],
-
-    ["ㄸ", "쌍디귿", "tt"],
-
-    ["ㅃ", "쌍비읍", "pp"],
-
-    ["ㅆ", "쌍시옷", "ss"],
-
-    ["ㅉ", "쌍지읒", "jj"]
-
-];
-
-
-
-/* ============================
-   21個基本母音
-============================ */
-
-const vowels = [
-
-    ["ㅏ", "아", "a"],
-
-    ["ㅑ", "야", "ya"],
-
-    ["ㅓ", "어", "eo"],
-
-    ["ㅕ", "여", "yeo"],
-
-    ["ㅗ", "오", "o"],
-
-    ["ㅛ", "요", "yo"],
-
-    ["ㅜ", "우", "u"],
-
-    ["ㅠ", "유", "yu"],
-
-    ["ㅡ", "으", "eu"],
-
-    ["ㅣ", "이", "i"],
-
-    ["ㅐ", "애", "ae"],
-
-    ["ㅔ", "에", "e"],
-
-    ["ㅒ", "얘", "yae"],
-
-    ["ㅖ", "예", "ye"],
-
-    ["ㅘ", "와", "wa"],
-
-    ["ㅙ", "왜", "wae"],
-
-    ["ㅚ", "외", "oe"],
-
-    ["ㅝ", "워", "wo"],
-
-    ["ㅞ", "웨", "we"],
-
-    ["ㅟ", "위", "wi"],
-
-    ["ㅢ", "의", "ui"]
-
-];
-
-
-
-/* ============================
-   建立字母卡片
-============================ */
-
-function createCards(
-    data,
-    containerId
-) {
-
-    const container =
-        document.getElementById(containerId);
-
-
-    data.forEach(item => {
-
-        const card =
-            document.createElement("div");
-
-
-        card.className =
-            "alphabet-card";
-
-
-        card.innerHTML = `
-
-            <div class="letter">
-                ${item[0]}
             </div>
 
-            <div class="name">
-                ${item[1]}
-            </div>
 
-            <button
-                class="sound-button"
-                onclick="playSound('${item[0]}', '${item[2]}')"
-            >
+            <p id="passwordMessage"></p>
 
-                🔊 發音
-
-            </button>
-
-        `;
+        </section>
 
 
-        container.appendChild(card);
-
-    });
-
-}
+    </main>
 
 
 
-/* ============================
-   顯示發音
-============================ */
+    <footer>
 
-function playSound(
-    letter,
-    romanization
-) {
+        © 2026 Chocochip Korean
 
-    document.getElementById(
-        "selectedLetter"
-    ).textContent = letter;
-
-
-    document.getElementById(
-        "selectedInfo"
-    ).innerHTML = `
-
-        韓文：${letter}
-
-        <br>
-
-        羅馬拼音：${romanization}
-
-        <br><br>
-
-        🔊 正在播放韓文發音
-
-    `;
-
-
-    /*
-       使用瀏覽器韓文語音功能
-       暫時代替 MP3 發音檔
-    */
-
-    const speech =
-        new SpeechSynthesisUtterance(letter);
-
-
-    speech.lang = "ko-KR";
-
-    speech.rate = 0.7;
-
-    speech.pitch = 1;
-
-
-    speechSynthesis.cancel();
-
-    speechSynthesis.speak(speech);
-
-}
+    </footer>
 
 
 
-/* ============================
-   啟動
-============================ */
-
-createCards(
-    consonants,
-    "consonants"
-);
+    <script>
 
 
-createCards(
-    vowels,
-    "vowels"
-);
+        /* ============================
+           19個基本子音
+        ============================ */
 
 
-</script>
+        const consonants = [
+
+            ["ㄱ", "기역", "g / k"],
+
+            ["ㄴ", "니은", "n"],
+
+            ["ㄷ", "디귿", "d / t"],
+
+            ["ㄹ", "리을", "r / l"],
+
+            ["ㅁ", "미음", "m"],
+
+            ["ㅂ", "비읍", "b / p"],
+
+            ["ㅅ", "시옷", "s"],
+
+            ["ㅇ", "이응", "ng"],
+
+            ["ㅈ", "지읒", "j"],
+
+            ["ㅊ", "치읓", "ch"],
+
+            ["ㅋ", "키읔", "k"],
+
+            ["ㅌ", "티읕", "t"],
+
+            ["ㅍ", "피읖", "p"],
+
+            ["ㅎ", "히읗", "h"],
+
+            ["ㄲ", "쌍기역", "kk"],
+
+            ["ㄸ", "쌍디귿", "tt"],
+
+            ["ㅃ", "쌍비읍", "pp"],
+
+            ["ㅆ", "쌍시옷", "ss"],
+
+            ["ㅉ", "쌍지읒", "jj"]
+
+        ];
+
+
+
+        /* ============================
+           建立子音卡片
+        ============================ */
+
+
+        function createCards(data) {
+
+            const container =
+                document.getElementById("consonants");
+
+
+            data.forEach(item => {
+
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "alphabet-card";
+
+
+                card.innerHTML = `
+
+                    <div class="letter">
+                        ${item[0]}
+                    </div>
+
+
+                    <div class="name">
+                        ${item[1]}
+                    </div>
+
+
+                    <div class="romanization">
+                        ${item[2]}
+                    </div>
+
+
+                    <button
+                        class="sound-button"
+                        onclick="playSound('${item[0]}')"
+                    >
+                        🔊 發音
+                    </button>
+
+                `;
+
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+
+
+        /* ============================
+           播放韓文發音
+        ============================ */
+
+
+        function playSound(letter) {
+
+
+            const speech =
+                new SpeechSynthesisUtterance(letter);
+
+
+            speech.lang = "ko-KR";
+
+
+            speech.rate = 0.7;
+
+
+            speech.pitch = 1;
+
+
+            speechSynthesis.cancel();
+
+
+            speechSynthesis.speak(speech);
+
+        }
+
+
+
+        /* ============================
+           解鎖基本母音
+        ============================ */
+
+
+        function unlockVowels() {
+
+
+            const password =
+                document.getElementById("password").value;
+
+
+            const message =
+                document.getElementById("passwordMessage");
+
+
+            if (password === "choco40") {
+
+
+                window.location.href =
+                    "vowels.html";
+
+
+            } else {
+
+
+                message.textContent =
+                    "密碼錯誤，請向老師確認密碼。";
+
+            }
+
+        }
+
+
+
+        /* ============================
+           Enter 也可以解鎖
+        ============================ */
+
+
+        function checkEnter(event) {
+
+            if (event.key === "Enter") {
+
+                unlockVowels();
+
+            }
+
+        }
+
+
+
+        /* ============================
+           啟動
+        ============================ */
+
+
+        createCards(consonants);
+
+
+    </script>
 
 
 </body>
