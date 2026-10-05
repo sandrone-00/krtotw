@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>進階收音｜Chocochip Korean</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background: #f7f5f2;
+
+            color: #333;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================
+           導覽列
+        ===================== */
+
+        header {
+
+            height: 70px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        .back {
+
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================
+           主要內容
+        ===================== */
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            padding: 0 20px;
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .title h1 {
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .title p {
+
+            color: #777;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           介紹區
+        ===================== */
+
+        .intro {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            margin-bottom: 35px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.04);
+        }
+
+
+        .intro h2 {
+
+            margin-bottom: 18px;
+
+            font-size: 24px;
+        }
+
+
+        .intro p {
+
+            color: #666;
+
+            line-height: 2;
+
+            margin-bottom: 10px;
+        }
+
+
+        .number {
+
+            display: inline-block;
+
+            background: #333;
+
+            color: white;
+
+            padding: 3px 10px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            margin-right: 8px;
+        }
+
+
+        /* =====================
+           分類標題
+        ===================== */
+
+        .section-title {
+
+            font-size: 25px;
+
+            margin: 45px 0 20px;
+        }
+
+
+        /* =====================
+           發音卡片
+        ===================== */
+
+        .alphabet-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .alphabet-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            transition: 0.2s;
+
+            border: 2px solid transparent;
+        }
+
+
+        .alphabet-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #ddd;
+        }
+
+
+        .letter {
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+            font-weight: bold;
+        }
+
+
+        .name {
+
+            font-size: 14px;
+
+            color: #666;
+
+            margin-bottom: 12px;
+        }
+
+
+        .pronunciation {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+
+        .meaning {
+
+            font-size: 14px;
+
+            color: #777;
+
+            margin-bottom: 12px;
+        }
+
+
+        .sound-button {
+
+            border: none;
+
+            background: #f1f1f1;
+
+            border-radius: 20px;
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+
+        .sound-button:hover {
+
+            background: #e5e5e5;
+        }
+
+
+        /* =====================
+           規則說明
+        ===================== */
+
+        .rule-box {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.04);
+        }
+
+
+        .rule-box p {
+
+            color: #666;
+
+            line-height: 2;
+
+            margin-bottom: 10px;
+        }
+
+
+        .rule-box strong {
+
+            color: #333;
+        }
+
+
+        /* =====================
+           雙收音
+        ===================== */
+
+        .double-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .double-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            border: 2px solid transparent;
+
+            transition: 0.2s;
+        }
+
+
+        .double-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #ddd;
+        }
+
+
+        .double-letter {
+
+            font-size: 36px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+
+        .double-sound {
+
+            font-size: 15px;
+
+            color: #666;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================
+           下一階段
+        ===================== */
+
+        .next-section {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            margin-top: 45px;
+
+            margin-bottom: 60px;
+
+            text-align: center;
+        }
+
+
+        .back-course {
+
+            display: inline-block;
+
+            background: #333;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+        }
+
+
+        .back-course:hover {
+
+            background: #555;
+        }
+
+
+        /* =====================
+           Footer
+        ===================== */
+
+        footer {
+
+            background: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================
+           手機版
+        ===================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 0 20px;
+            }
+
+
+            .title h1 {
+
+                font-size: 30px;
+            }
+
+
+            .alphabet-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+
+            .double-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🇰🇷 Chocochip Korean
+    </div>
+
+
+    <a
+        href="batchim.html"
+        class="back"
+    >
+        ← 返回收音課程
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- =====================
+         標題
+    ===================== -->
+
+    <section class="title">
+
+        <h1>
+            進階收音
+        </h1>
+
+        <p>
+            學習雙收音、連音、硬音化與氣音化，
+            了解韓文實際發音的變化。
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================
+         課程介紹
+    ===================== -->
+
+    <section class="intro">
+
+        <h2>
+
+            <span class="number">
+                01
+            </span>
+
+            認識進階收音
+
+        </h2>
+
+
+        <p>
+            學會基本收音之後，
+            韓文的發音還會因為後面的音節產生變化。
+        </p>
+
+
+        <p>
+            這一課將進一步學習
+            雙收音、連音、硬音化與氣音化。
+        </p>
+
+
+        <p>
+            學習時除了看韓文怎麼寫，
+            也要注意實際發音。
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================
+         單收音
+    ===================== -->
+
+    <h2 class="section-title">
+        02｜單收音的發音變化
+    </h2>
+
+
+    <div class="rule-box">
+
+        <p>
+            韓文有許多子音可以當收音，
+            但在音節結尾時，
+            實際發出的聲音會受到限制。
+        </p>
+
+        <p>
+            初學階段可以先掌握
+            <strong>ㄱ、ㄴ、ㄷ、ㄹ、ㅁ、ㅂ、ㅇ</strong>
+            七種主要收音。
+        </p>
+
+    </div>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㄱ
+            </div>
+
+            <div class="name">
+                기역
+            </div>
+
+            <div class="pronunciation">
+                ㄱ
+            </div>
+
+            <div class="meaning">
+                例：국
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('국')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㄴ
+            </div>
+
+            <div class="name">
+                니은
+            </div>
+
+            <div class="pronunciation">
+                ㄴ
+            </div>
+
+            <div class="meaning">
+                例：문
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('문')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㄷ
+            </div>
+
+            <div class="name">
+                디귿
+            </div>
+
+            <div class="pronunciation">
+                ㄷ
+            </div>
+
+            <div class="meaning">
+                例：옷
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('옷')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㄹ
+            </div>
+
+            <div class="name">
+                리을
+            </div>
+
+            <div class="pronunciation">
+                ㄹ
+            </div>
+
+            <div class="meaning">
+                例：물
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('물')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㅁ
+            </div>
+
+            <div class="name">
+                미음
+            </div>
+
+            <div class="pronunciation">
+                ㅁ
+            </div>
+
+            <div class="meaning">
+                例：밤
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('밤')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㅂ
+            </div>
+
+            <div class="name">
+                비읍
+            </div>
+
+            <div class="pronunciation">
+                ㅂ
+            </div>
+
+            <div class="meaning">
+                例：밥
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('밥')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                ㅇ
+            </div>
+
+            <div class="name">
+                이응
+            </div>
+
+            <div class="pronunciation">
+                ㅇ
+            </div>
+
+            <div class="meaning">
+                例：공
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('공')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         雙收音
+    ===================== -->
+
+    <h2 class="section-title">
+        03｜雙收音（겹받침）
+    </h2>
+
+
+    <div class="rule-box">
+
+        <p>
+            兩個子音同時出現在音節下方，
+            稱為<strong>雙收音（겹받침）</strong>。
+        </p>
+
+        <p>
+            雙收音不是任何情況下都把兩個子音完整念出來，
+            實際發音會依照後面的音節產生變化。
+        </p>
+
+    </div>
+
+
+    <div class="double-grid">
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄳ</div>
+            <div class="double-sound">
+                主要發 ㄱ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄵ</div>
+            <div class="double-sound">
+                主要發 ㄴ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄶ</div>
+            <div class="double-sound">
+                主要發 ㄴ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄺ</div>
+            <div class="double-sound">
+                依後方音節變化
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄻ</div>
+            <div class="double-sound">
+                主要發 ㅁ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄼ</div>
+            <div class="double-sound">
+                依單字與後方音節變化
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄽ</div>
+            <div class="double-sound">
+                主要發 ㄹ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄾ</div>
+            <div class="double-sound">
+                主要發 ㄹ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㄿ</div>
+            <div class="double-sound">
+                主要發 ㅂ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㅀ</div>
+            <div class="double-sound">
+                主要發 ㄹ
+            </div>
+        </div>
+
+
+        <div class="double-card">
+            <div class="double-letter">ㅄ</div>
+            <div class="double-sound">
+                主要發 ㅂ
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         雙收音實例
+    ===================== -->
+
+    <h2 class="section-title">
+        04｜雙收音的發音練習
+    </h2>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                읽다
+            </div>
+
+            <div class="name">
+                ㄺ
+            </div>
+
+            <div class="pronunciation">
+                읽다
+            </div>
+
+            <div class="meaning">
+                讀
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('읽다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                앉다
+            </div>
+
+            <div class="name">
+                ㄵ
+            </div>
+
+            <div class="pronunciation">
+                앉다
+            </div>
+
+            <div class="meaning">
+                坐
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('앉다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                없다
+            </div>
+
+            <div class="name">
+                ㅄ
+            </div>
+
+            <div class="pronunciation">
+                없다
+            </div>
+
+            <div class="meaning">
+                沒有
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('없다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         連音
+    ===================== -->
+
+    <h2 class="section-title">
+        05｜連音
+    </h2>
+
+
+    <div class="rule-box">
+
+        <p>
+            當前一個音節有收音，
+            而下一個音節以
+            <strong>ㅇ＋母音</strong>
+            開始時，
+            收音可能會連到下一個音節發音。
+        </p>
+
+        <p>
+            因此韓文的「拼寫」與「實際聽到的聲音」
+            有時會不太一樣。
+        </p>
+
+    </div>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                한국어
+            </div>
+
+            <div class="name">
+                韓語
+            </div>
+
+            <div class="pronunciation">
+                連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('한국어')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                먹어요
+            </div>
+
+            <div class="name">
+                吃
+            </div>
+
+            <div class="pronunciation">
+                連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('먹어요')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                읽어
+            </div>
+
+            <div class="name">
+                讀
+            </div>
+
+            <div class="pronunciation">
+                雙收音＋連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('읽어')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                앉아
+            </div>
+
+            <div class="name">
+                坐
+            </div>
+
+            <div class="pronunciation">
+                雙收音＋連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('앉아')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         硬音化
+    ===================== -->
+
+    <h2 class="section-title">
+        06｜硬音化
+    </h2>
+
+
+    <div class="rule-box">
+
+        <p>
+            某些收音後面的
+            <strong>ㄱ、ㄷ、ㅂ、ㅅ、ㅈ</strong>
+            會受到前面的聲音影響，
+            發音變得更加緊、更強。
+        </p>
+
+        <p>
+            這種發音變化稱為
+            <strong>硬音化</strong>。
+        </p>
+
+    </div>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                국밥
+            </div>
+
+            <div class="name">
+                湯飯
+            </div>
+
+            <div class="pronunciation">
+                국빱
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('국밥')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                학교
+            </div>
+
+            <div class="name">
+                學校
+            </div>
+
+            <div class="pronunciation">
+                학꾜
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('학교')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                식당
+            </div>
+
+            <div class="name">
+                餐廳
+            </div>
+
+            <div class="pronunciation">
+                식땅
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('식당')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                약국
+            </div>
+
+            <div class="name">
+                藥局
+            </div>
+
+            <div class="pronunciation">
+                약꾹
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('약국')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         氣音化
+    ===================== -->
+
+    <h2 class="section-title">
+        07｜氣音化
+    </h2>
+
+
+    <div class="rule-box">
+
+        <p>
+            <strong>ㅎ</strong>
+            和某些子音相遇時，
+            會使原本的子音產生送氣化。
+        </p>
+
+        <p>
+            這就是韓文發音中常見的
+            <strong>氣音化</strong>。
+        </p>
+
+    </div>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                좋다
+            </div>
+
+            <div class="name">
+                好
+            </div>
+
+            <div class="pronunciation">
+                조타
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('좋다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                놓다
+            </div>
+
+            <div class="name">
+                放、放置
+            </div>
+
+            <div class="pronunciation">
+                노타
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('놓다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                많다
+            </div>
+
+            <div class="name">
+                多
+            </div>
+
+            <div class="pronunciation">
+                만타
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('많다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                잡히다
+            </div>
+
+            <div class="name">
+                被抓住
+            </div>
+
+            <div class="pronunciation">
+                자피다
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('잡히다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         進階單字
+    ===================== -->
+
+    <h2 class="section-title">
+        08｜進階單字發音練習
+    </h2>
+
+
+    <div class="alphabet-grid">
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                국밥
+            </div>
+
+            <div class="name">
+                湯飯
+            </div>
+
+            <div class="pronunciation">
+                국빱
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('국밥')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                학교
+            </div>
+
+            <div class="name">
+                學校
+            </div>
+
+            <div class="pronunciation">
+                학꾜
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('학교')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                식당
+            </div>
+
+            <div class="name">
+                餐廳
+            </div>
+
+            <div class="pronunciation">
+                식땅
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('식당')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                약국
+            </div>
+
+            <div class="name">
+                藥局
+            </div>
+
+            <div class="pronunciation">
+                약꾹
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('약국')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                좋다
+            </div>
+
+            <div class="name">
+                好
+            </div>
+
+            <div class="pronunciation">
+                조타
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('좋다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                놓다
+            </div>
+
+            <div class="name">
+                放、放置
+            </div>
+
+            <div class="pronunciation">
+                노타
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('놓다')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                읽어
+            </div>
+
+            <div class="name">
+                讀
+            </div>
+
+            <div class="pronunciation">
+                雙收音＋連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('읽어')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                앉아
+            </div>
+
+            <div class="name">
+                坐
+            </div>
+
+            <div class="pronunciation">
+                雙收音＋連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('앉아')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+        <div class="alphabet-card">
+
+            <div class="letter">
+                없어
+            </div>
+
+            <div class="name">
+                沒有
+            </div>
+
+            <div class="pronunciation">
+                雙收音＋連音
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('없어')"
+            >
+                🔊 發音
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         返回收音課程
+    ===================== -->
+
+    <section class="next-section">
+
+        <a
+            href="batchim.html"
+            class="back-course"
+        >
+            ← 返回收音課程
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 Chocochip Korean
+
+</footer>
+
+
+
+<script>
+
+
+/* ============================
+   韓文發音
+============================ */
+
+
+function playSound(text) {
+
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+    speech.lang =
+        "ko-KR";
+
+
+    speech.rate =
+        0.7;
+
+
+    speech.pitch =
+        1;
+
+
+    speechSynthesis.cancel();
+
+
+    speechSynthesis.speak(
+        speech
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
