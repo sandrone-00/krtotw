@@ -1,627 +1,1131 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>chocochip韓語繁體學習網｜韓語正規課程</title>
+
+<style>
+
+:root{
+    --ink:#172431;
+    --brown:#a65d45;
+    --brown-dark:#8e4d3b;
+    --paper:#fffdf8;
+    --bg:#eef0f2;
+    --green:#f0f6f1;
+    --cream:#fbf4ec;
+    --peach:#f3e5de;
+    --yellow:#f2e4a4;
+    --line:#8da0aa;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    color:var(--ink);
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+    background:var(--bg);
+}
 
-    <title>Chocochip Korean 發音學習平台</title>
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
 
-    <style>
+/* =========================
+   Header
+========================= */
+
+.header{
+    height:176px;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+    padding-top:18px;
+}
+
+.flag{
+    width:67px;
+    height:67px;
+    margin:auto;
+    border:2px solid #ef5660;
+
+    display:grid;
+    place-items:center;
 
-        /* =========================
-           基本設定
-        ========================= */
+    font-size:40px;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+.brand{
+    margin:8px 0 0;
 
-        body {
-            font-family:
-                Arial,
-                "Noto Sans TC",
-                "Microsoft JhengHei",
-                sans-serif;
+    font-size:38px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
 
-            background-color: #f7f5f2;
-            color: #333;
-            line-height: 1.6;
-        }
+.subtitle{
+    margin:3px;
+    color:#735778;
+    font-size:12px;
+}
 
 
-        /* =========================
-           導覽列
-        ========================= */
+/* =========================
+   Navigation
+========================= */
 
-        header {
-            width: 100%;
-            height: 70px;
+.nav{
+    height:43px;
 
-            background-color: #ffffff;
+    background:#fff;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    border-bottom:1px solid #d8dadd;
 
-            padding: 0 50px;
+    box-shadow:
+        0 2px 7px rgba(0,0,0,.08);
+}
 
-            border-bottom: 1px solid #eeeeee;
+.navin{
+    height:100%;
 
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    gap:27px;
+}
 
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-            color: #333;
-        }
+.nav a{
+    font-size:12px;
+    font-weight:800;
+}
 
+.nav a:hover{
+    color:#675074;
+}
 
-        nav {
-            display: flex;
-            gap: 30px;
-        }
+.nav a:first-child{
+    color:#1762a4;
+}
 
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-size: 15px;
-        }
+/* =========================
+   Main Paper
+========================= */
 
+.wrapper{
+    max-width:1120px;
 
-        nav a:hover {
-            color: #111;
-        }
+    margin:36px auto 70px;
 
+    padding:0 18px;
+}
 
-        /* =========================
-           首頁主視覺
-        ========================= */
+.paper{
+    position:relative;
 
-        .hero {
-            width: 90%;
-            max-width: 1000px;
+    padding:
+        18px
+        20px
+        25px
+        88px;
 
-            margin: 70px auto 60px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 31px,
+            #8094a012 32px,
+            transparent 33px
+        ),
+        var(--paper);
 
-            padding: 80px 30px;
+    border:1px solid #9daab0;
 
-            background-color: #ffffff;
+    border-radius:6px;
 
-            border-radius: 24px;
+    box-shadow:
+        0 12px 25px rgba(54,67,75,.08);
+}
 
-            text-align: center;
 
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-        }
+/* 左側紅色筆記線 */
 
+.paper::before{
+    content:"";
 
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
+    position:absolute;
 
-            margin-bottom: 8px;
+    left:31px;
+    top:0;
+    bottom:0;
 
-            color: #333;
-        }
+    width:1px;
 
+    background:#efb6ad;
+}
 
-        .hero h2 {
-            font-size: 23px;
-            font-weight: 500;
 
-            margin-bottom: 25px;
+/* 左側打孔 */
 
-            color: #555;
-        }
+.holes{
+    position:absolute;
 
+    left:15px;
+    top:28px;
+    bottom:28px;
 
-        .hero p {
-            font-size: 17px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
 
-            color: #777;
+.holes i{
+    width:8px;
+    height:8px;
 
-            line-height: 2;
+    border:1px solid #72828a;
 
-            margin-bottom: 35px;
-        }
+    border-radius:50%;
 
+    background:#fff;
+}
 
-        /* =========================
-           開始按鈕
-        ========================= */
 
-        .start-button {
-            display: inline-block;
+/* =========================
+   Hero
+========================= */
 
-            padding: 13px 38px;
+.hero{
+    border:1px solid var(--brown);
 
-            background-color: #333;
-            color: #ffffff;
+    border-top:4px solid var(--brown);
 
-            text-decoration: none;
+    border-radius:6px;
 
-            border-radius: 30px;
+    background:var(--peach);
 
-            font-size: 15px;
+    padding:25px 28px;
 
-            transition: 0.2s;
-        }
+    position:relative;
+}
 
+.hero::after{
+    content:"";
 
-        .start-button:hover {
-            background-color: #555;
-            transform: translateY(-2px);
-        }
+    position:absolute;
 
+    right:27px;
+    top:0;
 
-        /* =========================
-           課程區域
-        ========================= */
+    width:53px;
+    height:9px;
 
-        .courses {
-            width: 90%;
-            max-width: 1000px;
+    background:#f4e7a8;
+}
 
-            margin: 0 auto 70px;
-        }
+.kicker{
+    font-size:11px;
 
+    letter-spacing:1px;
 
-        .courses > h2 {
-            text-align: center;
+    color:var(--brown-dark);
 
-            font-size: 28px;
+    font-weight:900;
 
-            margin-bottom: 35px;
-        }
+    margin-bottom:7px;
+}
 
+.level{
+    display:inline-block;
 
-        /* =========================
-           課程卡片
-        ========================= */
+    border:1px dashed var(--brown);
 
-        .course-list {
-            display: grid;
+    padding:3px 7px;
 
-            grid-template-columns: repeat(2, 1fr);
+    font-size:9px;
 
-            gap: 25px;
-        }
+    color:var(--brown-dark);
 
+    font-weight:900;
 
-        .course {
-            background-color: #ffffff;
+    background:#fff9f5;
+}
 
-            padding: 35px;
+.hero h1{
+    margin:7px 0 8px;
 
-            border-radius: 18px;
+    font-size:35px;
 
-            min-height: 220px;
+    letter-spacing:-1px;
+}
 
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+.hero h1::after{
+    content:"";
 
-            transition: 0.2s;
-        }
+    display:block;
 
+    width:94px;
+    height:8px;
 
-        .course:hover {
-            transform: translateY(-4px);
+    background:var(--yellow);
 
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-        }
+    margin-top:-7px;
+}
 
+.hero p{
+    margin:0;
 
-        .course h3 {
-            font-size: 20px;
+    font-size:11px;
 
-            margin-bottom: 18px;
+    line-height:1.8;
 
-            color: #333;
-        }
+    color:#555;
+}
 
 
-        .course p {
-            color: #777;
+/* =========================
+   Introduction
+========================= */
 
-            line-height: 1.9;
+.goals{
+    display:grid;
 
-            margin-bottom: 25px;
-        }
+    grid-template-columns:
+        repeat(3,1fr);
 
+    margin-top:12px;
 
-        .course a {
-            text-decoration: none;
+    border:1px solid #81939c;
 
-            color: #333;
+    background:#fff;
 
-            font-weight: bold;
+    border-radius:5px;
 
-            font-size: 14px;
-        }
+    overflow:hidden;
+}
 
+.goal{
+    padding:13px 15px;
 
-        .course a:hover {
-            text-decoration: underline;
-        }
+    border-right:1px dashed #b1bbc0;
+}
 
+.goal:last-child{
+    border-right:0;
+}
 
-        /* =========================
-           平台介紹
-        ========================= */
+.goal h3{
+    margin:0 0 6px;
 
-        .about {
-            text-align: center;
+    font-size:12px;
+}
 
-            background-color: #ffffff;
+.goal p{
+    margin:0;
 
-            border-radius: 18px;
+    color:#6b7479;
 
-            padding: 50px 30px;
+    font-size:9px;
 
-            margin-bottom: 70px;
-        }
+    line-height:1.55;
+}
 
 
-        .about h2 {
-            margin-bottom: 20px;
-        }
+/* =========================
+   Section
+========================= */
 
+.section{
+    margin-top:13px;
 
-        .about p {
-            color: #777;
+    padding:18px 20px;
 
-            line-height: 2;
-        }
+    border:1px solid var(--brown);
 
+    border-radius:5px;
 
-        /* =========================
-           頁尾
-        ========================= */
+    background:var(--green);
+}
 
-        footer {
-            width: 100%;
+.section.cream{
+    background:var(--cream);
+}
 
-            padding: 35px 20px;
+.title{
+    font-size:20px;
 
-            background-color: #ffffff;
+    font-weight:900;
 
-            border-top: 1px solid #eeeeee;
+    margin:0;
+}
 
-            text-align: center;
+.title::before{
+    content:"–";
 
-            color: #999;
+    color:var(--brown);
 
-            font-size: 13px;
-        }
+    margin-right:7px;
+}
 
+.title span{
+    background:
+        linear-gradient(
+            transparent 55%,
+            var(--yellow) 55%
+        );
+}
 
-        /* =========================
-           手機版
-        ========================= */
+.desc{
+    font-size:11px;
 
-        @media (max-width: 700px) {
+    color:#586168;
 
-            header {
-                height: auto;
+    line-height:1.7;
 
-                padding: 18px 20px;
+    margin:11px 0 12px;
+}
 
-                flex-direction: column;
 
-                gap: 12px;
-            }
+/* =========================
+   Level Cards
+========================= */
 
+.levels{
+    display:grid;
 
-            nav {
-                gap: 20px;
-            }
+    grid-template-columns:
+        repeat(2,1fr);
 
+    gap:9px;
+}
 
-            .hero {
-                margin-top: 35px;
+.level-card{
+    background:#fff;
 
-                padding: 55px 20px;
-            }
+    border:1px solid #8c9da5;
 
+    border-radius:4px;
 
-            .hero h1 {
-                font-size: 32px;
-            }
+    padding:15px 14px;
 
+    min-height:158px;
 
-            .hero h2 {
-                font-size: 20px;
-            }
+    position:relative;
+}
 
+.level-label{
+    display:inline-block;
 
-            .hero p {
-                font-size: 15px;
-            }
+    border:1px solid var(--brown);
 
+    color:var(--brown-dark);
 
-            .course-list {
-                grid-template-columns: 1fr;
-            }
+    font-size:9px;
 
+    padding:3px 7px;
 
-            .course {
-                padding: 28px;
-            }
+    font-weight:900;
+}
 
-        }
+.level-card h3{
+    font-size:16px;
 
-    </style>
+    margin:13px 0 9px;
 
+    border-left:2px solid #c97860;
+
+    padding-left:8px;
+}
+
+.level-card p{
+    font-size:11px;
+
+    font-weight:700;
+
+    line-height:1.7;
+
+    margin:0;
+}
+
+.count{
+    font-size:9px;
+
+    color:var(--brown-dark);
+
+    font-weight:900;
+
+    margin-top:8px;
+}
+
+.tags{
+    display:flex;
+
+    gap:5px;
+
+    flex-wrap:wrap;
+
+    border-top:1px dashed #b6bec2;
+
+    margin-top:10px;
+
+    padding-top:8px;
+}
+
+.tags span{
+    border:1px solid #a7b3b8;
+
+    padding:3px 7px;
+
+    font-size:8px;
+
+    background:#fff;
+}
+
+
+/* =========================
+   Learning Flow
+========================= */
+
+.flow{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:6px;
+
+    margin-top:12px;
+}
+
+.flow div{
+    border:1px dashed #8c9ba2;
+
+    text-align:center;
+
+    background:#fff;
+
+    padding:11px 5px;
+
+    font-size:9px;
+
+    font-weight:900;
+}
+
+
+/* =========================
+   Note
+========================= */
+
+.note{
+    margin-top:12px;
+
+    border:1px dashed #b47d6a;
+
+    background:#f7eae3;
+
+    padding:12px 15px;
+
+    color:#68615d;
+
+    font-size:10px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    text-align:center;
+
+    background:#fff;
+
+    border-top:1px solid #ddd;
+
+    padding:22px;
+
+    color:#777;
+
+    font-size:11px;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media(max-width:760px){
+
+    .header{
+        height:auto;
+        padding-bottom:15px;
+    }
+
+    .brand{
+        font-size:29px;
+    }
+
+    .nav{
+        height:auto;
+    }
+
+    .navin{
+        flex-wrap:wrap;
+
+        padding:8px;
+
+        gap:10px;
+    }
+
+    .wrapper{
+        margin-top:20px;
+
+        padding:0 8px;
+    }
+
+    .paper{
+        padding:
+            15px
+            12px
+            20px
+            47px;
+    }
+
+    .paper::before{
+        left:25px;
+    }
+
+    .holes{
+        left:11px;
+    }
+
+    .goals{
+        grid-template-columns:1fr;
+    }
+
+    .goal{
+        border-right:0;
+
+        border-bottom:
+            1px dashed #b1bbc0;
+    }
+
+    .goal:last-child{
+        border-bottom:0;
+    }
+
+    .levels{
+        grid-template-columns:1fr;
+    }
+
+    .flow{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         導覽列
-    ========================= -->
+<!-- =========================
+     網站標題
+========================= -->
 
-    <header>
+<header class="header">
 
-        <div class="logo">
-            🇰🇷 Chocochip Korean
-        </div>
+    <div class="flag">
+        KR
+    </div>
 
+    <h1 class="brand">
+        Chocochip Korean
+    </h1>
 
-        <nav>
+    <p class="subtitle">
+        Korean Learning Community
+    </p>
 
-            <a href="#">
-                首頁
-            </a>
-
-            <a href="#courses">
-                課程內容
-            </a>
-
-        </nav>
-
-    </header>
+</header>
 
 
 
-    <!-- =========================
-         首頁
-    ========================= -->
+<!-- =========================
+     導覽列
+========================= -->
 
-    <section class="hero">
+<nav class="nav">
 
-        <h1>
-            Chocochip Korean
-        </h1>
+    <div class="navin">
 
-
-        <h2>
-            發音學習平台
-        </h2>
-
-
-        <p>
-
-            從韓文40音開始，
-            <br>
-
-            打好韓文發音基礎。
-
-            <br>
-
-            透過日常單字與實際練習，
-            <br>
-
-            一步一步建立韓文發音能力。
-
-        </p>
-
-
-        <a
-            href="#courses"
-            class="start-button"
-        >
-
-            開始學習
-
+        <a href="#regular">
+            韓語正規課程
         </a>
 
-    </section>
+        <a href="#levels">
+            韓語學習
+        </a>
+
+        <a href="#review">
+            複習教材
+        </a>
+
+        <a href="#notes">
+            學習筆記
+        </a>
+
+        <a href="#login">
+            學生登入
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     主要內容
+========================= -->
+
+<main class="wrapper">
+
+<div class="paper">
+
+
+    <!-- 左側筆記本孔洞 -->
+
+    <div class="holes">
+
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+    </div>
 
 
 
     <!-- =========================
-         課程
+         課程介紹
     ========================= -->
 
     <section
-        class="courses"
-        id="courses"
+        class="hero"
+        id="regular"
     >
 
-        <h2>
-            課程內容
-        </h2>
-
-
-        <div class="course-list">
-
-
-            <!-- 第一課 -->
-
-            <div class="course">
-
-                <h3>
-                    01｜韓文40音發音入門
-                </h3>
-
-
-                <p>
-
-                    從韓文40音開始學習，
-
-                    認識基本母音、子音以及發音方式，
-
-                    建立韓文閱讀與發音的基礎。
-
-                </p>
-
-
-              <a href="course.html" class="course-button">開始學習 →</a>
-
-                </a>
-
-            </div>
-
-
-
-            <!-- 第二課 -->
-
-            <div class="course">
-
-                <h3>
-                    02｜日常單字與發音練習
-                </h3>
-
-
-                <p>
-
-                    學習生活中常見的韓文單字，
-
-                    搭配發音練習，
-
-                    讓學到的單字真正能夠讀出來。
-
-                </p>
-
-
-                <a href="https://sandrone-00.github.io/krtotw/words.html">
-
-                    開始學習 →
-
-                </a>
-
-            </div>
-<!-- 第三課 -->
-
-<div class="course">
-
-    <h3>
-        03｜常用的基本表達
-    </h3>
-
-    <p>
-        學習韓文日常生活中常用的基本表達，
-        從簡單的問候與生活用語開始，
-        建立實際溝通的基礎。
-    </p>
-
-    <a href="https://sandrone-00.github.io/krtotw/expression.html">
-        開始學習 →
-    </a>
-
-</div>
-
-
-<!-- 第四課 -->
-
-<div class="course">
-
-    <h3>
-        04｜一級文法練習
-    </h3>
-
-    <p>
-        從韓文初級文法開始，
-        練習基本句型與常用文法，
-        逐步建立韓文造句能力。
-    </p>
-
-    <a href="https://sandrone-00.github.io/krtotw/grammar1.html">
-        開始學習 →
-    </a>
-
-</div>
-
-
-<!-- 第五課 -->
-
-<div class="course">
-
-    <h3>
-        05｜二級文法練習
-    </h3>
-
-    <p>
-        進一步學習韓文二級文法，
-        搭配實際句型與例句，
-        提升閱讀與表達能力。
-    </p>
-
-    <a href="https://sandrone-00.github.io/krtotw/grammar2.html">
-        開始學習 →
-    </a>
-
-</div>
-
+        <div class="kicker">
+            CHOCOCHIP KOREAN · REGULAR COURSE
         </div>
+
+
+        <div class="level">
+            LEVEL NOTE・等級選擇
+        </div>
+
+
+        <h1>
+            韓語正規課程
+        </h1>
+
+
+        <p>
+            請依照自己的學習程度與目標，
+            選擇適合自己的課程。
+            每個等級都有完整的學習內容，
+            並可以在課後反覆複習。
+        </p>
 
     </section>
 
 
 
     <!-- =========================
-         平台介紹
+         三個學習特色
     ========================= -->
 
-    <section class="courses">
+    <section class="goals">
 
-        <div class="about">
 
-            <h2>
-                Chocochip Korean
-            </h2>
+        <div class="goal">
 
+            <h3>
+                第一次學習也可以
+            </h3>
 
             <p>
-
-                不只是記住韓文字母，
-
-                <br>
-
-                而是從正確發音開始，
-
-                <br>
-
-                建立韓文學習的基礎。
-
+                韓文完全沒有基礎，
+                也可以從最初階開始學習。
             </p>
 
         </div>
 
+
+
+        <div class="goal">
+
+            <h3>
+                已經學過可以直接複習
+            </h3>
+
+            <p>
+                可以選擇適合自己的程度，
+                重新整理已經學過的內容。
+            </p>
+
+        </div>
+
+
+
+        <div class="goal">
+
+            <h3>
+                一路學到完整程度
+            </h3>
+
+            <p>
+                從基礎到高級，
+                依照自己的學習目標逐步前進。
+            </p>
+
+        </div>
+
+
     </section>
 
 
 
     <!-- =========================
-         頁尾
+         等級選擇
     ========================= -->
 
-    <footer>
+    <section
+        class="section"
+        id="levels"
+    >
 
-        © 2026 Chocochip Korean
+        <h2 class="title">
 
-    </footer>
+            <span>
+                選擇你的學習等級
+            </span>
+
+        </h2>
+
+
+        <p class="desc">
+
+            等級是依照課程內容與使用範圍區分，
+            不是單純用考試分數判斷。
+            請選擇最符合自己目前程度的課程。
+
+        </p>
+
+
+
+        <div class="levels">
+
+
+            <!-- LEVEL 1 -->
+
+            <a
+                href="level1.html"
+                class="level-card"
+            >
+
+                <span class="level-label">
+                    LEVEL 1 ›
+                </span>
+
+
+                <h3>
+                    基礎韓語
+                </h3>
+
+
+                <p>
+                    從韓文字母與發音開始，
+                    學習基本句型與生活表達，
+                    建立韓文入門基礎。
+                </p>
+
+
+                <div class="count">
+                    共 21 個學習單元
+                </div>
+
+
+                <div class="tags">
+
+                    <span>韓文</span>
+
+                    <span>發音</span>
+
+                    <span>基本文法</span>
+
+                    <span>生活表達</span>
+
+                    <span>初級詞彙</span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LEVEL 2 -->
+
+            <a
+                href="level2.html"
+                class="level-card"
+            >
+
+                <span class="level-label">
+                    LEVEL 2 ›
+                </span>
+
+
+                <h3>
+                    初級韓語
+                </h3>
+
+
+                <p>
+                    學習時制、句型變化與常用文法，
+                    將基礎韓文擴展到日常對話。
+                </p>
+
+
+                <div class="count">
+                    共 26 個學習單元
+                </div>
+
+
+                <div class="tags">
+
+                    <span>時制</span>
+
+                    <span>文法活用</span>
+
+                    <span>功能文法</span>
+
+                    <span>連接表達</span>
+
+                    <span>生活對話</span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LEVEL 3 -->
+
+            <a
+                href="level3.html"
+                class="level-card"
+            >
+
+                <span class="level-label">
+                    LEVEL 3 ›
+                </span>
+
+
+                <h3>
+                    中級韓語
+                </h3>
+
+
+                <p>
+                    進一步擴充句型與表達方式，
+                    學習敘述、原因、對比
+                    與更完整的韓文句子。
+                </p>
+
+
+                <div class="count">
+                    共 20 個學習單元
+                </div>
+
+
+                <div class="tags">
+
+                    <span>句型擴充</span>
+
+                    <span>原因・對比</span>
+
+                    <span>中級單字</span>
+
+                    <span>語句應用</span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LEVEL 4 -->
+
+            <a
+                href="level4.html"
+                class="level-card"
+            >
+
+                <span class="level-label">
+                    LEVEL 4 ›
+                </span>
+
+
+                <h3>
+                    高級韓語
+                </h3>
+
+
+                <p>
+                    進行更完整的文法分析與正式表達，
+                    並練習發表、閱讀與複雜句型。
+                </p>
+
+
+                <div class="count">
+                    共 20 個學習單元
+                </div>
+
+
+                <div class="tags">
+
+                    <span>文法分析</span>
+
+                    <span>正式表達</span>
+
+                    <span>閱讀</span>
+
+                    <span>發表</span>
+
+                    <span>寫作</span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         整體學習流程
+    ========================= -->
+
+    <section
+        class="section cream"
+        id="review"
+    >
+
+        <h2 class="title">
+
+            <span>
+                整體學習流程
+            </span>
+
+        </h2>
+
+
+        <div class="flow">
+
+            <div>
+                基礎・韓文與發音
+            </div>
+
+            <div>
+                初級・句型與連接
+            </div>
+
+            <div>
+                中級・表達與應用
+            </div>
+
+            <div>
+                高級・分析與表達
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         學習說明
+    ========================= -->
+
+    <div
+        class="note"
+        id="notes"
+    >
+
+        本網站主要提供課程內容的
+        繁體中文整理與課後複習。
+
+        學生登入後，
+        可依照自己的課程權限開啟對應教材，
+
+        並反覆回到已學習的內容複習。
+
+    </div>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    chocochip韓語繁體學習網
+    ｜ Korean Learning Community
+
+</footer>
 
 
 </body>
-
 </html>
