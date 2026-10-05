@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>收音｜Chocochip Korean</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        "Microsoft JhengHei",
+        sans-serif;
+
+    background: #f7f5f2;
+
+    color: #333;
+
+    line-height: 1.7;
+}
+
+
+/* =====================
+   導覽列
+===================== */
+
+header {
+
+    height: 70px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.logo {
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.back {
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.back:hover {
+
+    color: #000;
+}
+
+
+/* =====================
+   主要內容
+===================== */
+
+.container {
+
+    max-width: 1050px;
+
+    margin: 50px auto;
+
+    padding: 0 20px;
+}
+
+
+/* =====================
+   標題
+===================== */
+
+.title {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.title h1 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+
+.title p {
+
+    color: #777;
+}
+
+
+/* =====================
+   課程介紹
+===================== */
+
+.intro {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    margin-bottom: 45px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+}
+
+
+.intro h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 18px;
+}
+
+
+.intro p {
+
+    color: #666;
+
+    line-height: 2;
+}
+
+
+/* =====================
+   收音範例
+===================== */
+
+.example {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+}
+
+
+.example-title {
+
+    color: #777;
+
+    margin-bottom: 10px;
+}
+
+
+.example-word {
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+    margin: 10px 0;
+}
+
+
+.example-break {
+
+    color: #777;
+
+    margin-bottom: 10px;
+}
+
+
+.example-note {
+
+    color: #666;
+}
+
+
+/* =====================
+   區塊標題
+===================== */
+
+.section-title {
+
+    font-size: 26px;
+
+    margin: 45px 0 12px;
+}
+
+
+.section-description {
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================
+   收音卡片
+===================== */
+
+.sound-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+
+.sound-card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px 12px;
+
+    text-align: center;
+
+    border: 2px solid transparent;
+
+    transition: 0.2s;
+}
+
+
+.sound-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #ddd;
+}
+
+
+.batchim {
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.batchim-name {
+
+    font-size: 14px;
+
+    color: #666;
+
+    margin-bottom: 7px;
+}
+
+
+.batchim-sound {
+
+    font-size: 14px;
+
+    color: #999;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================
+   單字卡片
+===================== */
+
+.word-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.word-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.03);
+}
+
+
+.word {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.meaning {
+
+    font-size: 16px;
+
+    color: #555;
+
+    margin-bottom: 7px;
+}
+
+
+.romanization {
+
+    font-size: 13px;
+
+    color: #999;
+
+    margin-bottom: 8px;
+}
+
+
+.batchim-info {
+
+    font-size: 13px;
+
+    color: #777;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================
+   發音按鈕
+===================== */
+
+.sound-button {
+
+    border: none;
+
+    background: #f1f1f1;
+
+    border-radius: 20px;
+
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.sound-button:hover {
+
+    background: #e5e5e5;
+}
+
+
+/* =====================
+   學習提醒
+===================== */
+
+.notice {
+
+    background: #fffaf3;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-top: 45px;
+
+    color: #666;
+
+    line-height: 1.9;
+}
+
+
+/* =====================
+   進階收音
+===================== */
+
+.advanced-section {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+}
+
+
+.advanced-section h2 {
+
+    font-size: 26px;
+
+    margin-bottom: 12px;
+}
+
+
+.advanced-section p {
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+.advanced-button {
+
+    display: inline-block;
+
+    background: #333;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 30px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+.advanced-button:hover {
+
+    background: #555;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================
+   Footer
+===================== */
+
+footer {
+
+    background: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 60px;
+}
+
+
+/* =====================
+   手機版
+===================== */
+
+@media (max-width: 700px) {
+
+    header {
+
+        padding: 0 20px;
+    }
+
+
+    .title h1 {
+
+        font-size: 30px;
+    }
+
+
+    .sound-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .word-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .sound-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .word-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================
+     導覽列
+===================== -->
+
+<header>
+
+    <div class="logo">
+        🇰🇷 Chocochip Korean
+    </div>
+
+
+    <a
+        href="course.html"
+        class="back"
+    >
+        ← 返回課程
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =====================
+     標題
+===================== -->
+
+<section class="title">
+
+    <h1>
+        收音
+    </h1>
+
+    <p>
+        받침｜韓文音節最後的子音
+    </p>
+
+</section>
+
+
+
+<!-- =====================
+     課程介紹
+===================== -->
+
+<section class="intro">
+
+    <h2>
+        什麼是收音？
+    </h2>
+
+
+    <p>
+
+        韓文音節除了可以由
+        <strong>子音＋母音</strong>
+        組成之外，
+
+        <br>
+
+        在音節的最下面還可以出現子音。
+
+        <br>
+
+        這個位於音節最後面的子音，
+        就叫做
+        <strong>받침（收音）</strong>。
+
+        <br>
+
+        收音是韓文閱讀與發音中非常重要的一部分。
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================
+     範例
+===================== -->
+
+<section class="example">
+
+    <div class="example-title">
+        例如：
+    </div>
+
+
+    <div class="example-word">
+        한
+    </div>
+
+
+    <div class="example-break">
+        ㅎ + ㅏ + ㄴ
+    </div>
+
+
+    <div class="example-note">
+
+        ㄴ 位於音節最下面，
+        因此 ㄴ 是這個音節的收音。
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+     01｜常見收音
+===================== -->
+
+<h2 class="section-title">
+
+    01｜常見收音
+
+</h2>
+
+
+<p class="section-description">
+
+    先認識韓文中常見的收音，
+    再進一步練習實際單字。
+
+</p>
+
+
+<div
+    class="sound-grid"
+    id="batchimList"
+>
+</div>
+
+
+
+<!-- =====================
+     02｜有收音的單字
+===================== -->
+
+<h2 class="section-title">
+
+    02｜收音單字練習
+
+</h2>
+
+
+<p class="section-description">
+
+    以下單字都包含收音。
+
+    <br>
+
+    可以查看中文翻譯、
+    羅馬拼音與收音位置，
+    並點擊按鈕聽發音。
+
+</p>
+
+
+<div
+    class="word-grid"
+    id="wordPractice"
+>
+</div>
+
+
+
+<!-- =====================
+     學習提醒
+===================== -->
+
+<div class="notice">
+
+    <strong>
+        💡 學習提醒
+    </strong>
+
+    <br><br>
+
+    閱讀韓文單字時，
+    可以先觀察每個音節的最下面。
+
+    <br>
+
+    如果最下面出現子音，
+    就代表這個音節有收音。
+
+    <br><br>
+
+    先確認文字，
+    再聽發音，
+    最後跟著朗讀，
+    會比較容易掌握收音。
+
+</div>
+
+
+
+<!-- =====================
+     進階收音
+===================== -->
+
+<section class="advanced-section">
+
+    <h2>
+        進階收音
+    </h2>
+
+
+    <p>
+
+        學會基本收音之後，
+        接著學習韓文的發音變化。
+
+        <br>
+
+        內容包含
+        <strong>硬音化、氣音化</strong>
+        等進階發音規則。
+
+    </p>
+
+
+    <a
+        href="advanced-batchim.html"
+        class="advanced-button"
+    >
+        進入進階收音 →
+    </a>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 Chocochip Korean
+
+</footer>
+
+
+
+<script>
+
+
+/* ============================
+   常見收音
+============================ */
+
+const batchimList = [
+
+    ["ㄱ", "기역", "k"],
+
+    ["ㄴ", "니은", "n"],
+
+    ["ㄷ", "디귿", "t"],
+
+    ["ㄹ", "리을", "l"],
+
+    ["ㅁ", "미음", "m"],
+
+    ["ㅂ", "비읍", "p"],
+
+    ["ㅅ", "시옷", "t"],
+
+    ["ㅇ", "이응", "ng"],
+
+    ["ㅈ", "지읒", "t"],
+
+    ["ㅊ", "치읓", "t"],
+
+    ["ㅋ", "키읔", "k"],
+
+    ["ㅌ", "티읕", "t"],
+
+    ["ㅍ", "피읖", "p"],
+
+    ["ㅎ", "히읗", "t / h"]
+
+];
+
+
+
+/* ============================
+   有收音的單字
+============================ */
+
+const words = [
+
+    ["한국", "韓國", "hanguk", "한：ㄴ／국：ㄱ"],
+
+    ["한국어", "韓語", "hangugeo", "한：ㄴ／국：ㄱ"],
+
+    ["학교", "學校", "hakgyo", "학：ㄱ"],
+
+    ["학생", "學生", "haksaeng", "학：ㄱ／생：ㅇ"],
+
+    ["책", "書／書籍", "chaek", "책：ㄱ"],
+
+    ["밥", "飯", "bap", "밥：ㅂ"],
+
+    ["집", "家", "jip", "집：ㅂ"],
+
+    ["옷", "衣服", "ot", "옷：ㅅ"],
+
+    ["꽃", "花", "kkot", "꽃：ㅊ"],
+
+    ["문", "門", "mun", "문：ㄴ"],
+
+    ["산", "山", "san", "산：ㄴ"],
+
+    ["손", "手", "son", "손：ㄴ"],
+
+    ["눈", "眼睛／雪", "nun", "눈：ㄴ"],
+
+    ["밤", "夜晚／栗子", "bam", "밤：ㅁ"],
+
+    ["김", "海苔", "gim", "김：ㅁ"],
+
+    ["공", "球", "gong", "공：ㅇ"],
+
+    ["방", "房間", "bang", "방：ㅇ"],
+
+    ["강", "江", "gang", "강：ㅇ"],
+
+    ["길", "路", "gil", "길：ㄹ"],
+
+    ["달", "月亮", "dal", "달：ㄹ"],
+
+    ["물", "水", "mul", "물：ㄹ"],
+
+    ["말", "話／馬", "mal", "말：ㄹ"],
+
+    ["앞", "前面", "ap", "앞：ㅍ"],
+
+    ["옆", "旁邊", "yeop", "옆：ㅍ"],
+
+    ["밖", "外面", "bak", "밖：ㄲ"],
+
+    ["국", "湯／國家", "guk", "국：ㄱ"],
+
+    ["약", "藥", "yak", "약：ㄱ"],
+
+    ["먹다", "吃", "meokda", "먹：ㄱ"],
+
+    ["읽다", "讀", "ikda", "읽：ㄺ"],
+
+    ["없다", "沒有", "eopda", "없：ㅄ"],
+
+    ["있다", "有／存在", "itda", "있：ㅆ"]
+
+];
+
+
+
+/* ============================
+   建立收音卡片
+============================ */
+
+function createBatchimCards(data) {
+
+    const container =
+        document.getElementById(
+            "batchimList"
+        );
+
+
+    data.forEach(item => {
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "sound-card";
+
+
+        card.innerHTML = `
+
+            <div class="batchim">
+                ${item[0]}
+            </div>
+
+            <div class="batchim-name">
+                ${item[1]}
+            </div>
+
+            <div class="batchim-sound">
+                ${item[2]}
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('${item[0]}')"
+            >
+                🔊 發音
+            </button>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+/* ============================
+   建立單字卡片
+============================ */
+
+function createWordCards(data) {
+
+    const container =
+        document.getElementById(
+            "wordPractice"
+        );
+
+
+    data.forEach(item => {
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "word-card";
+
+
+        card.innerHTML = `
+
+            <div class="word">
+                ${item[0]}
+            </div>
+
+            <div class="meaning">
+                ${item[1]}
+            </div>
+
+            <div class="romanization">
+                ${item[2]}
+            </div>
+
+            <div class="batchim-info">
+                收音：${item[3]}
+            </div>
+
+            <button
+                class="sound-button"
+                onclick="playSound('${item[0]}')"
+            >
+                🔊 聽發音
+            </button>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+/* ============================
+   韓文語音
+============================ */
+
+function playSound(text) {
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+    speech.lang = "ko-KR";
+
+    speech.rate = 0.75;
+
+    speech.pitch = 1;
+
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+
+/* ============================
+   啟動
+============================ */
+
+createBatchimCards(
+    batchimList
+);
+
+
+createWordCards(
+    words
+);
+
+</script>
+
+
+</body>
+
+</html>
