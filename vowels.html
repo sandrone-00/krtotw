@@ -401,28 +401,29 @@ function playSound(letter) {
     speechSynthesis.speak(speech);
 
 }
-<section class="next-section">
-  <h2>進階發音</h2>
+function checkAdvancedPassword() {
 
-  <p>
-    學會基本母音之後，接著學習韓文的進階發音。
-    內容包含複合母音、子音與母音組合，以及實際單字發音練習。
-  </p>
+  const password =
+    document.getElementById("advancedPassword").value;
 
-  <div class="password-box">
-    <input
-      type="password"
-      id="advancedPassword"
-      placeholder="請輸入密碼"
-    >
+  const message =
+    document.getElementById("passwordMessage");
 
-    <button onclick="checkAdvancedPassword()">
-      進入進階發音
-    </button>
-  </div>
+  if (password === "choco410") {
 
-  <div id="passwordMessage"></div>
-</section>
+    message.textContent = "密碼正確，正在進入進階發音……";
+    message.style.color = "green";
+
+    setTimeout(function() {
+      window.location.href = "advanced.html";
+    }, 500);
+
+  } else {
+
+    message.textContent = "密碼錯誤，請重新輸入。";
+    message.style.color = "red";
+  }
+}
 
 </script>
 
