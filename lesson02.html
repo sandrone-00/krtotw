@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>第二課｜基本子音 14 個｜Chocochip Korean</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #2c3c43;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+    background:
+        radial-gradient(circle, #cfc8b8 1px, transparent 1.4px) 0 0 / 20px 20px,
+        #f3efe5;
+}
+
+/* ===== Header ===== */
+
+.header {
+    background: #f8f5ec;
+    border-bottom: 1px solid #8b9ba0;
+    padding: 12px 16px;
+}
+
+.navin {
+    max-width: 980px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #31596c;
+    border-radius: 6px;
+    background: #e4eef2;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    color: #31596c;
+}
+
+.brand {
+    font-weight: 900;
+    color: #294b5b;
+}
+
+.subtitle {
+    font-size: 10px;
+    color: #78868b;
+}
+
+.nav {
+    margin-left: auto;
+    display: flex;
+    gap: 6px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 10px;
+    padding: 5px 8px;
+    border: 1px solid #7f9298;
+    background: #fffdf8;
+    border-radius: 3px;
+}
+
+/* ===== Main ===== */
+
+.wrapper {
+    width: min(960px, calc(100% - 20px));
+    margin: 14px auto 28px;
+}
+
+.paper {
+    position: relative;
+    background: #fffdf8;
+    border: 1px solid #56717a;
+    box-shadow: 4px 5px 0 #d1c8b5;
+    padding: 13px 15px 20px;
+}
+
+.paper:before {
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #dca3a3;
+}
+
+.holes {
+    position: absolute;
+    left: -7px;
+    top: 10px;
+    bottom: 10px;
+    width: 8px;
+
+    background:
+        radial-gradient(
+            circle,
+            #fffdf8 2.2px,
+            #92928b 2.6px,
+            transparent 3px
+        )
+        0 0 / 8px 25px;
+}
+
+.breadcrumb {
+    font-size: 10px;
+    color: #718187;
+    margin: 3px 4px 9px 20px;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+    margin-left: 20px;
+    background: #dcebf1;
+    border: 2px solid #3b748e;
+    border-radius: 4px;
+    padding: 21px 18px 19px;
+}
+
+.kicker {
+    font-size: 10px;
+    font-weight: 900;
+    color: #36708a;
+}
+
+.hero h1 {
+    margin: 4px 0 3px;
+    font-size: 29px;
+    color: #203c48;
+}
+
+.hero .en {
+    font-size: 11px;
+    color: #38687a;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 10px;
+    line-height: 1.7;
+    margin: 8px 0 0;
+    color: #52666e;
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+    margin-top: 11px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 9px;
+    padding: 5px 7px;
+    border: 1px solid #718d96;
+    background: #f8fcfc;
+    border-radius: 3px;
+}
+
+/* ===== Sections ===== */
+
+.section {
+    margin: 13px 0 0 20px;
+    border: 1px solid #56717a;
+    background: #faf9f3;
+    padding: 11px;
+}
+
+.section-title {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 900;
+    color: #2d5665;
+}
+
+.section-en {
+    font-size: 9px;
+    color: #8a989c;
+    margin-top: 2px;
+}
+
+.line {
+    height: 3px;
+    background: #e9cf85;
+    width: 65px;
+    margin: 6px 0 9px;
+}
+
+.intro {
+    font-size: 10px;
+    line-height: 1.8;
+    margin: 0 0 9px;
+}
+
+/* ===== Goals ===== */
+
+.goals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #789096;
+    background: #edf3f4;
+}
+
+.goal {
+    padding: 9px;
+    border-right: 1px solid #a6b4b7;
+    min-height: 72px;
+}
+
+.goal:last-child {
+    border-right: 0;
+}
+
+.goal b {
+    font-size: 11px;
+    color: #2c6b82;
+}
+
+.goal p {
+    font-size: 9px;
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+/* ===== Table ===== */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 9px;
+}
+
+th,
+td {
+    border: 1px solid #8ca0a5;
+    padding: 7px 6px;
+    vertical-align: middle;
+}
+
+th {
+    background: #e5eef0;
+    color: #355866;
+}
+
+.jamo-cell {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    color: #1c607a;
+    width: 48px;
+}
+
+.korean {
+    font-size: 17px;
+    font-weight: 900;
+    color: #263e48;
+}
+
+/* ===== Audio ===== */
+
+audio {
+    height: 32px;
+    max-width: 210px;
+}
+
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.sound-card {
+    background: #fff;
+    border: 1px solid #8fa1a5;
+    padding: 10px;
+}
+
+.sound-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jamo {
+    font-size: 31px;
+    font-weight: 900;
+    color: #1e6079;
+    line-height: 1;
+}
+
+.name {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.example {
+    font-size: 9px;
+    color: #78878b;
+    margin-top: 3px;
+}
+
+.sound-card p {
+    font-size: 9px;
+    color: #64747a;
+}
+
+.sound-card audio {
+    width: 100%;
+}
+
+/* ===== Other ===== */
+
+.note {
+    margin-top: 9px;
+    padding: 9px;
+    border: 1px solid #d2ad88;
+    background: #fff4e8;
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+.principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.principle {
+    background: #fff;
+    border: 1px solid #9baeb2;
+    padding: 9px;
+    text-align: center;
+}
+
+.principle .icon {
+    font-size: 27px;
+}
+
+.principle strong {
+    font-size: 10px;
+    color: #315d6c;
+}
+
+.principle p {
+    font-size: 9px;
+    line-height: 1.5;
+    color: #68777c;
+}
+
+.practice {
+    border: 1px dashed #71868c;
+    background: #edf3f4;
+    padding: 11px;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.practice .row {
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #315a68;
+}
+
+.summary {
+    background: #e8f0e9;
+    border: 1px solid #8da195;
+    padding: 10px;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.back {
+    margin: 13px 0 0 20px;
+    display: flex;
+    gap: 7px;
+}
+
+.back a {
+    text-decoration: none;
+    border: 1px solid #5d747c;
+    background: #fff;
+    padding: 7px 10px;
+    font-size: 9px;
+    border-radius: 3px;
+}
+
+footer {
+    text-align: center;
+    color: #7b8689;
+    font-size: 8px;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 650px) {
+
+    .nav {
+        display: none;
+    }
+
+    .wrapper {
+        width: calc(100% - 10px);
+    }
+
+    .paper {
+        padding: 9px 7px 17px;
+    }
+
+    .breadcrumb,
+    .hero,
+    .section,
+    .back {
+        margin-left: 12px;
+    }
+
+    .hero {
+        padding: 16px 12px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .goals {
+        grid-template-columns: 1fr;
+    }
+
+    .goal {
+        border-right: 0;
+        border-bottom: 1px solid #a6b4b7;
+    }
+
+    .goal:last-child {
+        border-bottom: 0;
+    }
+
+    .principles,
+    .sound-grid {
+        grid-template-columns: 1fr;
+    }
+
+    audio {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="navin">
+
+        <div class="logo">
+            KR
+        </div>
+
+        <div>
+            <div class="brand">
+                Chocochip Korean
+            </div>
+
+            <div class="subtitle">
+                韓文繁體學習網站
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">首頁</a>
+            <a href="level1.html">基礎韓語</a>
+            <a href="lesson01.html">第一課</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="wrapper">
+
+<div class="paper">
+
+<div class="holes"></div>
+
+
+<div class="breadcrumb">
+    基礎韓語　›　發音規則　›　第二課
+</div>
+
+
+<!-- ===== Hero ===== -->
+
+<section class="hero">
+
+    <div class="kicker">
+        기본 자음 14개
+    </div>
+
+    <h1>
+        基本子音 14 個
+    </h1>
+
+    <div class="en">
+        The 14 Basic Consonants
+    </div>
+
+    <p>
+        認識韓文最基本的 14 個子音。
+        先看字形，再聽聲音，最後自己跟著讀。
+    </p>
+
+    <div class="badges">
+
+        <span class="badge">
+            初學者
+        </span>
+
+        <span class="badge">
+            發音入門
+        </span>
+
+        <span class="badge">
+            14 個基本子音
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- ===== Goals ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        一、今日的目標
+    </h2>
+
+    <div class="section-en">
+        Today's Goals
+    </div>
+
+    <div class="line"></div>
+
+
+    <div class="goals">
+
+        <div class="goal">
+            <b>01</b>
+
+            <p>
+                認識 14 個基本子音的字形與韓文名稱。
+            </p>
+        </div>
+
+
+        <div class="goal">
+            <b>02</b>
+
+            <p>
+                知道子音的大致發音位置與氣流。
+            </p>
+        </div>
+
+
+        <div class="goal">
+            <b>03</b>
+
+            <p>
+                可以搭配母音讀出簡單韓語音節。
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== Basic consonants ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        二、基本子音 14 個
+    </h2>
+
+    <div class="section-en">
+        The 14 Basic Consonants
+    </div>
+
+    <div class="line"></div>
+
+    <p class="intro">
+        不要急著背羅馬拼音。
+        先觀察字形、聽實際韓語，再慢慢建立自己的發音感覺。
+    </p>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>子音</th>
+                    <th>韓文名稱</th>
+                    <th>示範音</th>
+                    <th>播放</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td class="jamo-cell">ㄱ</td>
+                    <td>기역</td>
+                    <td class="korean">가</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ga.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㄴ</td>
+                    <td>니은</td>
+                    <td class="korean">나</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/na.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㄷ</td>
+                    <td>디귿</td>
+                    <td class="korean">다</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/da.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㄹ</td>
+                    <td>리을</td>
+                    <td class="korean">나라</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ra.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅁ</td>
+                    <td>미음</td>
+                    <td class="korean">마음</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ma.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅂ</td>
+                    <td>비읍</td>
+                    <td class="korean">바로</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ba.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅅ</td>
+                    <td>시옷</td>
+                    <td class="korean">사다</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/sa.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅇ</td>
+                    <td>이응</td>
+                    <td class="korean">아</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/a.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅈ</td>
+                    <td>지읒</td>
+                    <td class="korean">자신</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ja.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅊ</td>
+                    <td>치읓</td>
+                    <td class="korean">추진</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/cha.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅋ</td>
+                    <td>키읔</td>
+                    <td class="korean">학교</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ka.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅌ</td>
+                    <td>티읕</td>
+                    <td class="korean">탁자</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ta.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅍ</td>
+                    <td>피읖</td>
+                    <td class="korean">팔</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/pa.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="jamo-cell">ㅎ</td>
+                    <td>히읗</td>
+                    <td class="korean">학교</td>
+                    <td>
+                        <audio controls preload="metadata">
+                            <source src="audio/ha.mp3" type="audio/mpeg">
+                        </audio>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>💡 小提醒</strong>
+        <br>
+
+        這裡的示範音是「實際韓語音節或單字」，
+        不是把子音孤立地念出來。
+
+        這樣更接近之後真正閱讀韓文時會遇到的聲音。
+
+    </div>
+
+</section>
+
+
+<!-- ===== Pronunciation concept ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        三、子音是怎麼設計的？
+    </h2>
+
+    <div class="section-en">
+        How the Consonants Were Designed
+    </div>
+
+    <div class="line"></div>
+
+    <p class="intro">
+        學習子音時，可以把注意力放在「哪裡在動」。
+        這會比單純背羅馬拼音更容易建立發音概念。
+    </p>
+
+
+    <div class="principles">
+
+        <div class="principle">
+
+            <div class="icon">
+                👅
+            </div>
+
+            <strong>
+                舌頭的位置
+            </strong>
+
+            <p>
+                ㄴ、ㄷ、ㄹ、ㅅ、ㅈ 等音，
+                可以觀察舌頭與上齒齦附近的位置。
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="icon">
+                👄
+            </div>
+
+            <strong>
+                嘴唇的位置
+            </strong>
+
+            <p>
+                ㅁ、ㅂ、ㅍ 都可以從雙唇閉合與放開來感受差異。
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <div class="icon">
+                💨
+            </div>
+
+            <strong>
+                氣流的強弱
+            </strong>
+
+            <p>
+                ㅋ、ㅌ、ㅍ、ㅊ 的送氣比較明顯，
+                可以注意手掌前的氣流。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== Audio practice ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        四、聽聲音再跟著讀
+    </h2>
+
+    <div class="section-en">
+        Listen & Read Aloud
+    </div>
+
+    <div class="line"></div>
+
+    <p class="intro">
+        按下播放，先完整聽一次，再自己讀一次。
+        建議每個音至少練習 2～3 次。
+    </p>
+
+
+    <div class="sound-grid">
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+
+                <div class="jamo">
+                    ㄱ
+                </div>
+
+                <div>
+
+                    <div class="name">
+                        기역
+                    </div>
+
+                    <div class="example">
+                        示範：<b>가</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p>
+                先聽一次，再自己讀一次。
+            </p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ga.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㄴ</div>
+
+                <div>
+                    <div class="name">니은</div>
+                    <div class="example">示範：<b>나</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/na.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㄷ</div>
+
+                <div>
+                    <div class="name">디귿</div>
+                    <div class="example">示範：<b>다</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/da.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㄹ</div>
+
+                <div>
+                    <div class="name">리을</div>
+                    <div class="example">示範：<b>나라</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ra.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅁ</div>
+
+                <div>
+                    <div class="name">미음</div>
+                    <div class="example">示範：<b>마음</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ma.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅂ</div>
+
+                <div>
+                    <div class="name">비읍</div>
+                    <div class="example">示範：<b>바로</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ba.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅅ</div>
+
+                <div>
+                    <div class="name">시옷</div>
+                    <div class="example">示範：<b>사다</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/sa.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅇ</div>
+
+                <div>
+                    <div class="name">이응</div>
+                    <div class="example">示範：<b>아</b></div>
+                </div>
+            </div>
+
+            <p>字首的 ㅇ 不發音，可以先觀察它和母音的組合。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/a.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅈ</div>
+
+                <div>
+                    <div class="name">지읒</div>
+                    <div class="example">示範：<b>자신</b></div>
+                </div>
+            </div>
+
+            <p>先聽一次，再自己讀一次。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ja.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅊ</div>
+
+                <div>
+                    <div class="name">치읓</div>
+                    <div class="example">示範：<b>추진</b></div>
+                </div>
+            </div>
+
+            <p>注意與 ㅈ 相比更明顯的送氣。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/cha.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅋ</div>
+
+                <div>
+                    <div class="name">키읔</div>
+                    <div class="example">示範：<b>학교</b></div>
+                </div>
+            </div>
+
+            <p>注意 ㅋ 的送氣感。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ka.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅌ</div>
+
+                <div>
+                    <div class="name">티읕</div>
+                    <div class="example">示範：<b>탁자</b></div>
+                </div>
+            </div>
+
+            <p>比 ㄷ 有更明顯的送氣。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ta.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅍ</div>
+
+                <div>
+                    <div class="name">피읖</div>
+                    <div class="example">示範：<b>팔</b></div>
+                </div>
+            </div>
+
+            <p>比 ㅂ 有更明顯的送氣。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/pa.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+
+        <article class="sound-card">
+
+            <div class="sound-head">
+                <div class="jamo">ㅎ</div>
+
+                <div>
+                    <div class="name">히읗</div>
+                    <div class="example">示範：<b>학교</b></div>
+                </div>
+            </div>
+
+            <p>感受喉嚨送出的氣流。</p>
+
+            <audio controls preload="metadata">
+                <source src="audio/ha.mp3" type="audio/mpeg">
+            </audio>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ===== Practice ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        五、自己讀讀看
+    </h2>
+
+    <div class="section-en">
+        Read Aloud
+    </div>
+
+    <div class="line"></div>
+
+    <div class="practice">
+
+        先慢慢讀，不需要追求速度。
+
+        <div class="row">
+            가 나 다 라 마
+        </div>
+
+        <div class="row">
+            바 사 아 자 차
+        </div>
+
+        <div class="row">
+            카 타 파 하
+        </div>
+
+        讀完後，再回到上方按音檔確認。
+
+    </div>
+
+</section>
+
+
+<!-- ===== Summary ===== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        六、今天先記住這件事
+    </h2>
+
+    <div class="section-en">
+        Remember This
+    </div>
+
+    <div class="line"></div>
+
+    <div class="summary">
+
+        <strong>
+            看到子音 → 注意發音位置 → 聽一次 → 自己讀一次。
+        </strong>
+
+        <br>
+
+        現在不用一次把所有發音規則全部背起來。
+        先熟悉 14 個基本子音，
+        下一階段再把子音與母音組合起來。
+
+    </div>
+
+</section>
+
+
+<div class="back">
+
+    <a href="level1.html">
+        ← 回到基礎韓語學習
+    </a>
+
+    <a href="lesson01.html">
+        ← 上一課
+    </a>
+
+</div>
+
+
+<footer>
+
+    音訊檔案放置位置：
+    <strong>audio/</strong>
+
+    <br>
+
+    請將 pronunciation02.html 與 audio 資料夾一起上傳至 GitHub。
+
+</footer>
+
+
+</div>
+</main>
+
+</body>
+</html>
