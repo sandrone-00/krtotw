@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>進階發音｜Chocochip Korean</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                Arial,
+                "Microsoft JhengHei",
+                sans-serif;
+
+            background: #f7f5f2;
+
+            color: #333;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================
+           導覽列
+        ===================== */
+
+        header {
+
+            height: 70px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 50px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        .back {
+
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        .back:hover {
+
+            color: #000;
+        }
+
+
+        /* =====================
+           主要內容
+        ===================== */
+
+        .container {
+
+            max-width: 1050px;
+
+            margin: 50px auto;
+
+            padding: 0 20px;
+        }
+
+
+        /* =====================
+           標題
+        ===================== */
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .title h1 {
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .title p {
+
+            color: #777;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           課程介紹
+        ===================== */
+
+        .intro {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            margin-bottom: 45px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.04);
+        }
+
+
+        .intro h2 {
+
+            font-size: 24px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .intro p {
+
+            color: #666;
+
+            line-height: 2;
+        }
+
+
+        /* =====================
+           區塊標題
+        ===================== */
+
+        .section-title {
+
+            font-size: 26px;
+
+            margin: 45px 0 12px;
+        }
+
+
+        .section-description {
+
+            color: #777;
+
+            margin-bottom: 25px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           音節卡片
+        ===================== */
+
+        .sound-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .sound-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 24px 12px;
+
+            text-align: center;
+
+            transition: 0.2s;
+
+            border: 2px solid transparent;
+        }
+
+
+        .sound-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #ddd;
+        }
+
+
+        .korean {
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+
+        .combination {
+
+            font-size: 13px;
+
+            color: #888;
+
+            margin-bottom: 7px;
+
+            min-height: 20px;
+        }
+
+
+        .romanization {
+
+            font-size: 14px;
+
+            color: #666;
+
+            margin-bottom: 15px;
+        }
+
+
+        .sound-button {
+
+            border: none;
+
+            background: #f1f1f1;
+
+            border-radius: 20px;
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+
+        .sound-button:hover {
+
+            background: #e5e5e5;
+        }
+
+
+        /* =====================
+           單字
+        ===================== */
+
+        .word-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .word-card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.03);
+        }
+
+
+        .word {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+
+        .meaning {
+
+            font-size: 16px;
+
+            color: #555;
+
+            margin-bottom: 8px;
+        }
+
+
+        .word-romanization {
+
+            font-size: 13px;
+
+            color: #999;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================
+           學習提醒
+        ===================== */
+
+        .notice {
+
+            background: #fffaf3;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin-top: 45px;
+
+            color: #666;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================
+           Footer
+        ===================== */
+
+        footer {
+
+            background: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #999;
+
+            font-size: 13px;
+
+            margin-top: 60px;
+        }
+
+
+        /* =====================
+           手機版
+        ===================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 0 20px;
+            }
+
+
+            .title h1 {
+
+                font-size: 30px;
+            }
+
+
+            .sound-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+
+            .word-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .sound-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .word-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================
+         導覽列
+    ===================== -->
+
+    <header>
+
+        <div class="logo">
+            🇰🇷 Chocochip Korean
+        </div>
+
+
+        <a
+            href="course.html"
+            class="back"
+        >
+            ← 返回課程
+        </a>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- =====================
+             標題
+        ===================== -->
+
+        <section class="title">
+
+            <h1>
+                進階發音
+            </h1>
+
+            <p>
+                子音與母音組合練習
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================
+             課程介紹
+        ===================== -->
+
+        <section class="intro">
+
+            <h2>
+                從字母組合成完整音節
+            </h2>
+
+
+            <p>
+
+                前面的課程已經學習了
+                韓文的基本子音與基本母音。
+
+                <br>
+
+                接下來，我們開始將
+                <strong>子音＋母音</strong>
+                組合成完整的韓文音節。
+
+                <br>
+
+                本階段會練習基本音節、
+                複合母音，以及沒有收音的實際單字。
+
+                <br>
+
+                <strong>
+                    本頁單字練習完全不使用收音。
+                </strong>
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================
+             01｜基本母音組合
+        ===================== -->
+
+        <h2 class="section-title">
+            01｜子音＋基本母音
+        </h2>
+
+
+        <p class="section-description">
+
+            將子音與基本母音組合成完整音節。
+            每張卡片只有一個韓文音節。
+
+        </p>
+
+
+        <div
+            class="sound-grid"
+            id="basicCombination"
+        >
+        </div>
+
+
+
+        <!-- =====================
+             02｜複合母音組合
+        ===================== -->
+
+        <h2 class="section-title">
+            02｜子音＋複合母音
+        </h2>
+
+
+        <p class="section-description">
+
+            練習子音與複合母音的組合。
+            每張卡片同樣只有一個韓文音節。
+
+        </p>
+
+
+        <div
+            class="sound-grid"
+            id="compoundCombination"
+        >
+        </div>
+
+
+
+        <!-- =====================
+             03｜無收音單字
+        ===================== -->
+
+        <h2 class="section-title">
+            03｜單字發音練習
+        </h2>
+
+
+        <p class="section-description">
+
+            以下單字全部沒有收音。
+
+            <br>
+
+            可以進一步練習從單一音節
+            閱讀到完整單字。
+
+        </p>
+
+
+        <div
+            class="word-grid"
+            id="wordPractice"
+        >
+        </div>
+
+
+
+        <!-- =====================
+             學習提醒
+        ===================== -->
+
+        <div class="notice">
+
+            <strong>
+                💡 學習提醒
+            </strong>
+
+            <br><br>
+
+            這一階段的學習順序：
+
+            <br><br>
+
+            子音
+            ＋
+            母音
+            →
+            完整音節
+            →
+            無收音單字
+
+            <br><br>
+
+            本頁不加入任何收音單字。
+
+            <br>
+
+            收音會在下一個課程階段另外學習。
+
+        </div>
+
+
+    </main>
+
+
+
+    <footer>
+
+        © 2026 Chocochip Korean
+
+    </footer>
+
+
+
+    <script>
+
+
+        /* ==================================================
+           01｜子音＋基本母音
+
+           每一張卡片只有一個音節
+        ================================================== */
+
+        const basicCombination = [
+
+            ["가", "ㄱ + ㅏ", "ga"],
+            ["나", "ㄴ + ㅏ", "na"],
+            ["다", "ㄷ + ㅏ", "da"],
+            ["라", "ㄹ + ㅏ", "ra"],
+            ["마", "ㅁ + ㅏ", "ma"],
+
+            ["바", "ㅂ + ㅏ", "ba"],
+            ["사", "ㅅ + ㅏ", "sa"],
+            ["아", "ㅇ + ㅏ", "a"],
+            ["자", "ㅈ + ㅏ", "ja"],
+            ["차", "ㅊ + ㅏ", "cha"],
+
+            ["카", "ㅋ + ㅏ", "ka"],
+            ["타", "ㅌ + ㅏ", "ta"],
+            ["파", "ㅍ + ㅏ", "pa"],
+            ["하", "ㅎ + ㅏ", "ha"],
+
+
+            ["거", "ㄱ + ㅓ", "geo"],
+            ["너", "ㄴ + ㅓ", "neo"],
+            ["더", "ㄷ + ㅓ", "deo"],
+            ["러", "ㄹ + ㅓ", "reo"],
+            ["머", "ㅁ + ㅓ", "meo"],
+
+            ["버", "ㅂ + ㅓ", "beo"],
+            ["서", "ㅅ + ㅓ", "seo"],
+            ["어", "ㅇ + ㅓ", "eo"],
+            ["저", "ㅈ + ㅓ", "jeo"],
+            ["처", "ㅊ + ㅓ", "cheo"],
+
+            ["커", "ㅋ + ㅓ", "keo"],
+            ["터", "ㅌ + ㅓ", "teo"],
+            ["퍼", "ㅍ + ㅓ", "peo"],
+            ["허", "ㅎ + ㅓ", "heo"],
+
+
+            ["고", "ㄱ + ㅗ", "go"],
+            ["노", "ㄴ + ㅗ", "no"],
+            ["도", "ㄷ + ㅗ", "do"],
+            ["로", "ㄹ + ㅗ", "ro"],
+            ["모", "ㅁ + ㅗ", "mo"],
+
+            ["보", "ㅂ + ㅗ", "bo"],
+            ["소", "ㅅ + ㅗ", "so"],
+            ["오", "ㅇ + ㅗ", "o"],
+            ["조", "ㅈ + ㅗ", "jo"],
+            ["초", "ㅊ + ㅗ", "cho"],
+
+            ["코", "ㅋ + ㅗ", "ko"],
+            ["토", "ㅌ + ㅗ", "to"],
+            ["포", "ㅍ + ㅗ", "po"],
+            ["호", "ㅎ + ㅗ", "ho"],
+
+
+            ["구", "ㄱ + ㅜ", "gu"],
+            ["누", "ㄴ + ㅜ", "nu"],
+            ["두", "ㄷ + ㅜ", "du"],
+            ["루", "ㄹ + ㅜ", "ru"],
+            ["무", "ㅁ + ㅜ", "mu"],
+
+            ["부", "ㅂ + ㅜ", "bu"],
+            ["수", "ㅅ + ㅜ", "su"],
+            ["우", "ㅇ + ㅜ", "u"],
+            ["주", "ㅈ + ㅜ", "ju"],
+            ["추", "ㅊ + ㅜ", "chu"],
+
+            ["쿠", "ㅋ + ㅜ", "ku"],
+            ["투", "ㅌ + ㅜ", "tu"],
+            ["푸", "ㅍ + ㅜ", "pu"],
+            ["후", "ㅎ + ㅜ", "hu"],
+
+
+            ["기", "ㄱ + ㅣ", "gi"],
+            ["니", "ㄴ + ㅣ", "ni"],
+            ["디", "ㄷ + ㅣ", "di"],
+            ["리", "ㄹ + ㅣ", "ri"],
+            ["미", "ㅁ + ㅣ", "mi"],
+
+            ["비", "ㅂ + ㅣ", "bi"],
+            ["시", "ㅅ + ㅣ", "si"],
+            ["이", "ㅇ + ㅣ", "i"],
+            ["지", "ㅈ + ㅣ", "ji"],
+            ["치", "ㅊ + ㅣ", "chi"],
+
+            ["키", "ㅋ + ㅣ", "ki"],
+            ["티", "ㅌ + ㅣ", "ti"],
+            ["피", "ㅍ + ㅣ", "pi"],
+            ["히", "ㅎ + ㅣ", "hi"]
+
+        ];
+
+
+
+        /* ==================================================
+           02｜子音＋複合母音
+
+           每一張卡片只有一個音節
+        ================================================== */
+
+        const compoundCombination = [
+
+            ["과", "ㄱ + ㅘ", "gwa"],
+            ["놔", "ㄴ + ㅘ", "nwa"],
+            ["돠", "ㄷ + ㅘ", "dwa"],
+            ["롸", "ㄹ + ㅘ", "rwa"],
+            ["뫄", "ㅁ + ㅘ", "mwa"],
+
+            ["봐", "ㅂ + ㅘ", "bwa"],
+            ["솨", "ㅅ + ㅘ", "swa"],
+            ["와", "ㅇ + ㅘ", "wa"],
+            ["좌", "ㅈ + ㅘ", "jwa"],
+            ["촤", "ㅊ + ㅘ", "chwa"],
+
+            ["콰", "ㅋ + ㅘ", "kwa"],
+            ["톼", "ㅌ + ㅘ", "twa"],
+            ["퐈", "ㅍ + ㅘ", "pwa"],
+            ["화", "ㅎ + ㅘ", "hwa"],
+
+
+            ["궈", "ㄱ + ㅝ", "gwo"],
+            ["눠", "ㄴ + ㅝ", "nwo"],
+            ["둬", "ㄷ + ㅝ", "dwo"],
+            ["뤄", "ㄹ + ㅝ", "rwo"],
+            ["뭐", "ㅁ + ㅝ", "mwo"],
+
+            ["붜", "ㅂ + ㅝ", "bwo"],
+            ["숴", "ㅅ + ㅝ", "swo"],
+            ["워", "ㅇ + ㅝ", "wo"],
+            ["줘", "ㅈ + ㅝ", "jwo"],
+            ["춰", "ㅊ + ㅝ", "chwo"],
+
+            ["쿼", "ㅋ + ㅝ", "kwo"],
+            ["퉈", "ㅌ + ㅝ", "two"],
+            ["풔", "ㅍ + ㅝ", "pwo"],
+            ["훠", "ㅎ + ㅝ", "hwo"],
+
+
+            ["괘", "ㄱ + ㅙ", "gwae"],
+            ["놰", "ㄴ + ㅙ", "nwae"],
+            ["돼", "ㄷ + ㅙ", "dwae"],
+            ["뫠", "ㅁ + ㅙ", "mwae"],
+            ["봐", "ㅂ + ㅘ", "bwa"],
+
+            ["왜", "ㅇ + ㅙ", "wae"],
+            ["쐐", "ㅆ + ㅙ", "sswae"],
+
+
+            ["궤", "ㄱ + ㅞ", "gwe"],
+            ["눼", "ㄴ + ㅞ", "nwe"],
+            ["뒈", "ㄷ + ㅞ", "dwe"],
+            ["뤠", "ㄹ + ㅞ", "rwe"],
+            ["뭬", "ㅁ + ㅞ", "mwe"],
+
+            ["웨", "ㅇ + ㅞ", "we"],
+
+
+            ["귀", "ㄱ + ㅟ", "gwi"],
+            ["뉘", "ㄴ + ㅟ", "nwi"],
+            ["뒤", "ㄷ + ㅟ", "dwi"],
+            ["뤼", "ㄹ + ㅟ", "rwi"],
+            ["뮈", "ㅁ + ㅟ", "mwi"],
+
+            ["뷔", "ㅂ + ㅟ", "bwi"],
+            ["쉬", "ㅅ + ㅟ", "swi"],
+            ["위", "ㅇ + ㅟ", "wi"],
+            ["쥐", "ㅈ + ㅟ", "jwi"],
+
+
+            ["괴", "ㄱ + ㅚ", "goe"],
+            ["뇌", "ㄴ + ㅚ", "noe"],
+            ["되", "ㄷ + ㅚ", "doe"],
+            ["뢰", "ㄹ + ㅚ", "roe"],
+            ["뫼", "ㅁ + ㅚ", "moe"],
+
+            ["뵈", "ㅂ + ㅚ", "boe"],
+            ["쇠", "ㅅ + ㅚ", "soe"],
+            ["외", "ㅇ + ㅚ", "oe"],
+            ["죄", "ㅈ + ㅚ", "joe"],
+            ["최", "ㅊ + ㅚ", "choe"],
+
+
+            ["의", "ㅇ + ㅢ", "ui"],
+            ["희", "ㅎ + ㅢ", "hui"]
+
+        ];
+
+
+
+        /* ==================================================
+           03｜完全沒有收音的單字
+
+           注意：
+           每個音節都沒有 받침
+        ================================================== */
+
+        const words = [
+
+            ["나비", "蝴蝶", "nabi"],
+
+            ["아기", "嬰兒", "agi"],
+
+            ["바다", "大海", "bada"],
+
+            ["사과", "蘋果", "sagwa"],
+
+            ["우유", "牛奶", "uyu"],
+
+            ["오이", "小黃瓜", "oi"],
+
+            ["모자", "帽子", "moja"],
+
+            ["포도", "葡萄", "podo"],
+
+            ["커피", "咖啡", "keopi"],
+
+            ["치마", "裙子", "chima"],
+
+            ["토마토", "番茄", "tomato"],
+
+            ["가수", "歌手", "gasu"],
+
+            ["두부", "豆腐", "dubu"],
+
+            ["고기", "肉", "gogi"],
+
+            ["아빠", "爸爸", "appa"],
+
+            ["허리", "腰", "heori"],
+
+            ["코끼리", "大象", "kkokkiri"],
+
+            ["나무", "樹木", "namu"],
+
+            ["머리", "頭／頭部", "meori"],
+
+            ["다리", "腿／橋", "dari"],
+
+            ["하마", "河馬", "hama"],
+
+            ["호수", "湖", "hosu"],
+
+            ["바지", "褲子", "baji"],
+
+            ["고추", "辣椒", "gochu"],
+
+            ["누나", "姐姐（男性稱呼）", "nuna"]
+
+        ];
+
+
+
+        /* ============================
+           建立音節卡片
+        ============================ */
+
+        function createSoundCards(
+            data,
+            containerId
+        ) {
+
+            const container =
+                document.getElementById(containerId);
+
+
+            data.forEach(item => {
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "sound-card";
+
+
+                card.innerHTML = `
+
+                    <div class="korean">
+                        ${item[0]}
+                    </div>
+
+                    <div class="combination">
+                        ${item[1]}
+                    </div>
+
+                    <div class="romanization">
+                        ${item[2]}
+                    </div>
+
+                    <button
+                        class="sound-button"
+                        onclick="playSound('${item[0]}')"
+                    >
+                        🔊 發音
+                    </button>
+
+                `;
+
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+
+
+        /* ============================
+           建立單字卡片
+        ============================ */
+
+        function createWordCards(data) {
+
+            const container =
+                document.getElementById(
+                    "wordPractice"
+                );
+
+
+            data.forEach(item => {
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "word-card";
+
+
+                card.innerHTML = `
+
+                    <div class="word">
+                        ${item[0]}
+                    </div>
+
+                    <div class="meaning">
+                        ${item[1]}
+                    </div>
+
+                    <div class="word-romanization">
+                        ${item[2]}
+                    </div>
+
+                    <button
+                        class="sound-button"
+                        onclick="playSound('${item[0]}')"
+                    >
+                        🔊 聽發音
+                    </button>
+
+                `;
+
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+
+
+        /* ============================
+           韓文語音
+        ============================ */
+
+        function playSound(text) {
+
+            const speech =
+                new SpeechSynthesisUtterance(text);
+
+
+            speech.lang = "ko-KR";
+
+            speech.rate = 0.75;
+
+            speech.pitch = 1;
+
+
+            speechSynthesis.cancel();
+
+            speechSynthesis.speak(speech);
+
+        }
+
+
+
+        /* ============================
+           啟動
+        ============================ */
+
+        createSoundCards(
+            basicCombination,
+            "basicCombination"
+        );
+
+
+        createSoundCards(
+            compoundCombination,
+            "compoundCombination"
+        );
+
+
+        createWordCards(words);
+
+
+    </script>
+
+
+</body>
+
+</html>
