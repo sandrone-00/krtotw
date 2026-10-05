@@ -1,224 +1,397 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>基本母音｜Chocochip Korean</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <style>
 
-    <title>
-        21個基本母音｜Chocochip Korean
-    </title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      background: #f7f5f2;
+      color: #333;
+      line-height: 1.6;
+    }
 
-    <style>
 
-        * {
+    /* =========================
+       Header
+    ========================= */
 
-            box-sizing: border-box;
+    header {
+      height: 70px;
+      background: white;
 
-            margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-            padding: 0;
+      padding: 0 50px;
 
-        }
+      border-bottom: 1px solid #eee;
+    }
 
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-        body {
+    .back {
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-            font-family:
-                Arial,
-                "Microsoft JhengHei",
-                sans-serif;
+    .back:hover {
+      color: #000;
+    }
 
-            background: #f7f5f2;
 
-            color: #333;
+    /* =========================
+       Main
+    ========================= */
 
-        }
+    .container {
+      max-width: 1000px;
 
+      margin: 50px auto;
 
-        header {
+      padding: 0 20px;
+    }
 
-            height: 70px;
 
-            background: white;
+    /* =========================
+       Title
+    ========================= */
 
-            display: flex;
+    .title {
+      text-align: center;
 
-            align-items: center;
+      margin-bottom: 45px;
+    }
 
-            justify-content: space-between;
+    .title h1 {
+      font-size: 36px;
 
-            padding: 0 50px;
+      margin-bottom: 15px;
+    }
 
-            border-bottom: 1px solid #eee;
+    .title p {
+      color: #777;
 
-        }
+      line-height: 1.9;
+    }
 
 
-        .logo {
+    /* =========================
+       Intro
+    ========================= */
 
-            font-size: 20px;
+    .intro {
+      background: white;
 
-            font-weight: bold;
+      border-radius: 20px;
 
-        }
+      padding: 35px;
 
+      margin-bottom: 35px;
 
-        .back {
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+    }
 
-            color: #555;
+    .intro h2 {
+      margin-bottom: 18px;
 
-            text-decoration: none;
+      font-size: 24px;
+    }
 
-        }
+    .intro p {
+      color: #666;
 
+      line-height: 2;
+    }
 
-        .container {
+    .number {
+      display: inline-block;
 
-            max-width: 1000px;
+      background: #333;
 
-            margin: 50px auto;
+      color: white;
 
-            padding: 0 20px;
+      padding: 3px 10px;
 
-        }
+      border-radius: 20px;
 
+      font-size: 12px;
 
-        .title {
+      margin-right: 8px;
+    }
 
-            text-align: center;
 
-            margin-bottom: 40px;
+    /* =========================
+       Section Title
+    ========================= */
 
-        }
+    .section-title {
+      font-size: 25px;
 
+      margin: 45px 0 20px;
+    }
 
-        .title h1 {
 
-            font-size: 36px;
+    /* =========================
+       Vowel Cards
+    ========================= */
 
-            margin-bottom: 15px;
+    .alphabet-grid {
+      display: grid;
 
-        }
+      grid-template-columns:
+        repeat(5, 1fr);
 
+      gap: 15px;
+    }
 
-        .title p {
+    .alphabet-card {
+      background: white;
 
-            color: #777;
+      border-radius: 15px;
 
-        }
+      padding: 25px 15px;
 
+      text-align: center;
 
-        .alphabet-grid {
+      transition: 0.2s;
 
-            display: grid;
+      border: 2px solid transparent;
+    }
 
-            grid-template-columns:
-                repeat(5, 1fr);
+    .alphabet-card:hover {
+      transform: translateY(-3px);
 
-            gap: 15px;
+      border-color: #ddd;
+    }
 
-        }
+    .letter {
+      font-size: 42px;
 
+      margin-bottom: 10px;
 
-        .alphabet-card {
+      font-weight: bold;
+    }
 
-            background: white;
+    .name {
+      font-size: 14px;
 
-            border-radius: 15px;
+      color: #666;
 
-            padding: 25px 15px;
+      margin-bottom: 12px;
+    }
 
-            text-align: center;
+    .sound-button {
+      border: none;
 
-            transition: 0.2s;
+      background: #f1f1f1;
 
-        }
+      border-radius: 20px;
 
+      padding: 7px 15px;
 
-        .alphabet-card:hover {
+      cursor: pointer;
 
-            transform: translateY(-3px);
+      font-size: 14px;
+    }
 
-        }
+    .sound-button:hover {
+      background: #e5e5e5;
+    }
 
 
-        .letter {
+    /* =========================
+       Advanced Pronunciation
+    ========================= */
 
-            font-size: 42px;
+    .next-section {
+      background: white;
 
-            font-weight: bold;
+      border-radius: 20px;
 
-            margin-bottom: 10px;
+      padding: 40px;
 
-        }
+      margin-top: 50px;
 
+      margin-bottom: 60px;
 
-        .name {
+      text-align: center;
 
-            color: #777;
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+    }
 
-            margin-bottom: 12px;
+    .next-section h2 {
+      font-size: 25px;
 
-        }
+      margin-bottom: 15px;
+    }
 
+    .next-section p {
+      color: #777;
 
-        .sound-button {
+      line-height: 1.9;
 
-            border: none;
+      margin-bottom: 25px;
+    }
 
-            background: #f1f1f1;
 
-            padding: 8px 15px;
+    /* =========================
+       Password
+    ========================= */
 
-            border-radius: 20px;
+    .password-box {
+      display: flex;
 
-            cursor: pointer;
+      justify-content: center;
 
-        }
+      align-items: center;
 
+      gap: 10px;
 
-        .sound-button:hover {
+      flex-wrap: wrap;
+    }
 
-            background: #e5e5e5;
+    .password-box input {
+      width: 240px;
 
-        }
+      padding: 12px 15px;
 
+      border: 1px solid #ddd;
 
-        footer {
+      border-radius: 8px;
 
-            background: white;
+      font-size: 15px;
 
-            text-align: center;
+      outline: none;
+    }
 
-            padding: 30px;
+    .password-box input:focus {
+      border-color: #999;
+    }
 
-            color: #999;
+    .password-box button {
+      border: none;
 
-            margin-top: 60px;
+      background: #333;
 
-        }
+      color: white;
 
+      padding: 12px 25px;
 
-        @media (max-width: 700px) {
+      border-radius: 8px;
 
-            .alphabet-grid {
+      cursor: pointer;
 
-                grid-template-columns:
-                    repeat(3, 1fr);
+      font-size: 14px;
+    }
 
-            }
+    .password-box button:hover {
+      background: #555;
+    }
 
-        }
+    #passwordMessage {
+      margin-top: 15px;
 
-    </style>
+      font-size: 14px;
+
+      min-height: 22px;
+    }
+
+
+    /* =========================
+       Home Button
+    ========================= */
+
+    .home-button {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      color: #555;
+
+      text-decoration: none;
+
+      font-size: 14px;
+    }
+
+    .home-button:hover {
+      color: #000;
+    }
+
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      background: white;
+
+      text-align: center;
+
+      padding: 30px;
+
+      color: #999;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      .title h1 {
+        font-size: 30px;
+      }
+
+      .alphabet-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .password-box {
+        flex-direction: column;
+      }
+
+      .password-box input {
+        width: 100%;
+
+        max-width: 300px;
+      }
+
+      .password-box button {
+        width: 100%;
+
+        max-width: 300px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -226,206 +399,357 @@
 <body>
 
 
-<header>
+  <!-- =========================
+       Header
+  ========================= -->
+
+  <header>
 
     <div class="logo">
-
-        🇰🇷 Chocochip Korean
-
+      🇰🇷 Chocochip Korean
     </div>
 
-
     <a
-        href="alphabet.html"
-        class="back"
+      href="index.html"
+      class="back"
     >
-
-        ← 返回上一階段
-
+      ← 回首頁
     </a>
 
-</header>
+  </header>
 
 
 
-<main class="container">
+  <!-- =========================
+       Main
+  ========================= -->
 
+  <main class="container">
+
+
+    <!-- Title -->
 
     <section class="title">
 
-        <h1>
-            21個基本母音
-        </h1>
+      <h1>
+        基本母音
+      </h1>
 
-        <p>
-            學習韓文基本母音與正確發音。
-        </p>
+      <p>
+        認識韓文的基本母音與複合母音，
+        熟悉每個母音的形狀與發音。
+      </p>
 
     </section>
 
 
 
+    <!-- Introduction -->
+
+    <section class="intro">
+
+      <h2>
+
+        <span class="number">
+          01
+        </span>
+
+        認識韓文母音
+
+      </h2>
+
+      <p>
+
+        韓文母音是組成韓文字的基礎。
+        先熟悉母音的形狀與發音，
+        再進一步和子音組合，
+        就能開始閱讀韓文。
+
+      </p>
+
+    </section>
+
+
+
+    <!-- Basic Vowels -->
+
+    <h2 class="section-title">
+
+      基本母音
+
+    </h2>
+
+
+
     <div
-        class="alphabet-grid"
-        id="vowels"
+      class="alphabet-grid"
+      id="vowelGrid"
     ></div>
 
 
-</main>
 
+    <!-- =========================
+         Advanced Pronunciation
+    ========================= -->
 
+    <section class="next-section">
 
-<footer>
+      <h2>
+        進階發音
+      </h2>
 
-    © 2026 Chocochip Korean
+      <p>
 
-</footer>
-
-
-
-<script>
-
-
-const vowels = [
-
-    ["ㅏ", "아", "a"],
-
-    ["ㅑ", "야", "ya"],
-
-    ["ㅓ", "어", "eo"],
-
-    ["ㅕ", "여", "yeo"],
-
-    ["ㅗ", "오", "o"],
-
-    ["ㅛ", "요", "yo"],
-
-    ["ㅜ", "우", "u"],
-
-    ["ㅠ", "유", "yu"],
-
-    ["ㅡ", "으", "eu"],
-
-    ["ㅣ", "이", "i"],
-
-    ["ㅐ", "애", "ae"],
-
-    ["ㅔ", "에", "e"],
-
-    ["ㅒ", "얘", "yae"],
-
-    ["ㅖ", "예", "ye"],
-
-    ["ㅘ", "와", "wa"],
-
-    ["ㅙ", "왜", "wae"],
-
-    ["ㅚ", "외", "oe"],
-
-    ["ㅝ", "워", "wo"],
-
-    ["ㅞ", "웨", "we"],
-
-    ["ㅟ", "위", "wi"],
-
-    ["ㅢ", "의", "ui"]
-
-];
-
-
-const container =
-    document.getElementById("vowels");
-
-
-vowels.forEach(item => {
-
-
-    const card =
-        document.createElement("div");
-
-
-    card.className =
-        "alphabet-card";
-
-
-    card.innerHTML = `
-
-        <div class="letter">
-            ${item[0]}
-        </div>
-
-        <div class="name">
-            ${item[1]}
-        </div>
-
-        <div>
-            ${item[2]}
-        </div>
+        完成基本母音學習後，
+        接著學習韓文的進階發音。
 
         <br>
 
-        <button
-            class="sound-button"
-            onclick="playSound('${item[0]}')"
+        內容包含複合母音、
+        子音與母音組合，
+        以及單字發音練習。
+
+      </p>
+
+
+
+      <div class="password-box">
+
+        <input
+          type="password"
+          id="advancedPassword"
+          placeholder="請輸入進階發音密碼"
+          onkeydown="
+            if(event.key === 'Enter')
+            checkAdvancedPassword()
+          "
         >
 
-            🔊 發音
-
+        <button
+          onclick="checkAdvancedPassword()"
+        >
+          進入進階發音
         </button>
 
-    `;
-
-
-    container.appendChild(card);
-
-});
+      </div>
 
 
 
-function playSound(letter) {
+      <div
+        id="passwordMessage"
+      ></div>
 
-    const speech =
-        new SpeechSynthesisUtterance(letter);
 
 
-    speech.lang =
+      <a
+        href="index.html"
+        class="home-button"
+      >
+        ← 回首頁
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       Footer
+  ========================= -->
+
+  <footer>
+
+    Chocochip Korean｜
+    韓文發音學習平台
+
+  </footer>
+
+
+
+  <!-- =========================
+       JavaScript
+  ========================= -->
+
+  <script>
+
+
+    /* =========================
+       Vowels
+    ========================= */
+
+    const vowels = [
+
+      ["ㅏ", "아", "a"],
+      ["ㅑ", "야", "ya"],
+      ["ㅓ", "어", "eo"],
+      ["ㅕ", "여", "yeo"],
+      ["ㅗ", "오", "o"],
+      ["ㅛ", "요", "yo"],
+      ["ㅜ", "우", "u"],
+      ["ㅠ", "유", "yu"],
+      ["ㅡ", "으", "eu"],
+      ["ㅣ", "이", "i"],
+
+      ["ㅐ", "애", "ae"],
+      ["ㅔ", "에", "e"],
+      ["ㅒ", "얘", "yae"],
+      ["ㅖ", "예", "ye"],
+
+      ["ㅘ", "와", "wa"],
+      ["ㅙ", "왜", "wae"],
+      ["ㅚ", "외", "oe"],
+      ["ㅝ", "워", "wo"],
+      ["ㅞ", "웨", "we"],
+      ["ㅟ", "위", "wi"],
+      ["ㅢ", "의", "ui"]
+
+    ];
+
+
+
+    /* =========================
+       Create Vowel Cards
+    ========================= */
+
+    const vowelGrid =
+      document.getElementById(
+        "vowelGrid"
+      );
+
+
+    vowels.forEach(function(vowel) {
+
+      const card =
+        document.createElement("div");
+
+
+      card.className =
+        "alphabet-card";
+
+
+      card.innerHTML = `
+
+        <div class="letter">
+          ${vowel[0]}
+        </div>
+
+        <div class="name">
+          ${vowel[1]} ｜ ${vowel[2]}
+        </div>
+
+        <button
+          class="sound-button"
+          onclick="playSound('${vowel[1]}')"
+        >
+          🔊 發音
+        </button>
+
+      `;
+
+
+      vowelGrid.appendChild(card);
+
+    });
+
+
+
+    /* =========================
+       Korean TTS
+    ========================= */
+
+    function playSound(text) {
+
+      const speech =
+        new SpeechSynthesisUtterance(
+          text
+        );
+
+
+      speech.lang =
         "ko-KR";
 
 
-    speech.rate =
+      speech.rate =
         0.7;
 
 
-    speechSynthesis.cancel();
+      speech.pitch =
+        1;
 
-    speechSynthesis.speak(speech);
 
-}
-function checkAdvancedPassword() {
+      speechSynthesis.cancel();
 
-  const password =
-    document.getElementById("advancedPassword").value;
 
-  const message =
-    document.getElementById("passwordMessage");
+      speechSynthesis.speak(
+        speech
+      );
 
-  if (password === "choco410") {
+    }
 
-    message.textContent = "密碼正確，正在進入進階發音……";
-    message.style.color = "green";
 
-    setTimeout(function() {
-      window.location.href = "advanced.html";
-    }, 500);
 
-  } else {
+    /* =========================
+       Advanced Password
+    ========================= */
 
-    message.textContent = "密碼錯誤，請重新輸入。";
-    message.style.color = "red";
-  }
-}
+    function checkAdvancedPassword() {
 
-</script>
+      const password =
+        document
+          .getElementById(
+            "advancedPassword"
+          )
+          .value
+          .trim();
+
+
+      const message =
+        document
+          .getElementById(
+            "passwordMessage"
+          );
+
+
+      if (
+        password === "choco410"
+      ) {
+
+        message.textContent =
+          "密碼正確，正在進入進階發音……";
+
+
+        message.style.color =
+          "green";
+
+
+        setTimeout(
+          function() {
+
+            window.location.href =
+              "advanced.html";
+
+          },
+          500
+        );
+
+
+      } else {
+
+        message.textContent =
+          "密碼錯誤，請重新輸入。";
+
+
+        message.style.color =
+          "red";
+
+      }
+
+    }
+
+
+  </script>
 
 
 </body>
