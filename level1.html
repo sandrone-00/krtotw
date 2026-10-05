@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>基礎韓語學習｜chocochip韓語繁體學習網</title>
+
+
+<style>
+
+/* =========================
+   基本設定
+========================= */
+
+:root{
+
+    --ink:#172431;
+
+    --blue:#4f89aa;
+
+    --blue-light:#e8f2f7;
+
+    --green:#eef6f0;
+
+    --purple:#f4f0f7;
+
+    --cream:#fbf6ed;
+
+    --yellow:#f3e5a4;
+
+    --line:#8da0aa;
+
+    --brown:#a65d45;
+
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    color:var(--ink);
+
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+
+    background:#eef0f2;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* =========================
+   網站 Header
+========================= */
+
+.header{
+
+    height:176px;
+
+    background:#fff;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:center;
+
+    padding-top:18px;
+
+}
+
+
+.logo{
+
+    width:67px;
+
+    height:67px;
+
+    margin:auto;
+
+    border:2px solid #ef5660;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+
+.brand{
+
+    margin:8px 0 0;
+
+    font-size:38px;
+
+    font-weight:900;
+
+    letter-spacing:-2px;
+
+}
+
+
+.subtitle{
+
+    margin:3px;
+
+    color:#735778;
+
+    font-size:12px;
+
+}
+
+
+/* =========================
+   導覽列
+========================= */
+
+.nav{
+
+    height:43px;
+
+    background:#fff;
+
+    border-bottom:1px solid #d8dadd;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,.08);
+
+}
+
+
+.navin{
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:27px;
+
+}
+
+
+.nav a{
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+.nav a:hover{
+
+    color:#675074;
+
+}
+
+
+/* =========================
+   主要紙張區域
+========================= */
+
+.wrapper{
+
+    max-width:1120px;
+
+    margin:36px auto 70px;
+
+    padding:0 18px;
+
+}
+
+
+.paper{
+
+    position:relative;
+
+    padding:
+        18px
+        20px
+        25px
+        88px;
+
+    background:
+
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 31px,
+            #8094a012 32px,
+            transparent 33px
+        ),
+
+        #fffdf8;
+
+    border:1px solid #9daab0;
+
+    border-radius:6px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(54,67,75,.08);
+
+}
+
+
+/* 左側紅線 */
+
+.paper:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:31px;
+
+    top:0;
+
+    bottom:0;
+
+    width:1px;
+
+    background:#efb6ad;
+
+}
+
+
+/* 左側打孔 */
+
+.holes{
+
+    position:absolute;
+
+    left:15px;
+
+    top:28px;
+
+    bottom:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+
+.holes i{
+
+    width:8px;
+
+    height:8px;
+
+    border:1px solid #72828a;
+
+    border-radius:50%;
+
+    background:#fff;
+
+}
+
+
+/* =========================
+   麵包屑
+========================= */
+
+.breadcrumb{
+
+    border:1px dashed #9ba8ae;
+
+    background:#fff;
+
+    padding:7px 10px;
+
+    font-size:9px;
+
+    margin-bottom:10px;
+
+    color:#4d5a60;
+
+}
+
+
+/* =========================
+   課程標題
+========================= */
+
+.hero{
+
+    border:1px solid #4d89aa;
+
+    border-top:4px solid #4d89aa;
+
+    border-radius:6px;
+
+    background:#e2eff6;
+
+    padding:24px 28px;
+
+    position:relative;
+
+}
+
+
+.hero:after{
+
+    content:"";
+
+    position:absolute;
+
+    right:27px;
+
+    top:0;
+
+    width:53px;
+
+    height:9px;
+
+    background:#f4e7a8;
+
+}
+
+
+.kicker{
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    color:#27617e;
+
+    font-weight:900;
+
+}
+
+
+.hero h1{
+
+    font-size:34px;
+
+    margin:6px 0 3px;
+
+    letter-spacing:-1px;
+
+}
+
+
+.hero h1:after{
+
+    content:"";
+
+    display:block;
+
+    width:88px;
+
+    height:8px;
+
+    background:var(--yellow);
+
+    margin-top:-6px;
+
+}
+
+
+.hero .en{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#37647a;
+
+}
+
+
+.hero p{
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    color:#56636a;
+
+    margin:10px 0 0;
+
+}
+
+
+/* =========================
+   三個介紹區塊
+========================= */
+
+.intro{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border:1px solid #81939c;
+
+    background:#fff;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+
+.intro div{
+
+    padding:13px 14px;
+
+    border-right:1px dashed #b1bbc0;
+
+}
+
+
+.intro div:last-child{
+
+    border:0;
+
+}
+
+
+.intro h3{
+
+    margin:0 0 5px;
+
+    font-size:12px;
+
+}
+
+
+.intro p{
+
+    font-size:9px;
+
+    line-height:1.55;
+
+    color:#687277;
+
+    margin:0;
+
+}
+
+
+/* =========================
+   課程分類
+========================= */
+
+.section{
+
+    margin-top:12px;
+
+    border:1px solid #4d89aa;
+
+    border-radius:5px;
+
+    padding:16px;
+
+    background:var(--green);
+
+}
+
+
+/* 發音 */
+
+.section.pronunciation{
+
+    background:#fbf6ed;
+
+    border-color:#b07b68;
+
+}
+
+
+/* 句型 */
+
+.section.sentences{
+
+    background:#f4f0f7;
+
+    border-color:#9c89a8;
+
+}
+
+
+/* 基本表達 */
+
+.section.expressions{
+
+    background:#edf5f8;
+
+    border-color:#7199ad;
+
+}
+
+
+/* =========================
+   標題
+========================= */
+
+.section-title{
+
+    font-size:19px;
+
+    font-weight:900;
+
+    margin:0;
+
+}
+
+
+.section-title:before{
+
+    content:"–";
+
+    color:#3f7895;
+
+    margin-right:7px;
+
+}
+
+
+.section-title span{
+
+    background:
+        linear-gradient(
+            transparent 55%,
+            var(--yellow) 55%
+        );
+
+}
+
+
+.section-en{
+
+    font-size:10px;
+
+    color:#3e6678;
+
+    font-weight:700;
+
+    margin:
+        2px 0
+        12px 17px;
+
+}
+
+
+.subtitle2{
+
+    font-size:10px;
+
+    margin:0 0 7px;
+
+    color:#536068;
+
+}
+
+
+.unit-count{
+
+    display:inline-block;
+
+    border:1px solid #9ba9ae;
+
+    background:#fff;
+
+    padding:3px 6px;
+
+    font-size:8px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================
+   課程卡片
+========================= */
+
+.units{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:8px;
+
+}
+
+
+.unit{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        38px 1fr;
+
+    min-height:74px;
+
+    background:#fff;
+
+    border:1px solid #8b9da6;
+
+    border-left:
+        3px solid #4c8aad;
+
+    border-radius:3px;
+
+    padding:9px;
+
+}
+
+
+.unit:hover{
+
+    box-shadow:
+        0 3px 9px
+        rgba(0,0,0,.08);
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =========================
+   鎖定課程
+========================= */
+
+.unit.locked{
+
+    background:#f4f4f4;
+
+    border-left-color:#aaa;
+
+    color:#777;
+
+    cursor:not-allowed;
+
+}
+
+
+.unit.locked:hover{
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+.unit.locked:after{
+
+    content:"🔒";
+
+    position:absolute;
+
+    right:9px;
+
+    top:9px;
+
+    font-size:12px;
+
+    opacity:.75;
+
+}
+
+
+/* =========================
+   編號
+========================= */
+
+.num{
+
+    width:28px;
+
+    height:28px;
+
+    border:
+        1px solid #4c8aad;
+
+    background:#eef7fb;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    color:#285f79;
+
+    align-self:center;
+
+}
+
+
+.locked .num{
+
+    border-color:#aaa;
+
+    background:#eee;
+
+    color:#777;
+
+}
+
+
+/* =========================
+   課程文字
+========================= */
+
+.unit h3{
+
+    font-size:11px;
+
+    margin:
+        0
+        20px
+        2px
+        0;
+
+}
+
+
+.unit .en{
+
+    font-size:9px;
+
+    color:#37657b;
+
+    font-weight:700;
+
+    margin-bottom:2px;
+
+}
+
+
+.unit p{
+
+    font-size:8px;
+
+    line-height:1.45;
+
+    margin:0;
+
+    color:#5e686d;
+
+}
+
+
+/* =========================
+   最後說明
+========================= */
+
+.finish{
+
+    margin-top:12px;
+
+    border:
+        1px dashed #7895a4;
+
+    background:#e4f0f6;
+
+    padding:12px 14px;
+
+    font-size:10px;
+
+    color:#59666c;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+
+    text-align:center;
+
+    background:#fff;
+
+    border-top:1px solid #ddd;
+
+    padding:22px;
+
+    color:#777;
+
+    font-size:11px;
+
+}
+
+
+/* =========================
+   手機版
+========================= */
+
+@media(max-width:760px){
+
+    .header{
+
+        height:auto;
+
+        padding-bottom:15px;
+
+    }
+
+
+    .brand{
+
+        font-size:29px;
+
+    }
+
+
+    .nav{
+
+        height:auto;
+
+    }
+
+
+    .navin{
+
+        flex-wrap:wrap;
+
+        padding:8px;
+
+        gap:10px;
+
+    }
+
+
+    .wrapper{
+
+        margin-top:20px;
+
+        padding:0 8px;
+
+    }
+
+
+    .paper{
+
+        padding:
+            15px
+            12px
+            20px
+            47px;
+
+    }
+
+
+    .paper:before{
+
+        left:25px;
+
+    }
+
+
+    .holes{
+
+        left:11px;
+
+    }
+
+
+    .intro{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .units{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     Header
+===================================== -->
+
+<header class="header">
+
+    <div class="logo">
+        KR
+    </div>
+
+    <h1 class="brand">
+        Chocochip Korean
+    </h1>
+
+    <p class="subtitle">
+        Korean Learning Community
+    </p>
+
+</header>
+
+
+
+<!-- =====================================
+     導覽列
+===================================== -->
+
+<nav class="nav">
+
+    <div class="navin">
+
+        <a href="index.html">
+            韓語正規課程
+        </a>
+
+        <a href="#hangul">
+            基礎韓語
+        </a>
+
+        <a href="#review">
+            複習教材
+        </a>
+
+        <a href="#notes">
+            學習筆記
+        </a>
+
+        <a href="#login">
+            學生登入
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     主要內容
+===================================== -->
+
+<main class="wrapper">
+
+
+<div class="paper">
+
+
+    <!-- 左側打孔 -->
+
+    <div class="holes">
+
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+    </div>
+
+
+
+    <!-- =====================================
+         麵包屑
+    ===================================== -->
+
+    <div class="breadcrumb">
+
+        韓語正規課程
+        ＞
+        基礎韓語
+
+    </div>
+
+
+
+    <!-- =====================================
+         基礎韓語標題
+    ===================================== -->
+
+    <section class="hero">
+
+
+        <div class="kicker">
+
+            CHOCOCHIP KOREAN · BASIC
+
+        </div>
+
+
+        <h1>
+
+            基礎韓語學習
+
+        </h1>
+
+
+        <div class="en">
+
+            Basic Korean Study
+
+        </div>
+
+
+        <p>
+
+            從韓文字母與發音開始，
+            逐步學習基本句型、生活表達與基礎詞彙，
+            建立韓文學習的基礎。
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         課程介紹
+    ===================================== -->
+
+    <section class="intro">
+
+
+        <div>
+
+            <h3>
+                從基礎開始
+            </h3>
+
+            <p>
+                從韓文字母與發音開始，
+                逐步建立韓文基礎。
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                需要什麼再學
+            </h3>
+
+            <p>
+                依照自己的需要選擇課程內容，
+                已解鎖的教材可以反覆複習。
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                用朗讀內化
+            </h3>
+
+            <p>
+                看到韓文後朗讀出來，
+                透過重複練習建立語感。
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         01～05 韓文
+    ===================================== -->
+
+    <section
+        class="section"
+        id="hangul"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                韓文
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Learn the principles of Hangul
+            and read basic syllables.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            韓文的入門與基本拼讀
+
+        </p>
+
+
+        <span class="unit-count">
+
+            5 個學習單元
+
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 01 免費 -->
+
+            <a
+                class="unit"
+                href="lesson01.html"
+            >
+
+                <div class="num">
+                    01
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        韓文是什麼？
+                    </h3>
+
+
+                    <div class="en">
+                        What Kind of Writing System Is Hangul?
+                    </div>
+
+
+                    <p>
+                        認識韓文的起源與基本特色，
+                        建立學習韓文的第一個概念。
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- 02 免費 -->
+
+            <a
+                class="unit"
+                href="lesson02.html"
+            >
+
+                <div class="num">
+                    02
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        基本子音 14 個
+                    </h3>
+
+
+                    <div class="en">
+                        The 14 Basic Consonants
+                    </div>
+
+
+                    <p>
+                        學習韓文基本子音的字形、
+                        名稱與基本發音。
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- 03 鎖定 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    03
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        基本母音 10 個
+                    </h3>
+
+
+                    <div class="en">
+                        The 10 Basic Vowels
+                    </div>
+
+
+                    <p>
+                        學習基本母音的字形與發音，
+                        開始練習母音。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 鎖定 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    04
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        將子音與母音組合
+                    </h3>
+
+
+                    <div class="en">
+                        Combining Syllables
+                    </div>
+
+
+                    <p>
+                        學習將子音與母音
+                        組合成一個韓文音節。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 鎖定 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    05
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        雙子音與複合母音
+                    </h3>
+
+
+                    <div class="en">
+                        Double Consonants and Compound Vowels
+                    </div>
+
+
+                    <p>
+                        認識基本子音與母音之外
+                        的進階發音。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         06～07 發音
+    ===================================== -->
+
+    <section
+        class="section pronunciation"
+        id="pronunciation"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                發音
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Practice clear Korean pronunciation
+            with the mouth and tongue.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            嘴巴與舌頭的發音練習
+
+        </p>
+
+
+        <span class="unit-count">
+            2 個學習單元
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 06 鎖定 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    06
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        母音的複習與發音
+                    </h3>
+
+
+                    <div class="en">
+                        Vowel Pronunciation Practice
+                    </div>
+
+
+                    <p>
+                        透過反覆練習母音，
+                        讓發音更加清楚自然。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 鎖定 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    07
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        發音的七個終聲
+                    </h3>
+
+
+                    <div class="en">
+                        The Seven Final Consonant Sounds
+                    </div>
+
+
+                    <p>
+                        整理韓文常見終聲的
+                        基本發音規則。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         08～10 句型
+    ===================================== -->
+
+    <section
+        class="section sentences"
+        id="sentences"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                句型
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Learn the three basic Korean
+            sentence patterns.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            最常使用的三種基本句型
+
+        </p>
+
+
+        <span class="unit-count">
+            3 個學習單元
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 08 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    08
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        動詞描述動作
+                    </h3>
+
+
+                    <div class="en">
+                        Sentences That Describe Actions
+                    </div>
+
+
+                    <p>
+                        學習使用動詞描述
+                        正在進行的動作。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 09 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    09
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        狀態的描述
+                    </h3>
+
+
+                    <div class="en">
+                        Sentences That Describe States
+                    </div>
+
+
+                    <p>
+                        使用句型描述人物
+                        或事物的狀態。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 10 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    10
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        名詞的說明
+                    </h3>
+
+
+                    <div class="en">
+                        Describing Nouns
+                    </div>
+
+
+                    <p>
+                        使用韓文介紹與說明
+                        人物、事物與身分。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         11～16 基本表達
+    ===================================== -->
+
+    <section
+        class="section expressions"
+        id="expressions"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                基本表達
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Practice essential expressions
+            used in daily life in Korea.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            韓國生活中最常使用的表達
+
+        </p>
+
+
+        <span class="unit-count">
+            6 個學習單元
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 11 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    11
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        問候與感謝
+                    </h3>
+
+
+                    <div class="en">
+                        Greetings and Thanks
+                    </div>
+
+
+                    <p>
+                        學習韓國生活中常見的
+                        問候與感謝表達。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 12 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    12
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        教室與日常表達
+                    </h3>
+
+
+                    <div class="en">
+                        Classroom and Daily Expressions
+                    </div>
+
+
+                    <p>
+                        學習課堂與日常生活中的
+                        常用表達。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 13 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    13
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        餐廳與購物
+                    </h3>
+
+
+                    <div class="en">
+                        Restaurants and Shopping
+                    </div>
+
+
+                    <p>
+                        練習點餐、詢價、
+                        購物等生活情境。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 14 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    14
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        交通與找路
+                    </h3>
+
+
+                    <div class="en">
+                        Transportation and Directions
+                    </div>
+
+
+                    <p>
+                        學習旅行與移動時
+                        常用的表達。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 15 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    15
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        時間、天氣、約會
+                    </h3>
+
+
+                    <div class="en">
+                        Time, Weather, and Appointments
+                    </div>
+
+
+                    <p>
+                        練習時間、天氣與
+                        約定相關的表達。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 16 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    16
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        緊急情況與家
+                    </h3>
+
+
+                    <div class="en">
+                        Emergencies and Problems at Home
+                    </div>
+
+
+                    <p>
+                        學習說明問題與
+                        尋求協助的表達方式。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         17～20 基礎詞彙
+    ===================================== -->
+
+    <section
+        class="section"
+        id="vocabulary"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                基礎詞彙
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Learn basic vocabulary
+            by topic and example.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            依照主題與例子學習單字
+
+        </p>
+
+
+        <span class="unit-count">
+            4 個學習單元
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 17 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    17
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        基本動物與常見動物
+                    </h3>
+
+
+                    <div class="en">
+                        Basic Animals
+                    </div>
+
+
+                    <p>
+                        學習常見動物與
+                        韓文名稱。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 18 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    18
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        十二生肖動物
+                    </h3>
+
+
+                    <div class="en">
+                        The Twelve Zodiac Animals
+                    </div>
+
+
+                    <p>
+                        學習韓國文化中常見的
+                        十二生肖動物。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 19 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    19
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        基本數字 1 到 10
+                    </h3>
+
+
+                    <div class="en">
+                        Basic Numbers from 1 to 10
+                    </div>
+
+
+                    <p>
+                        學習韓文數字與
+                        基本數字系統。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 20 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    20
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        基本色彩
+                    </h3>
+
+
+                    <div class="en">
+                        Basic Colors
+                    </div>
+
+
+                    <p>
+                        學習韓文常見的
+                        基本顏色名稱。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         21 等級檢查
+    ===================================== -->
+
+    <section
+        class="section"
+        id="review"
+    >
+
+
+        <h2 class="section-title">
+
+            <span>
+                等級檢查
+            </span>
+
+        </h2>
+
+
+        <div class="section-en">
+
+            Review Hangul, pronunciation,
+            sentence patterns,
+            expressions, and vocabulary.
+
+        </div>
+
+
+        <p class="subtitle2">
+
+            基礎內容的複習與檢查
+
+        </p>
+
+
+        <span class="unit-count">
+            1 個學習單元
+        </span>
+
+
+
+        <div class="units">
+
+
+            <!-- 21 -->
+
+            <div class="unit locked">
+
+                <div class="num">
+                    21
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        初級檢查
+                    </h3>
+
+
+                    <div class="en">
+                        Review the basic course
+                    </div>
+
+
+                    <p>
+                        複習韓文、發音、句型、
+                        基本表達與詞彙，
+                        確認是否準備進入下一個等級。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         最後說明
+    ===================================== -->
+
+    <div
+        class="finish"
+        id="notes"
+    >
+
+        完成這個等級的學習後，
+        可以回到各單元反覆複習。
+
+        <br><br>
+
+        目前僅開放
+
+        <strong>
+            01．韓文是什麼？
+        </strong>
+
+        與
+
+        <strong>
+            02．基本子音 14 個
+        </strong>
+
+        作為免費試閱。
+
+        <br>
+
+        其餘課程需登入後，
+        依照學生的學習權限開啟。
+
+    </div>
+
+
+</div>
+
+</main>
+
+
+
+<footer>
+
+    chocochip韓語繁體學習網
+    ｜ Korean Learning Community
+
+</footer>
+
+
+</body>
+
+</html>
