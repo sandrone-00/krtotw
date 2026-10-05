@@ -423,6 +423,99 @@
 
         }
 
+
+
+.next-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.next-section h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.next-section p {
+  color: #777;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.password-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.password-box input {
+  width: 240px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.password-box input:focus {
+  border-color: #999;
+}
+
+.password-box button {
+  border: none;
+  background: #333;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.password-box button:hover {
+  background: #555;
+}
+
+#batchimPasswordMessage {
+  margin-top: 15px;
+  font-size: 14px;
+  min-height: 22px;
+}
+
+.home-button {
+  display: inline-block;
+  margin-top: 15px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.home-button:hover {
+  color: #000;
+}
+
+@media (max-width: 700px) {
+
+  .password-box {
+    flex-direction: column;
+  }
+
+  .password-box input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .password-box button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
     </style>
 
 </head>
@@ -626,6 +719,51 @@
 
         </div>
 
+
+
+        <!-- =====================
+             下一階段｜收音技巧
+        ===================== -->
+
+        <section class="next-section">
+
+            <h2>
+                下一階段：收音技巧
+            </h2>
+
+            <p>
+                完成進階發音學習後，
+                接著學習韓文的收音（받침）。
+                認識子音在字尾的發音方式與基本規則。
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="batchimPassword"
+                    placeholder="請輸入收音課程密碼"
+                    onkeydown="if(event.key === 'Enter') checkBatchimPassword()"
+                >
+
+                <button
+                    onclick="checkBatchimPassword()"
+                >
+                    進入收音技巧
+                </button>
+
+            </div>
+
+            <div id="batchimPasswordMessage"></div>
+
+            <a
+                href="index.html"
+                class="home-button"
+            >
+                ← 回首頁
+            </a>
+
+        </section>
 
     </main>
 
@@ -1053,97 +1191,47 @@
 
         createWordCards(words);
 
-        .next-section {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  margin-top: 50px;
-  margin-bottom: 60px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-}
 
-.next-section h2 {
-  font-size: 25px;
-  margin-bottom: 15px;
-}
+        /* ============================
+           下一階段｜收音密碼
+        ============================ */
 
-.next-section p {
-  color: #777;
-  line-height: 1.9;
-  margin-bottom: 25px;
-}
+        function checkBatchimPassword() {
 
-.password-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+            const password =
+                document.getElementById(
+                    "batchimPassword"
+                ).value.trim();
 
-.password-box input {
-  width: 240px;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-}
+            const message =
+                document.getElementById(
+                    "batchimPasswordMessage"
+                );
 
-.password-box input:focus {
-  border-color: #999;
-}
+            if (password === "choco530") {
 
-.password-box button {
-  border: none;
-  background: #333;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-}
+                message.textContent =
+                    "密碼正確，正在進入收音技巧……";
 
-.password-box button:hover {
-  background: #555;
-}
+                message.style.color =
+                    "green";
 
-#batchimPasswordMessage {
-  margin-top: 15px;
-  font-size: 14px;
-  min-height: 22px;
-}
+                setTimeout(function() {
 
-.home-button {
-  display: inline-block;
-  margin-top: 15px;
-  color: #555;
-  text-decoration: none;
-  font-size: 14px;
-}
+                    window.location.href =
+                        "batchim.html";
 
-.home-button:hover {
-  color: #000;
-}
+                }, 500);
 
-@media (max-width: 700px) {
+            } else {
 
-  .password-box {
-    flex-direction: column;
-  }
+                message.textContent =
+                    "密碼錯誤，請重新輸入。";
 
-  .password-box input {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .password-box button {
-    width: 100%;
-    max-width: 300px;
-  }
-
-}
+                message.style.color =
+                    "red";
+            }
+        }
 
     </script>
 
