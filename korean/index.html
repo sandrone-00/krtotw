@@ -7,33 +7,7 @@
 <title>韓文學習村｜桑多龍語言學習網</title>
 
 <style>
-/* =========================
-   返回首頁按鈕
-========================= */
 
-.home-button {
-    display: inline-block;
-    margin-bottom: 25px;
-    padding: 11px 28px;
-
-    background: #fffdf9;
-    border: 2px solid #d8cec5;
-    border-radius: 30px;
-
-    color: #796d65;
-    text-decoration: none;
-
-    font-size: 14px;
-    letter-spacing: 1px;
-
-    transition: all 0.25s ease;
-}
-
-.home-button:hover {
-    background: #eee8e1;
-    border-color: #c5b5a9;
-    transform: translateY(-3px);
-}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -57,6 +31,35 @@ body {
 .page {
     min-height: 100vh;
     padding: 45px 20px 70px;
+}
+
+/* =========================
+   返回首頁按鈕
+========================= */
+
+.home-button {
+    display: inline-block;
+
+    margin-bottom: 25px;
+    padding: 11px 28px;
+
+    background: #fffdf9;
+    border: 2px solid #d8cec5;
+    border-radius: 30px;
+
+    color: #796d65;
+    text-decoration: none;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition: all 0.25s ease;
+}
+
+.home-button:hover {
+    background: #eee8e1;
+    border-color: #c5b5a9;
+    transform: translateY(-3px);
 }
 
 /* =========================
@@ -142,20 +145,29 @@ h1 {
     background: #fffdf9;
     border: 2px solid #ded4cc;
     border-radius: 25px;
+
     padding: 35px 28px;
+
     text-align: center;
     text-decoration: none;
     color: inherit;
+
     transition: .25s ease;
+
     position: relative;
     min-height: 280px;
-    box-shadow: 0 8px 25px rgba(120,100,80,0.05);
+
+    box-shadow:
+        0 8px 25px rgba(120,100,80,0.05);
 }
 
 .card:hover {
     transform: translateY(-7px);
+
     border-color: #c9b9ae;
-    box-shadow: 0 15px 35px rgba(120,100,80,0.10);
+
+    box-shadow:
+        0 15px 35px rgba(120,100,80,0.10);
 }
 
 .icon {
@@ -176,7 +188,9 @@ h1 {
     color: #9a8e86;
 }
 
-/* 免費 */
+/* =========================
+   免費
+========================= */
 
 .free {
     border-color: #d6cfc4;
@@ -184,15 +198,21 @@ h1 {
 
 .free-label {
     display: inline-block;
+
     margin-top: 18px;
     padding: 5px 14px;
+
     border-radius: 20px;
+
     background: #eee9e1;
     color: #897c72;
+
     font-size: 12px;
 }
 
-/* 上鎖 */
+/* =========================
+   上鎖
+========================= */
 
 .locked {
     cursor: pointer;
@@ -200,11 +220,15 @@ h1 {
 
 .lock-label {
     display: inline-block;
+
     margin-top: 18px;
     padding: 5px 14px;
+
     border-radius: 20px;
+
     background: #eee9e1;
     color: #897c72;
+
     font-size: 12px;
 }
 
@@ -214,8 +238,11 @@ h1 {
 
 .notice {
     text-align: center;
+
     margin-top: 40px;
+
     color: #a79b92;
+
     font-size: 13px;
     line-height: 1.8;
 }
@@ -226,8 +253,11 @@ h1 {
 
 footer {
     text-align: center;
+
     margin-top: 65px;
+
     color: #b4a79e;
+
     font-size: 12px;
     letter-spacing: 1px;
 }
@@ -238,9 +268,12 @@ footer {
 
 .modal {
     display: none;
+
     position: fixed;
     inset: 0;
+
     background: rgba(80,70,60,0.35);
+
     z-index: 1000;
 
     align-items: center;
@@ -251,12 +284,18 @@ footer {
 
 .modal-box {
     width: min(400px, 100%);
+
     background: #fffdf9;
+
     border: 2px solid #ddd2c9;
     border-radius: 25px;
+
     padding: 35px 30px;
+
     text-align: center;
-    box-shadow: 0 20px 60px rgba(70,60,50,0.15);
+
+    box-shadow:
+        0 20px 60px rgba(70,60,50,0.15);
 }
 
 .modal-icon {
@@ -278,12 +317,18 @@ footer {
 
 .password-input {
     width: 100%;
+
     padding: 13px 15px;
+
     border: 2px solid #ddd3ca;
     border-radius: 12px;
+
     outline: none;
+
     font-size: 15px;
+
     text-align: center;
+
     color: #6f635b;
 }
 
@@ -293,13 +338,19 @@ footer {
 
 .enter-button {
     width: 100%;
+
     margin-top: 15px;
+
     padding: 13px;
+
     border: none;
     border-radius: 12px;
+
     background: #d5c7bc;
     color: white;
+
     font-size: 15px;
+
     cursor: pointer;
 }
 
@@ -309,17 +360,24 @@ footer {
 
 .close-button {
     margin-top: 15px;
+
     border: none;
     background: none;
+
     color: #aaa09a;
+
     cursor: pointer;
+
     font-size: 13px;
 }
 
 .error {
     display: none;
+
     margin-top: 12px;
+
     color: #b98f8f;
+
     font-size: 13px;
 }
 
@@ -402,6 +460,7 @@ footer {
 
             <a
                 href="beginner.html"
+                class="card free"
             >
 
                 <div class="icon">
@@ -414,7 +473,7 @@ footer {
 
                 <p>
                     第一次來到韓文學習村嗎？<br>
-                    從最基礎的韓文開始，
+                    從最基礎的韓文開始，<br>
                     一步一步建立自己的韓文能力。
                 </p>
 
@@ -444,7 +503,7 @@ footer {
 
                 <p>
                     準備前往韓國旅行嗎？<br>
-                    進入旅遊體驗區，
+                    進入旅遊體驗區，<br>
                     學習旅行時實用的韓文。
                 </p>
 
@@ -474,7 +533,7 @@ footer {
 
                 <p>
                     想更深入學習韓文嗎？<br>
-                    進入在地居民區，
+                    進入在地居民區，<br>
                     持續探索更多韓文內容。
                 </p>
 
@@ -491,6 +550,7 @@ footer {
         <div class="notice">
 
             🌿 每一個學習者，都有自己的起點。<br>
+
             選擇適合你的身分，開始今天的韓文學習吧！
 
         </div>
@@ -498,19 +558,23 @@ footer {
     </main>
 
 
-    
-       <footer>
+    <!-- Footer -->
 
-    <a href="../index.html" class="home-button">
-        ← 返回首頁
-    </a>
+    <footer>
 
-    <p>
-        桑多龍語言學習網　♡　讓學習變得輕鬆又快樂
-    </p>
+        <a
+            href="../index.html"
+            class="home-button"
+        >
+            ← 返回首頁
+        </a>
 
-</footer>
-   
+        <p>
+            桑多龍語言學習網　♡　讓學習變得輕鬆又快樂
+        </p>
+
+    </footer>
+
 
 </div>
 
@@ -602,13 +666,17 @@ function openPassword(area) {
 
     currentArea = area;
 
-    const modal = document.getElementById("passwordModal");
+    const modal =
+        document.getElementById("passwordModal");
 
-    const title = document.getElementById("modalTitle");
+    const title =
+        document.getElementById("modalTitle");
 
-    const input = document.getElementById("passwordInput");
+    const input =
+        document.getElementById("passwordInput");
 
-    const error = document.getElementById("errorMessage");
+    const error =
+        document.getElementById("errorMessage");
 
 
     if (area === "travel") {
@@ -616,6 +684,7 @@ function openPassword(area) {
         title.textContent = "🧳 旅遊體驗";
 
     }
+
 
     if (area === "local") {
 
@@ -629,6 +698,7 @@ function openPassword(area) {
     error.style.display = "none";
 
     modal.style.display = "flex";
+
 
     setTimeout(function() {
 
@@ -645,7 +715,9 @@ function openPassword(area) {
 
 function closePassword() {
 
-    document.getElementById("passwordModal").style.display = "none";
+    document
+        .getElementById("passwordModal")
+        .style.display = "none";
 
 }
 
@@ -680,6 +752,7 @@ function checkPassword() {
 
     if (input === passwords[currentArea]) {
 
+
         if (currentArea === "travel") {
 
             window.location.href =
@@ -687,12 +760,14 @@ function checkPassword() {
 
         }
 
+
         if (currentArea === "local") {
 
             window.location.href =
                 "../local.html";
 
         }
+
 
     } else {
 
@@ -707,16 +782,17 @@ function checkPassword() {
    點背景關閉
 ========================= */
 
-document.getElementById("passwordModal")
-.addEventListener("click", function(event) {
+document
+    .getElementById("passwordModal")
+    .addEventListener("click", function(event) {
 
-    if (event.target === this) {
+        if (event.target === this) {
 
-        closePassword();
+            closePassword();
 
-    }
+        }
 
-});
+    });
 
 </script>
 
