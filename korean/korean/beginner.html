@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>韓文初學者｜桑多龍學習平台</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+      background: #faf7f1;
+      color: #5f5148;
+      overflow-x: hidden;
+    }
+
+    /* ===== 背景裝飾 ===== */
+
+    .deco {
+      position: fixed;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .circle1 {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #e8e0ef;
+      top: 80px;
+      left: -60px;
+    }
+
+    .circle2 {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #dce8e5;
+      right: -40px;
+      top: 300px;
+    }
+
+    .circle3 {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #eee1d5;
+      left: 10%;
+      bottom: 40px;
+    }
+
+    .star {
+      font-size: 28px;
+      color: #b9a8c9;
+    }
+
+    .star1 {
+      top: 150px;
+      right: 13%;
+    }
+
+    .star2 {
+      bottom: 180px;
+      left: 8%;
+    }
+
+    .heart {
+      font-size: 24px;
+      color: #d7aeb5;
+    }
+
+    .heart1 {
+      top: 420px;
+      left: 8%;
+    }
+
+    .heart2 {
+      bottom: 100px;
+      right: 10%;
+    }
+
+    /* ===== Header ===== */
+
+    header {
+      width: 100%;
+      padding: 22px 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: #665a52;
+      letter-spacing: 1px;
+    }
+
+    /* ===== 主內容 ===== */
+
+    .container {
+      width: min(1050px, 92%);
+      margin: 20px auto 70px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .intro-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #5d514b;
+      letter-spacing: 2px;
+    }
+
+    .intro p {
+      margin: 13px 0 0;
+      font-size: 16px;
+      color: #8a7b71;
+      line-height: 1.8;
+    }
+
+    .notice {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 9px 18px;
+      background: #eee8f3;
+      border-radius: 30px;
+      color: #75657f;
+      font-size: 14px;
+    }
+
+    /* ===== 課程卡片 ===== */
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .course-card {
+      position: relative;
+      min-height: 205px;
+      padding: 28px 26px;
+      background: rgba(255, 253, 249, 0.95);
+      border: 2px solid #e3dbd2;
+      border-radius: 25px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 7px 18px rgba(113, 95, 80, 0.08);
+      transition: 0.25s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(113, 95, 80, 0.13);
+      border-color: #cbbbd5;
+    }
+
+    .course-number {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eee8f3;
+      color: #76667f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .course-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .course-card h2 {
+      margin: 0 45px 8px 0;
+      font-size: 21px;
+      color: #5e5149;
+    }
+
+    .course-card p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 14px;
+      color: #897b71;
+    }
+
+    .go {
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #82708d;
+    }
+
+    /* 不同卡片的小色彩 */
+
+    .course-card:nth-child(1) {
+      border-color: #d9d0c5;
+    }
+
+    .course-card:nth-child(2) {
+      border-color: #d7d1e2;
+    }
+
+    .course-card:nth-child(3) {
+      border-color: #d2dfdb;
+    }
+
+    .course-card:nth-child(4) {
+      border-color: #e0d5c8;
+    }
+
+    .course-card:nth-child(5) {
+      border-color: #decdd3;
+      grid-column: 1 / -1;
+    }
+
+    .course-card:nth-child(5) .course-number {
+      background: #f0e1e5;
+      color: #8c6871;
+    }
+
+    /* ===== 返回按鈕 ===== */
+
+    .back-area {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: #eee8e0;
+      color: #74675e;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #e4dbd1;
+      transform: translateY(-2px);
+    }
+
+    /* ===== Footer ===== */
+
+    footer {
+      text-align: center;
+      padding: 25px 15px 35px;
+      font-size: 13px;
+      color: #a0948b;
+    }
+
+    /* ===== RWD ===== */
+
+    @media (max-width: 700px) {
+
+      .intro h1 {
+        font-size: 26px;
+      }
+
+      .intro p {
+        font-size: 14px;
+      }
+
+      .courses {
+        grid-template-columns: 1fr;
+      }
+
+      .course-card {
+        min-height: 190px;
+      }
+
+      .course-card:nth-child(5) {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 背景裝飾 -->
+  <div class="deco circle1"></div>
+  <div class="deco circle2"></div>
+  <div class="deco circle3"></div>
+
+  <div class="deco star star1">✦</div>
+  <div class="deco star star2">✧</div>
+
+  <div class="deco heart heart1">♡</div>
+  <div class="deco heart heart2">♡</div>
+
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🌿 桑多龍學習平台</div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="container">
+
+    <section class="intro">
+
+      <div class="intro-icon">🇰🇷</div>
+
+      <h1>韓文初學者學習地圖</h1>
+
+      <p>
+        從韓文最基礎的發音開始，<br>
+        一步一步建立你的韓文基礎。
+      </p>
+
+      <div class="notice">
+        🌱 按照自己的步調慢慢學習就可以了！
+      </div>
+
+    </section>
+
+
+    <!-- 課程選單 -->
+
+    <section class="courses">
+
+
+      <!-- 01 基本子音 -->
+
+      <a
+        class="course-card"
+        href="../alphabet.html"
+      >
+
+        <div>
+
+          <div class="course-number">01</div>
+
+          <div class="course-icon">🔤</div>
+
+          <h2>基本子音</h2>
+
+          <p>
+            認識韓文最基本的子音，
+            從 ㄱ、ㄴ、ㄷ 開始建立韓文發音基礎。
+          </p>
+
+        </div>
+
+        <div class="go">
+          開始學習 →
+        </div>
+
+      </a>
+
+
+      <!-- 02 基本母音 -->
+
+      <a
+        class="course-card"
+        href="../vowels.html"
+      >
+
+        <div>
+
+          <div class="course-number">02</div>
+
+          <div class="course-icon">🌱</div>
+
+          <h2>基本母音</h2>
+
+          <p>
+            認識韓文的基本母音，
+            學習 ㅏ、ㅑ、ㅓ、ㅕ 等基本發音。
+          </p>
+
+        </div>
+
+        <div class="go">
+          開始學習 →
+        </div>
+
+      </a>
+
+
+      <!-- 03 進階母音 -->
+
+      <a
+        class="course-card"
+        href="../advanced.html"
+      >
+
+        <div>
+
+          <div class="course-number">03</div>
+
+          <div class="course-icon">🌿</div>
+
+          <h2>進階母音</h2>
+
+          <p>
+            進一步認識韓文的複合母音，
+            慢慢熟悉更多韓文發音組合。
+          </p>
+
+        </div>
+
+        <div class="go">
+          開始學習 →
+        </div>
+
+      </a>
+
+
+      <!-- 04 子音與母音組成音節 -->
+
+      <a
+        class="course-card"
+        href="../syllable.html"
+      >
+
+        <div>
+
+          <div class="course-number">04</div>
+
+          <div class="course-icon">🧩</div>
+
+          <h2>子音與母音組成音節</h2>
+
+          <p>
+            將已經學會的子音與母音組合起來，
+            開始真正讀出韓文字。
+          </p>
+
+        </div>
+
+        <div class="go">
+          開始學習 →
+        </div>
+
+      </a>
+
+
+      <!-- 05 收音與單字 -->
+
+      <a
+        class="course-card"
+        href="../batchim.html"
+      >
+
+        <div>
+
+          <div class="course-number">05</div>
+
+          <div class="course-icon">📖</div>
+
+          <h2>入門收音與單字發音練習</h2>
+
+          <p>
+            開始認識韓文收音，
+            並透過簡單單字練習韓文發音。
+          </p>
+
+        </div>
+
+        <div class="go">
+          🔒 進入課程 →
+        </div>
+
+      </a>
+
+    </section>
+
+
+    <!-- 返回 -->
+
+    <div class="back-area">
+
+      <a
+        class="back-btn"
+        href="index.html"
+      >
+        ← 返回身分選擇
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+    © 2026 桑多龍學習平台
+  </footer>
+
+</body>
+</html>
