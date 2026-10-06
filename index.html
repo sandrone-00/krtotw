@@ -908,8 +908,10 @@ footer{
             <!-- LEVEL 2 -->
 
             <a
-                href="level2.html"
-                class="level-card"
+              
+    href="level2.html"
+    class="level-card"
+    data-level="2"
             >
 
                 <span class="level-label">
@@ -953,10 +955,11 @@ footer{
 
             <!-- LEVEL 3 -->
 
-            <a
-                href="level3.html"
-                class="level-card"
-            >
+           <a
+    href="level3.html"
+    class="level-card"
+    data-level="3"
+>
 
                 <span class="level-label">
                     LEVEL 3 ›
@@ -999,9 +1002,10 @@ footer{
             <!-- LEVEL 4 -->
 
             <a
-                href="level4.html"
-                class="level-card"
-            >
+    href="level4.html"
+    class="level-card"
+    data-level="4"
+>
 
                 <span class="level-label">
                     LEVEL 4 ›
@@ -1118,13 +1122,210 @@ footer{
 <!-- =========================
      Footer
 ========================= -->
-
 <footer>
 
     chocochip韓語繁體學習網
     ｜ Korean Learning Community
 
 </footer>
+
+
+<!-- LEVEL 2～4 彈出視窗 -->
+<style>
+.level-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(35,45,50,.45);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.level-popup-overlay.show {
+    display: flex;
+}
+
+.level-popup {
+    width: min(520px,92vw);
+    background: #fffdf8;
+    border: 1px solid #d8c8b5;
+    border-radius: 12px;
+    padding: 42px 35px 35px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,.18);
+}
+
+.level-popup-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    color: #777;
+    cursor: pointer;
+}
+
+.popup-korean {
+    font-size: 19px;
+    color: #245b8f;
+    font-weight: 700;
+    margin: 14px 0;
+}
+
+.popup-chinese {
+    font-size: 19px;
+    color: #4d4036;
+    font-weight: 700;
+    margin: 14px 0;
+}
+
+.popup-english {
+    font-size: 17px;
+    color: #5c513d;
+    font-weight: 600;
+    margin: 14px 0 24px;
+}
+
+.popup-level {
+    font-size: 13px;
+    color: #888;
+    border-top: 1px dashed #cfc5b8;
+    padding-top: 15px;
+}
+</style>
+
+
+<div class="level-popup-overlay" id="levelPopup">
+
+    <div class="level-popup">
+
+        <button
+            class="level-popup-close"
+            id="levelPopupClose"
+        >
+            ×
+        </button>
+
+        <div class="popup-chinese">
+            該階段來跟 YEJUN老師一起上課學習吧！
+        </div>
+
+        <div class="popup-korean">
+            이 구역은 YEJUN 선생님과 함께 수업해요!
+        </div>
+
+        <div class="popup-english">
+            Let’s learn together with Teacher YEJUN here!
+        </div>
+
+        <div
+            class="popup-level"
+            id="popupLevelText"
+        >
+            LEVEL 2｜初級韓語
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const popup =
+        document.getElementById("levelPopup");
+
+    const closeBtn =
+        document.getElementById("levelPopupClose");
+
+    const levelText =
+        document.getElementById("popupLevelText");
+
+
+    const levelCards =
+        document.querySelectorAll(
+            '[data-level="2"], [data-level="3"], [data-level="4"]'
+        );
+
+
+    levelCards.forEach(function(card) {
+
+        card.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            const level =
+                card.getAttribute("data-level");
+
+
+            if (level === "2") {
+
+                levelText.textContent =
+                    "LEVEL 2｜初級韓語";
+
+            }
+
+
+            if (level === "3") {
+
+                levelText.textContent =
+                    "LEVEL 3｜中級韓語";
+
+            }
+
+
+            if (level === "4") {
+
+                levelText.textContent =
+                    "LEVEL 4｜高級韓語";
+
+            }
+
+
+            popup.classList.add("show");
+
+        });
+
+    });
+
+
+    closeBtn.addEventListener("click", function() {
+
+        popup.classList.remove("show");
+
+    });
+
+
+    popup.addEventListener("click", function(event) {
+
+        if (event.target === popup) {
+
+            popup.classList.remove("show");
+
+        }
+
+    });
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            popup.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
 
 
 </body>
