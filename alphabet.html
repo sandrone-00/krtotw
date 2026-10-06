@@ -3,439 +3,724 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>基本子音｜Chocochip Korean</title>
+<title>基本子音｜桑多龍學習平台</title>
 
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* =====================
+   基本設定
+===================== */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family:
-                Arial,
-                "Microsoft JhengHei",
-                sans-serif;
+body {
 
-            background: #f7f5f2;
+    font-family:
+        Arial,
+        "Microsoft JhengHei",
+        sans-serif;
 
-            color: #333;
+    background: #f8f6f2;
 
-            line-height: 1.6;
-        }
+    color: #333;
 
+    line-height: 1.6;
 
-        /* =====================
-           導覽列
-        ===================== */
+    overflow-x: hidden;
 
-        header {
+}
 
-            height: 70px;
 
-            background: white;
+/* =====================
+   背景裝飾
+===================== */
 
-            display: flex;
+.background-decoration {
 
-            align-items: center;
+    position: fixed;
 
-            justify-content: space-between;
+    inset: 0;
 
-            padding: 0 50px;
+    pointer-events: none;
 
-            border-bottom: 1px solid #eee;
-        }
+    overflow: hidden;
 
+    z-index: 0;
 
-        .logo {
+}
 
-            font-size: 20px;
 
-            font-weight: bold;
-        }
+/* 圓形 */
 
+.circle {
 
-        .back {
+    position: absolute;
 
-            color: #555;
+    border-radius: 50%;
 
-            text-decoration: none;
+    border: 2px solid #ddd3ca;
 
-            font-size: 14px;
-        }
+    opacity: 0.65;
 
+}
 
-        .back:hover {
+.circle-1 {
 
-            color: #000;
-        }
+    width: 80px;
 
+    height: 80px;
 
-        /* =====================
-           主要內容
-        ===================== */
+    top: 18%;
 
-        .container {
+    left: 3%;
 
-            max-width: 1000px;
+}
 
-            margin: 50px auto;
+.circle-2 {
 
-            padding: 0 20px;
-        }
+    width: 38px;
 
+    height: 38px;
 
-        /* =====================
-           標題
-        ===================== */
+    top: 35%;
 
-        .title {
+    right: 7%;
 
-            text-align: center;
+    border-color: #d8cedd;
 
-            margin-bottom: 45px;
-        }
+}
 
+.circle-3 {
 
-        .title h1 {
+    width: 100px;
 
-            font-size: 36px;
+    height: 100px;
 
-            margin-bottom: 15px;
-        }
+    bottom: 13%;
 
+    right: 2%;
 
-        .title p {
+    border-color: #d8d1c8;
 
-            color: #777;
+}
 
-            line-height: 1.9;
-        }
 
+/* 星星 */
 
-        /* =====================
-           40音介紹
-        ===================== */
+.star {
 
-        .intro {
+    position: absolute;
 
-            background: white;
+    color: #c4b4a9;
 
-            border-radius: 20px;
+    font-size: 22px;
 
-            padding: 35px;
+    opacity: .75;
 
-            margin-bottom: 35px;
+}
 
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.04);
-        }
+.star-1 {
 
+    top: 13%;
 
-        .intro h2 {
+    left: 13%;
 
-            margin-bottom: 18px;
+}
 
-            font-size: 24px;
-        }
+.star-2 {
 
+    top: 22%;
 
-        .intro p {
+    right: 15%;
 
-            color: #666;
+}
 
-            line-height: 2;
-        }
+.star-3 {
 
+    bottom: 20%;
 
-        .number {
+    left: 8%;
 
-            display: inline-block;
+}
 
-            background: #333;
 
-            color: white;
+/* 小愛心 */
 
-            padding: 3px 10px;
+.heart {
 
-            border-radius: 20px;
+    position: absolute;
 
-            font-size: 12px;
+    color: #cbb5ba;
 
-            margin-right: 8px;
-        }
+    font-size: 25px;
 
+    opacity: .65;
 
-        /* =====================
-           分類標題
-        ===================== */
+}
 
-        .section-title {
+.heart-1 {
 
-            font-size: 25px;
+    top: 50%;
 
-            margin: 45px 0 20px;
-        }
+    right: 9%;
 
+}
 
-        /* =====================
-           子音卡片
-        ===================== */
+.heart-2 {
 
-        .alphabet-grid {
+    bottom: 10%;
 
-            display: grid;
+    left: 17%;
 
-            grid-template-columns:
-                repeat(5, 1fr);
+}
 
-            gap: 15px;
-        }
 
+/* =====================
+   小兔子
+===================== */
 
-        .alphabet-card {
+.bunny {
 
-            background: white;
+    position: absolute;
 
-            border-radius: 15px;
+    width: 80px;
 
-            padding: 25px 15px;
+    height: 85px;
 
-            text-align: center;
+    opacity: .65;
 
-            transition: 0.2s;
+}
 
-            border: 2px solid transparent;
-        }
 
+/* 身體 */
 
-        .alphabet-card:hover {
+.bunny-body {
 
-            transform: translateY(-3px);
+    position: absolute;
 
-            border-color: #ddd;
-        }
+    width: 50px;
 
+    height: 45px;
 
-        .letter {
+    left: 15px;
 
-            font-size: 42px;
+    bottom: 5px;
 
-            margin-bottom: 10px;
+    background: #fffdf9;
 
-            font-weight: bold;
-        }
+    border: 3px solid #c8bbb2;
 
+    border-radius: 50%;
 
-        .name {
+}
 
-            font-size: 14px;
 
-            color: #666;
+/* 耳朵 */
 
-            margin-bottom: 12px;
-        }
+.bunny-ear {
 
+    position: absolute;
 
-        .romanization {
+    width: 19px;
 
-            font-size: 13px;
+    height: 38px;
 
-            color: #999;
+    background: #fffdf9;
 
-            margin-bottom: 15px;
-        }
+    border: 3px solid #c8bbb2;
 
+    border-radius: 50%;
 
-        .sound-button {
+    top: 4px;
 
-            border: none;
+}
 
-            background: #f1f1f1;
+.bunny-ear.left {
 
-            border-radius: 20px;
+    left: 18px;
 
-            padding: 7px 15px;
+    transform: rotate(-10deg);
 
-            cursor: pointer;
+}
 
-            font-size: 14px;
-        }
+.bunny-ear.right {
 
+    right: 18px;
 
-        .sound-button:hover {
+    transform: rotate(10deg);
 
-            background: #e5e5e5;
-        }
+}
 
 
-        /* =====================
-           下一階段
-        ===================== */
+/* 眼睛 */
 
-        .next-section {
+.bunny-eye {
 
-            background: white;
+    position: absolute;
 
-            border-radius: 20px;
+    width: 4px;
 
-            padding: 40px;
+    height: 4px;
 
-            margin-top: 45px;
+    background: #8f827a;
 
-            margin-bottom: 60px;
+    border-radius: 50%;
 
-            text-align: center;
+    top: 19px;
 
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.04);
-        }
+}
 
+.bunny-eye.left {
 
-        .next-section h2 {
+    left: 15px;
 
-            font-size: 28px;
+}
 
-            margin-bottom: 15px;
-        }
+.bunny-eye.right {
 
+    right: 15px;
 
-        .next-section p {
+}
 
-            color: #777;
 
-            margin-bottom: 25px;
-        }
+/* 小兔子位置 */
 
+.bunny-1 {
 
-        .password-box {
+    left: 2%;
 
-            display: flex;
+    bottom: 7%;
 
-            justify-content: center;
+    transform: scale(.85) rotate(-5deg);
 
-            gap: 10px;
-        }
+}
 
+.bunny-2 {
 
-        .password-box input {
+    right: 2%;
 
-            width: 240px;
+    top: 12%;
 
-            padding: 12px 15px;
+    transform: scale(.65) rotate(5deg);
 
-            border: 1px solid #ddd;
+}
 
-            border-radius: 8px;
 
-            font-size: 15px;
-        }
+/* =====================
+   導覽列
+===================== */
 
+header {
 
-        .password-box button {
+    position: relative;
 
-            border: none;
+    z-index: 5;
 
-            background: #333;
+    height: 70px;
 
-            color: white;
+    background: rgba(255,255,255,.94);
 
-            padding: 12px 25px;
+    display: flex;
 
-            border-radius: 8px;
+    align-items: center;
 
-            cursor: pointer;
+    justify-content: space-between;
 
-            font-size: 15px;
-        }
+    padding: 0 50px;
 
+    border-bottom: 1px solid #eee;
 
-        .password-box button:hover {
+}
 
-            background: #555;
-        }
 
+.logo {
 
-        #passwordMessage {
+    font-size: 20px;
 
-            margin-top: 15px;
+    font-weight: bold;
 
-            font-size: 14px;
+    color: #6d625b;
 
-            color: #c55;
-        }
+}
 
 
-        /* =====================
-           Footer
-        ===================== */
+.back {
 
-        footer {
+    color: #756b64;
 
-            background: white;
+    text-decoration: none;
 
-            text-align: center;
+    font-size: 14px;
 
-            padding: 30px;
+    padding: 8px 18px;
 
-            color: #999;
+    border: 1px solid #ddd4cd;
 
-            font-size: 13px;
-        }
+    border-radius: 20px;
 
+    transition: .2s;
 
-        /* =====================
-           手機版
-        ===================== */
+}
 
-        @media (max-width: 700px) {
 
-            header {
+.back:hover {
 
-                padding: 0 20px;
-            }
+    background: #f2eee9;
 
+    transform: translateY(-2px);
 
-            .title h1 {
+}
 
-                font-size: 30px;
-            }
 
+/* =====================
+   主要內容
+===================== */
 
-            .alphabet-grid {
+.container {
 
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
+    position: relative;
 
+    z-index: 2;
 
-            .password-box {
+    max-width: 1000px;
 
-                flex-direction: column;
+    margin: 50px auto;
 
-                align-items: center;
-            }
+    padding: 0 20px;
 
+}
 
-            .password-box input {
 
-                width: 100%;
+/* =====================
+   標題
+===================== */
 
-                max-width: 300px;
-            }
+.title {
 
-        }
+    text-align: center;
 
-    </style>
+    margin-bottom: 45px;
+
+}
+
+
+.title h1 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+
+    color: #665c55;
+
+}
+
+
+.title p {
+
+    color: #777;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================
+   40音介紹
+===================== */
+
+.intro {
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+
+    border: 1px solid #eee7e0;
+
+}
+
+
+.intro h2 {
+
+    margin-bottom: 18px;
+
+    font-size: 24px;
+
+    color: #70655e;
+
+}
+
+
+.intro p {
+
+    color: #666;
+
+    line-height: 2;
+
+}
+
+
+.number {
+
+    display: inline-block;
+
+    background: #cbbdb2;
+
+    color: white;
+
+    padding: 3px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    margin-right: 8px;
+
+}
+
+
+/* =====================
+   分類標題
+===================== */
+
+.section-title {
+
+    font-size: 25px;
+
+    margin: 45px 0 20px;
+
+    color: #6f645d;
+
+}
+
+
+/* =====================
+   子音卡片
+===================== */
+
+.alphabet-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+
+}
+
+
+/* 卡片 */
+
+.alphabet-card {
+
+    background: rgba(255,255,255,.95);
+
+    border-radius: 15px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 4px 15px rgba(100,85,70,.04);
+
+}
+
+
+.alphabet-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #d8ccc2;
+
+    box-shadow:
+        0 8px 20px rgba(100,85,70,.08);
+
+}
+
+
+/* 韓文字 */
+
+.letter {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+
+    color: #625850;
+
+}
+
+
+/* 名稱 */
+
+.name {
+
+    font-size: 14px;
+
+    color: #666;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* 羅馬拼音 */
+
+.romanization {
+
+    font-size: 13px;
+
+    color: #999;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* 發音按鈕 */
+
+.sound-button {
+
+    border: none;
+
+    background: #f1eee9;
+
+    color: #71665e;
+
+    border-radius: 20px;
+
+    padding: 7px 15px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+
+.sound-button:hover {
+
+    background: #e5ded6;
+
+    transform: scale(1.03);
+
+}
+
+
+/* =====================
+   Footer
+===================== */
+
+footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    background: rgba(255,255,255,.9);
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    border-top: 1px solid #eee7e0;
+
+}
+
+
+/* =====================
+   手機版
+===================== */
+
+@media (max-width: 700px) {
+
+    header {
+
+        padding: 0 20px;
+
+    }
+
+
+    .logo {
+
+        font-size: 17px;
+
+    }
+
+
+    .title h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .alphabet-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .bunny {
+
+        opacity: .35;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .alphabet-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .intro {
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -443,358 +728,341 @@
 <body>
 
 
-    <!-- 導覽列 -->
+<!-- =====================
+     背景裝飾
+===================== -->
 
-    <header>
+<div class="background-decoration">
 
-        <div class="logo">
-            🇰🇷 Chocochip Korean
+    <div class="circle circle-1"></div>
+
+    <div class="circle circle-2"></div>
+
+    <div class="circle circle-3"></div>
+
+
+    <div class="star star-1">✦</div>
+
+    <div class="star star-2">✧</div>
+
+    <div class="star star-3">✦</div>
+
+
+    <div class="heart heart-1">♡</div>
+
+    <div class="heart heart-2">♡</div>
+
+
+    <!-- 小兔子 -->
+
+    <div class="bunny bunny-1">
+
+        <div class="bunny-ear left"></div>
+
+        <div class="bunny-ear right"></div>
+
+        <div class="bunny-body">
+
+            <span class="bunny-eye left"></span>
+
+            <span class="bunny-eye right"></span>
+
         </div>
 
-
-        <a
-            href="course.html"
-            class="back"
-        >
-            ← 返回課程
-        </a>
-
-    </header>
+    </div>
 
 
+    <div class="bunny bunny-2">
 
-    <main class="container">
+        <div class="bunny-ear left"></div>
 
+        <div class="bunny-ear right"></div>
 
-        <!-- 標題 -->
+        <div class="bunny-body">
 
-        <section class="title">
+            <span class="bunny-eye left"></span>
 
-            <h1>
-                韓文40音發音入門
-            </h1>
+            <span class="bunny-eye right"></span>
 
-            <p>
-                從韓文的基本字母開始，
-                認識子音與母音，
-                建立正確的韓文發音基礎。
-            </p>
+        </div>
 
-        </section>
+    </div>
+
+</div>
 
 
 
-        <!-- 40音介紹 -->
+<!-- =====================
+     導覽列
+===================== -->
 
-        <section class="intro">
+<header>
 
-            <h2>
-
-                <span class="number">
-                    01
-                </span>
-
-                認識韓文40音
-
-            </h2>
+    <div class="logo">
+        桑多龍學習平台
+    </div>
 
 
-            <p>
+    <a
+        href="course.html"
+        class="back"
+    >
+        ← 返回課程
+    </a>
 
-                學習韓文的第一步，
-                就是先熟悉這些基本字母的形狀與發音。
-
-                <br>
-
-                韓文40音包含
-                19個基本子音
-                與
-                21個基本母音。
-
-                <br>
-
-                這一階段我們先從
-                <strong>19個基本子音</strong>
-                開始。
-
-            </p>
-
-        </section>
+</header>
 
 
 
-        <!-- 19個基本子音 -->
+<!-- =====================
+     主要內容
+===================== -->
 
-        <h2 class="section-title">
+<main class="container">
 
-            19個基本子音
+
+    <!-- 標題 -->
+
+    <section class="title">
+
+        <h1>
+            韓文40音發音入門
+        </h1>
+
+        <p>
+            從韓文的基本字母開始，<br>
+            認識子音與母音，建立正確的韓文發音基礎。
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================
+         40音介紹
+    ===================== -->
+
+    <section class="intro">
+
+        <h2>
+
+            <span class="number">
+                01
+            </span>
+
+            認識韓文40音
 
         </h2>
 
 
-        <div
-            class="alphabet-grid"
-            id="consonants"
-        >
+        <p>
 
-        </div>
+            學習韓文的第一步，
+            就是先熟悉這些基本字母的形狀與發音。
 
+            <br>
 
+            韓文40音包含
+            19個基本子音
+            與
+            21個基本母音。
 
-        <!-- 下一階段 -->
+            <br>
 
-        <section class="next-section">
+            這一階段我們先從
+            <strong>19個基本子音</strong>
+            開始。
 
-            <h2>
-                下一階段
-            </h2>
+        </p>
 
-
-            <p>
-
-                完成基本子音學習後，
-                輸入老師提供的密碼，
-                解鎖21個基本母音。
-
-            </p>
+    </section>
 
 
-            <div class="password-box">
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="請輸入密碼"
-                    onkeydown="checkEnter(event)"
-                >
+    <!-- =====================
+         19個基本子音
+    ===================== -->
+
+    <h2 class="section-title">
+
+        19個基本子音
+
+    </h2>
 
 
-                <button
-                    onclick="unlockVowels()"
-                >
-                    解鎖
-                </button>
+    <div
+        class="alphabet-grid"
+        id="consonants"
+    >
 
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================
+     Footer
+===================== -->
+
+<footer>
+
+    © 2026 桑多龍學習平台
+
+</footer>
+
+
+
+<script>
+
+
+/* ============================
+   19個基本子音
+============================ */
+
+
+const consonants = [
+
+    ["ㄱ", "기역", "g / k"],
+
+    ["ㄴ", "니은", "n"],
+
+    ["ㄷ", "디귿", "d / t"],
+
+    ["ㄹ", "리을", "r / l"],
+
+    ["ㅁ", "미음", "m"],
+
+    ["ㅂ", "비읍", "b / p"],
+
+    ["ㅅ", "시옷", "s"],
+
+    ["ㅇ", "이응", "ng"],
+
+    ["ㅈ", "지읒", "j"],
+
+    ["ㅊ", "치읓", "ch"],
+
+    ["ㅋ", "키읔", "k"],
+
+    ["ㅌ", "티읕", "t"],
+
+    ["ㅍ", "피읖", "p"],
+
+    ["ㅎ", "히읗", "h"],
+
+    ["ㄲ", "쌍기역", "kk"],
+
+    ["ㄸ", "쌍디귿", "tt"],
+
+    ["ㅃ", "쌍비읍", "pp"],
+
+    ["ㅆ", "쌍시옷", "ss"],
+
+    ["ㅉ", "쌍지읒", "jj"]
+
+];
+
+
+
+/* ============================
+   建立子音卡片
+============================ */
+
+
+function createCards(data) {
+
+    const container =
+        document.getElementById("consonants");
+
+
+    data.forEach(item => {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "alphabet-card";
+
+
+        card.innerHTML = `
+
+            <div class="letter">
+                ${item[0]}
             </div>
 
 
-            <p id="passwordMessage"></p>
+            <div class="name">
+                ${item[1]}
+            </div>
 
-        </section>
 
+            <div class="romanization">
+                ${item[2]}
+            </div>
 
-    </main>
 
+            <button
+                class="sound-button"
+                onclick="playSound('${item[0]}')"
+            >
+                🔊 發音
+            </button>
 
+        `;
 
-    <footer>
 
-        © 2026 Chocochip Korean
+        container.appendChild(card);
 
-    </footer>
+    });
 
+}
 
 
-    <script>
 
+/* ============================
+   播放韓文發音
+   保留原本功能
+============================ */
 
-        /* ============================
-           19個基本子音
-        ============================ */
 
+function playSound(letter) {
 
-        const consonants = [
 
-            ["ㄱ", "기역", "g / k"],
+    const speech =
+        new SpeechSynthesisUtterance(letter);
 
-            ["ㄴ", "니은", "n"],
 
-            ["ㄷ", "디귿", "d / t"],
+    speech.lang = "ko-KR";
 
-            ["ㄹ", "리을", "r / l"],
 
-            ["ㅁ", "미음", "m"],
+    speech.rate = 0.7;
 
-            ["ㅂ", "비읍", "b / p"],
 
-            ["ㅅ", "시옷", "s"],
+    speech.pitch = 1;
 
-            ["ㅇ", "이응", "ng"],
 
-            ["ㅈ", "지읒", "j"],
+    speechSynthesis.cancel();
 
-            ["ㅊ", "치읓", "ch"],
 
-            ["ㅋ", "키읔", "k"],
+    speechSynthesis.speak(speech);
 
-            ["ㅌ", "티읕", "t"],
+}
 
-            ["ㅍ", "피읖", "p"],
 
-            ["ㅎ", "히읗", "h"],
 
-            ["ㄲ", "쌍기역", "kk"],
+/* ============================
+   啟動
+============================ */
 
-            ["ㄸ", "쌍디귿", "tt"],
 
-            ["ㅃ", "쌍비읍", "pp"],
+createCards(consonants);
 
-            ["ㅆ", "쌍시옷", "ss"],
 
-            ["ㅉ", "쌍지읒", "jj"]
-
-        ];
-
-
-
-        /* ============================
-           建立子音卡片
-        ============================ */
-
-
-        function createCards(data) {
-
-            const container =
-                document.getElementById("consonants");
-
-
-            data.forEach(item => {
-
-
-                const card =
-                    document.createElement("div");
-
-
-                card.className =
-                    "alphabet-card";
-
-
-                card.innerHTML = `
-
-                    <div class="letter">
-                        ${item[0]}
-                    </div>
-
-
-                    <div class="name">
-                        ${item[1]}
-                    </div>
-
-
-                    <div class="romanization">
-                        ${item[2]}
-                    </div>
-
-
-                    <button
-                        class="sound-button"
-                        onclick="playSound('${item[0]}')"
-                    >
-                        🔊 發音
-                    </button>
-
-                `;
-
-
-                container.appendChild(card);
-
-            });
-
-        }
-
-
-
-        /* ============================
-           播放韓文發音
-        ============================ */
-
-
-        function playSound(letter) {
-
-
-            const speech =
-                new SpeechSynthesisUtterance(letter);
-
-
-            speech.lang = "ko-KR";
-
-
-            speech.rate = 0.7;
-
-
-            speech.pitch = 1;
-
-
-            speechSynthesis.cancel();
-
-
-            speechSynthesis.speak(speech);
-
-        }
-
-
-
-        /* ============================
-           解鎖基本母音
-        ============================ */
-
-
-        function unlockVowels() {
-
-
-            const password =
-                document.getElementById("password").value;
-
-
-            const message =
-                document.getElementById("passwordMessage");
-
-
-            if (password === "choco40") {
-
-
-                window.location.href =
-                    "vowels.html";
-
-
-            } else {
-
-
-                message.textContent =
-                    "密碼錯誤，請向老師確認密碼。";
-
-            }
-
-        }
-
-
-
-        /* ============================
-           Enter 也可以解鎖
-        ============================ */
-
-
-        function checkEnter(event) {
-
-            if (event.key === "Enter") {
-
-                unlockVowels();
-
-            }
-
-        }
-
-
-
-        /* ============================
-           啟動
-        ============================ */
-
-
-        createCards(consonants);
-
-
-    </script>
+</script>
 
 
 </body>
