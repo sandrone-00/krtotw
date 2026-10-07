@@ -169,6 +169,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      cursor: pointer;
     }
 
     .course-card:hover {
@@ -218,32 +219,19 @@
       color: #82708d;
     }
 
-    /* 不同卡片的小色彩 */
+    /* 第 5 課鎖定樣式 */
 
-    .course-card:nth-child(1) {
-      border-color: #d9d0c5;
-    }
-
-    .course-card:nth-child(2) {
-      border-color: #d7d1e2;
-    }
-
-    .course-card:nth-child(3) {
-      border-color: #d2dfdb;
-    }
-
-    .course-card:nth-child(4) {
-      border-color: #e0d5c8;
-    }
-
-    .course-card:nth-child(5) {
+    .course-card.locked {
       border-color: #decdd3;
-      grid-column: 1 / -1;
     }
 
-    .course-card:nth-child(5) .course-number {
+    .course-card.locked .course-number {
       background: #f0e1e5;
       color: #8c6871;
+    }
+
+    .course-card.locked .go {
+      color: #9a6873;
     }
 
     /* ===== 返回按鈕 ===== */
@@ -278,6 +266,121 @@
       color: #a0948b;
     }
 
+    /* =========================================
+       密碼視窗
+    ========================================= */
+
+    .password-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(70, 60, 55, 0.42);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 9999;
+      backdrop-filter: blur(3px);
+    }
+
+    .password-box {
+      width: min(400px, 100%);
+      background: #fffaf4;
+      border: 2px solid #dfd4ca;
+      border-radius: 26px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow:
+        0 15px 40px rgba(80, 65, 55, 0.18);
+      animation: passwordPop 0.2s ease;
+    }
+
+    @keyframes passwordPop {
+      from {
+        transform: scale(0.92);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .password-icon {
+      font-size: 46px;
+      margin-bottom: 8px;
+    }
+
+    .password-box h2 {
+      margin: 5px 0 8px;
+      font-size: 23px;
+      color: #5e5149;
+    }
+
+    .password-box p {
+      margin: 0 0 20px;
+      color: #897b71;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 13px 15px;
+      border: 2px solid #d8cec5;
+      border-radius: 13px;
+      background: #ffffff;
+      color: #5f5148;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .password-input:focus {
+      border-color: #b9a8c9;
+      box-shadow: 0 0 0 3px rgba(185, 168, 201, 0.15);
+    }
+
+    .password-error {
+      display: none;
+      margin-top: 10px;
+      color: #b45f68;
+      font-size: 13px;
+    }
+
+    .password-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .password-buttons button {
+      flex: 1;
+      padding: 12px 10px;
+      border: none;
+      border-radius: 13px;
+      font-family: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cancel-btn {
+      background: #ebe4dd;
+      color: #74675e;
+    }
+
+    .enter-btn {
+      background: #9b88aa;
+      color: white;
+    }
+
+    .password-buttons button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
     /* ===== RWD ===== */
 
     @media (max-width: 700px) {
@@ -298,8 +401,8 @@
         min-height: 190px;
       }
 
-      .course-card:nth-child(5) {
-        grid-column: auto;
+      .password-box {
+        padding: 28px 22px;
       }
     }
   </style>
@@ -308,6 +411,7 @@
 <body>
 
   <!-- 背景裝飾 -->
+
   <div class="deco circle1"></div>
   <div class="deco circle2"></div>
   <div class="deco circle3"></div>
@@ -320,12 +424,14 @@
 
 
   <!-- Header -->
+
   <header>
     <div class="logo">🌿 桑多龍學習平台</div>
   </header>
 
 
   <!-- Main -->
+
   <main class="container">
 
     <section class="intro">
@@ -351,7 +457,9 @@
     <section class="courses">
 
 
-      <!-- 01 基本子音 -->
+      <!-- =========================================
+           01 基本子音
+      ========================================= -->
 
       <a
         class="course-card"
@@ -380,7 +488,9 @@
       </a>
 
 
-      <!-- 02 基本母音 -->
+      <!-- =========================================
+           02 基本母音
+      ========================================= -->
 
       <a
         class="course-card"
@@ -409,11 +519,13 @@
       </a>
 
 
-      <!-- 03 進階母音 -->
+      <!-- =========================================
+           03 進階母音
+      ========================================= -->
 
       <a
         class="course-card"
-        href="../syllable.html"
+        href="../advanced.html"
       >
 
         <div>
@@ -438,11 +550,13 @@
       </a>
 
 
-      <!-- 04 子音與母音組成音節 -->
+      <!-- =========================================
+           04 子音與母音組成音節
+      ========================================= -->
 
       <a
         class="course-card"
-        href="../advanced.html"
+        href="../syllable.html"
       >
 
         <div>
@@ -467,18 +581,21 @@
       </a>
 
 
-      <!-- 05 收音與單字 -->
+      <!-- =========================================
+           05 入門收音與單字發音練習
+           🔒 密碼：AAA6574
+      ========================================= -->
 
-      <a
-        class="course-card"
-        href="../batchim.html"
+      <div
+        class="course-card locked"
+        onclick="openBatchimPassword()"
       >
 
         <div>
 
           <div class="course-number">05</div>
 
-          <div class="course-icon">📖</div>
+          <div class="course-icon">🔐</div>
 
           <h2>入門收音與單字發音練習</h2>
 
@@ -490,10 +607,10 @@
         </div>
 
         <div class="go">
-          🔒 進入課程 →
+          🔒 輸入密碼進入 →
         </div>
 
-      </a>
+      </div>
 
     </section>
 
@@ -519,6 +636,186 @@
   <footer>
     © 2026 桑多龍學習平台
   </footer>
+
+
+  <!-- =========================================
+       收音課程密碼視窗
+  ========================================= -->
+
+  <div
+    id="batchimPasswordModal"
+    class="password-modal"
+  >
+
+    <div class="password-box">
+
+      <div class="password-icon">
+        🔐
+      </div>
+
+      <h2>
+        入門收音
+      </h2>
+
+      <p>
+        這個課程需要輸入密碼才能進入。<br>
+        請輸入老師提供的課程密碼。
+      </p>
+
+      <input
+        type="password"
+        id="batchimPassword"
+        class="password-input"
+        placeholder="請輸入課程密碼"
+        autocomplete="off"
+        onkeydown="handlePasswordKey(event)"
+      >
+
+      <div
+        id="batchimError"
+        class="password-error"
+      >
+        密碼錯誤，請再確認一次。
+      </div>
+
+      <div class="password-buttons">
+
+        <button
+          type="button"
+          class="cancel-btn"
+          onclick="closeBatchimPassword()"
+        >
+          取消
+        </button>
+
+        <button
+          type="button"
+          class="enter-btn"
+          onclick="checkBatchimPassword()"
+        >
+          進入課程
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       JavaScript
+  ========================================= -->
+
+  <script>
+
+    /* ===== 開啟密碼視窗 ===== */
+
+    function openBatchimPassword() {
+
+      const modal =
+        document.getElementById("batchimPasswordModal");
+
+      const input =
+        document.getElementById("batchimPassword");
+
+      const error =
+        document.getElementById("batchimError");
+
+      modal.style.display = "flex";
+
+      input.value = "";
+
+      error.style.display = "none";
+
+      setTimeout(function () {
+        input.focus();
+      }, 100);
+
+    }
+
+
+    /* ===== 關閉密碼視窗 ===== */
+
+    function closeBatchimPassword() {
+
+      document.getElementById(
+        "batchimPasswordModal"
+      ).style.display = "none";
+
+    }
+
+
+    /* ===== 檢查密碼 ===== */
+
+    function checkBatchimPassword() {
+
+      const input =
+        document.getElementById("batchimPassword");
+
+      const error =
+        document.getElementById("batchimError");
+
+      const password = input.value.trim();
+
+
+      /* 正確密碼 */
+
+      if (password === "AAA6574") {
+
+        window.location.href =
+          "../batchim.html";
+
+        return;
+
+      }
+
+
+      /* 密碼錯誤 */
+
+      error.style.display = "block";
+
+      input.value = "";
+
+      input.focus();
+
+    }
+
+
+    /* ===== Enter 送出 ===== */
+
+    function handlePasswordKey(event) {
+
+      if (event.key === "Enter") {
+
+        checkBatchimPassword();
+
+      }
+
+      if (event.key === "Escape") {
+
+        closeBatchimPassword();
+
+      }
+
+    }
+
+
+    /* ===== 點擊背景關閉 ===== */
+
+    document
+      .getElementById("batchimPasswordModal")
+      .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+          closeBatchimPassword();
+
+        }
+
+      });
+
+  </script>
 
 </body>
 </html>
