@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>子音與母音組成的音節｜桑多龍學習平台</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,"Microsoft JhengHei",sans-serif;
+    background:#f8f5ef;
+    color:#4b4a48;
+    line-height:1.7;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* =========================
+   幾何背景
+========================= */
+.bg-shape{
+    position:fixed;
+    pointer-events:none;
+    z-index:0;
+    opacity:.55;
+}
+
+.circle1{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:#e8e0ee;
+    top:110px;
+    left:-70px;
+}
+
+.circle2{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:#dce8e5;
+    right:-45px;
+    top:420px;
+}
+
+.square1{
+    width:90px;
+    height:90px;
+    background:#eee1d3;
+    transform:rotate(18deg);
+    left:4%;
+    bottom:120px;
+}
+
+.square2{
+    width:65px;
+    height:65px;
+    border:10px solid #d9d3e5;
+    transform:rotate(35deg);
+    right:7%;
+    bottom:70px;
+}
+
+.triangle{
+    width:0;
+    height:0;
+    border-left:55px solid transparent;
+    border-right:55px solid transparent;
+    border-bottom:95px solid #e2ebe6;
+    right:4%;
+    top:160px;
+}
+
+header,
+main,
+footer{
+    position:relative;
+    z-index:1;
+}
+
+/* =========================
+   導覽列
+========================= */
+header{
+    height:70px;
+    background:rgba(255,255,255,.94);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 50px;
+    border-bottom:1px solid #eee7df;
+}
+
+.back{
+    color:#665f59;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.back:hover{
+    color:#8b789d;
+}
+
+.logo{
+    font-size:19px;
+    font-weight:bold;
+    color:#5d5853;
+}
+
+/* =========================
+   主要內容
+========================= */
+.container{
+    max-width:1080px;
+    margin:55px auto;
+    padding:0 22px;
+}
+
+/* =========================
+   標題
+========================= */
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h1{
+    font-size:38px;
+    color:#514d4a;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+.title p{
+    color:#8b8580;
+    font-size:15px;
+}
+
+/* =========================
+   說明
+========================= */
+.intro{
+    background:rgba(255,255,255,.92);
+    border:1px solid #eee5dc;
+    border-radius:24px;
+    padding:30px 35px;
+    margin-bottom:48px;
+    box-shadow:0 8px 25px rgba(92,78,65,.05);
+}
+
+.intro h2{
+    font-size:22px;
+    margin-bottom:12px;
+    color:#625b55;
+}
+
+.intro p{
+    color:#77716c;
+}
+
+/* =========================
+   區塊
+========================= */
+.section-title{
+    font-size:25px;
+    margin:42px 0 8px;
+    color:#625b55;
+}
+
+.section-description{
+    color:#8a847f;
+    margin-bottom:22px;
+}
+
+/* =========================
+   音節卡片
+========================= */
+.sound-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.sound-card{
+    background:rgba(255,255,255,.94);
+    border:1px solid #ebe2d9;
+    border-radius:18px;
+    padding:22px 10px;
+    text-align:center;
+    transition:.2s ease;
+    box-shadow:0 5px 18px rgba(80,65,50,.035);
+}
+
+.sound-card:hover{
+    transform:translateY(-4px);
+    border-color:#d7ccdf;
+}
+
+.korean{
+    font-size:38px;
+    font-weight:bold;
+    color:#4e4a47;
+}
+
+.combination{
+    font-size:12px;
+    color:#9a918a;
+    min-height:21px;
+}
+
+.romanization{
+    font-size:13px;
+    color:#77706a;
+    margin:4px 0 12px;
+}
+
+.sound-button{
+    border:0;
+    background:#eee8f2;
+    color:#62586b;
+    border-radius:18px;
+    padding:7px 14px;
+    cursor:pointer;
+    font-size:13px;
+    transition:.2s;
+}
+
+.sound-button:hover{
+    background:#e1d8e8;
+}
+
+/* =========================
+   單字
+========================= */
+.word-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.word-card{
+    background:rgba(255,255,255,.96);
+    border:1px solid #ebe2d9;
+    border-radius:19px;
+    padding:22px 15px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(80,65,50,.035);
+    transition:.2s;
+}
+
+.word-card:hover{
+    transform:translateY(-3px);
+}
+
+.word{
+    font-size:30px;
+    font-weight:bold;
+    color:#514c48;
+    margin-bottom:3px;
+}
+
+.meaning{
+    font-size:15px;
+    color:#6f6964;
+    margin-bottom:4px;
+}
+
+.word-romanization{
+    font-size:12px;
+    color:#aaa19a;
+    margin-bottom:11px;
+}
+
+/* =========================
+   提醒
+========================= */
+.notice{
+    background:#fffaf2;
+    border:1px solid #eee2d0;
+    border-radius:20px;
+    padding:25px 30px;
+    margin-top:48px;
+    color:#716b65;
+}
+
+/* =========================
+   Footer
+========================= */
+footer{
+    background:rgba(255,255,255,.9);
+    text-align:center;
+    padding:28px;
+    color:#aaa19a;
+    font-size:13px;
+    margin-top:65px;
+}
+
+/* =========================
+   手機
+========================= */
+@media(max-width:800px){
+    header{
+        padding:0 22px;
+    }
+
+    .sound-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .word-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:560px){
+    header{
+        height:64px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .back{
+        font-size:13px;
+    }
+
+    .title h1{
+        font-size:30px;
+    }
+
+    .sound-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .word-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .intro{
+        padding:24px;
+    }
+}
+
+@media(max-width:380px){
+    .word-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 幾何圖形背景 -->
+<div class="bg-shape circle1"></div>
+<div class="bg-shape circle2"></div>
+<div class="bg-shape square1"></div>
+<div class="bg-shape square2"></div>
+<div class="bg-shape triangle"></div>
+
+<header>
+    <a href="korean/beginner.html" class="back">← 返回課程</a>
+    <div class="logo">🌿 桑多龍學習平台</div>
+</header>
+
+<main class="container">
+
+    <section class="title">
+        <h1>子音與母音組成的音節</h1>
+        <p>更多的單字練習，讓自己發聲越來越好</p>
+    </section>
+
+    <section class="intro">
+        <h2>🌱 從音節開始，慢慢讀出韓文</h2>
+        <p>
+            這一課直接進入更多韓文單字的發音練習，
+            讓你把已經學會的子音與母音，
+            實際運用在完整的韓文單字中。
+            <br>
+            <strong>本頁單字皆不使用收音（받침）。</strong>
+        </p>
+    </section>
+
+    <h2 class="section-title">01｜單字發音練習</h2>
+    <p class="section-description">
+        直接進入單字練習，先自己讀一次，再點擊「🔊 聽發音」確認自己的發音。
+        <br>
+        以下單字皆不使用收音（받침）。
+    </p>
+
+    <div class="word-grid" id="wordPractice"></div>
+
+
+
+    <div class="notice">
+        <strong>💡 學習提醒</strong>
+        <br><br>
+        不需要急著一次全部記住。
+        可以先看著韓文字，自己讀一次，
+        再點擊「🔊 聽發音」確認自己的發音。
+        <br><br>
+        <strong>子音＋母音 → 音節 → 單字</strong>
+        <br>
+        慢慢累積，你會越來越容易看到韓文就讀出來。
+    </div>
+
+</main>
+
+<footer>
+    © 2026 桑多龍學習平台
+</footer>
+
+<script>
+/* ============================
+   01｜無收音單字發音練習
+============================ */
+const words = [
+    ["거미","蜘蛛","geomi"],
+    ["나이","年齡","nai"],
+    ["도시","城市","dosi"],
+    ["두유","豆奶","uyu"],
+    ["라디오","收音機","radio"],
+    ["마녀","女巫","manyeo"],
+    ["모래","沙子","morae"],
+    ["보리","大麥","bori"],
+    ["사료","飼料","saryo"],
+    ["소리","聲音","sori"],
+    ["수리","修理","suri"],
+    ["아이","小孩","ai"],
+    ["야구","棒球","yagu"],
+    ["여우","狐狸","yeou"],
+    ["요리","料理","yori"],
+    ["우비","雨衣","ubi"],
+    ["우주","宇宙","uju"],
+    ["유리","玻璃","yuri"],
+    ["의자","椅子","uija"],
+    ["이마","額頭","ima"],
+    ["자두","李子","jadu"],
+    ["자전거","腳踏車","jajeongeo"],
+    ["저리","那邊／那樣","jeori"],
+    ["제비","燕子","jebi"],
+    ["주머니","口袋","jumeoni"],
+    ["지우개","橡皮擦","jiugae"],
+    ["차이","差異","chai"],
+    ["카메라","相機","kamera"],
+    ["파리","蒼蠅／巴黎","pari"],
+    ["피아노","鋼琴","piano"],
+    ["회사","公司","hoesa"],
+    ["휴지","衛生紙","hyuji"],
+    ["고래","鯨魚","gorae"],
+    ["기차","火車","gicha"],
+    ["도로","道路","doro"],
+    ["마루","地板／客廳","maru"],
+    ["보라","紫色","bora"],
+    ["어머니","媽媽","eomeoni"],
+    ["아버지","爸爸","abeoji"],
+    ["바나나","香蕉","banana"],
+    ["치즈","起司","chijeu"],
+    ["과자","零食","gwaja"],
+    ["소파","沙發","sopa"],
+    ["비누","肥皂","binu"],
+    ["시계","時鐘","sigye"],
+    ["고구마","地瓜","goguma"],
+    ["나비","蝴蝶","nabi"],
+    ["미소","微笑","miso"],
+    ["토끼","兔子","tokki"],
+    ["두부","豆腐","dubu"]
+];
+
+/* ============================
+   建立單字卡片
+============================ */
+function createWordCards(data){
+    const container=document.getElementById("wordPractice");
+
+    data.forEach(item=>{
+        const card=document.createElement("div");
+        card.className="word-card";
+
+        card.innerHTML=`
+            <div class="word">${item[0]}</div>
+            <div class="meaning">${item[1]}</div>
+            <div class="word-romanization">${item[2]}</div>
+            <button class="sound-button" onclick="playSound('${item[0]}')">
+                🔊 聽發音
+            </button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+/* ============================
+   韓文語音
+============================ */
+function playSound(text){
+    if(!("speechSynthesis" in window)){
+        alert("目前的瀏覽器不支援語音播放功能。");
+        return;
+    }
+
+    const speech=new SpeechSynthesisUtterance(text);
+    speech.lang="ko-KR";
+    speech.rate=0.72;
+    speech.pitch=1;
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(speech);
+}
+
+createWordCards(words);
+</script>
+
+</body>
+</html>
