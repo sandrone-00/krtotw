@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>收音｜Chocochip Korean</title>
-
+<title>收音｜桑多龍學習平台</title>
 
 <style>
 
@@ -19,18 +14,14 @@
     padding: 0;
 }
 
-
 body {
-
     font-family:
         Arial,
         "Microsoft JhengHei",
         sans-serif;
 
     background: #f7f5f2;
-
     color: #333;
-
     line-height: 1.7;
 }
 
@@ -40,15 +31,11 @@ body {
 ===================== */
 
 header {
-
     height: 70px;
-
     background: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 50px;
@@ -56,28 +43,29 @@ header {
     border-bottom: 1px solid #eee;
 }
 
-
 .logo {
-
     font-size: 20px;
-
     font-weight: bold;
+    color: #6d625b;
 }
 
-
 .back {
-
-    color: #555;
-
+    color: #756b64;
     text-decoration: none;
 
     font-size: 14px;
+
+    padding: 8px 18px;
+
+    border: 1px solid #ddd4cd;
+    border-radius: 20px;
+
+    transition: .2s;
 }
 
-
 .back:hover {
-
-    color: #000;
+    background: #f2eee9;
+    transform: translateY(-2px);
 }
 
 
@@ -86,11 +74,8 @@ header {
 ===================== */
 
 .container {
-
     max-width: 1050px;
-
     margin: 50px auto;
-
     padding: 0 20px;
 }
 
@@ -100,24 +85,37 @@ header {
 ===================== */
 
 .title {
-
     text-align: center;
-
     margin-bottom: 45px;
 }
 
-
 .title h1 {
-
     font-size: 36px;
-
     margin-bottom: 15px;
+    color: #665c55;
+}
+
+.title p {
+    color: #777;
 }
 
 
-.title p {
+/* =====================
+   共用內容區塊
+===================== */
 
-    color: #777;
+.intro,
+.example,
+.how-section,
+.sound-rule-section,
+.notice,
+.advanced-section {
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
 }
 
 
@@ -126,32 +124,18 @@ header {
 ===================== */
 
 .intro {
-
-    background: white;
-
-    border-radius: 20px;
-
     padding: 35px;
-
-    margin-bottom: 45px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 35px;
 }
 
-
 .intro h2 {
-
-    font-size: 24px;
-
+    font-size: 25px;
+    color: #6f645d;
     margin-bottom: 18px;
 }
 
-
 .intro p {
-
     color: #666;
-
     line-height: 2;
 }
 
@@ -161,49 +145,176 @@ header {
 ===================== */
 
 .example {
-
-    background: white;
-
-    border-radius: 20px;
-
     padding: 35px;
 
     text-align: center;
 
-    margin-bottom: 45px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 40px;
 }
 
-
 .example-title {
-
     color: #777;
-
     margin-bottom: 10px;
 }
 
-
 .example-word {
-
     font-size: 50px;
-
     font-weight: bold;
 
     margin: 10px 0;
 }
 
-
 .example-break {
-
     color: #777;
-
     margin-bottom: 10px;
 }
 
-
 .example-note {
+    color: #666;
+}
+
+
+/* =====================
+   如何收音
+===================== */
+
+.how-section {
+    padding: 35px;
+    margin-bottom: 40px;
+}
+
+.how-section h2 {
+    font-size: 25px;
+    color: #6f645d;
+    margin-bottom: 18px;
+}
+
+.how-section p {
+    color: #666;
+    line-height: 2;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.step-card {
+    background: #faf8f5;
+
+    border: 1px solid #e8e0d8;
+
+    border-radius: 16px;
+
+    padding: 24px 20px;
+
+    text-align: center;
+}
+
+.step-number {
+    display: inline-flex;
+
+    width: 38px;
+    height: 38px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d8cabe;
+
+    color: white;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.step-card h3 {
+    font-size: 18px;
+    color: #665c55;
+
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================
+   收音怎麼發音
+===================== */
+
+.sound-rule-section {
+    padding: 35px;
+    margin-bottom: 40px;
+}
+
+.sound-rule-section h2 {
+    font-size: 25px;
+    color: #6f645d;
+
+    margin-bottom: 18px;
+}
+
+.rule-intro {
+    color: #666;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+.rule-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.rule-card {
+    background: #faf8f5;
+
+    border: 1px solid #e8e0d8;
+
+    border-radius: 15px;
+
+    padding: 20px 12px;
+
+    text-align: center;
+}
+
+.rule-card .letters {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #625850;
+
+    margin-bottom: 7px;
+}
+
+.rule-card .sound {
+    color: #8a7d73;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.rule-card .example-mini {
+    font-size: 14px;
 
     color: #666;
 }
@@ -214,15 +325,14 @@ header {
 ===================== */
 
 .section-title {
-
     font-size: 26px;
 
     margin: 45px 0 12px;
+
+    color: #6f645d;
 }
 
-
 .section-description {
-
     color: #777;
 
     margin-bottom: 25px;
@@ -236,7 +346,6 @@ header {
 ===================== */
 
 .sound-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -245,9 +354,7 @@ header {
     gap: 15px;
 }
 
-
 .sound-card {
-
     background: white;
 
     border-radius: 15px;
@@ -261,17 +368,13 @@ header {
     transition: 0.2s;
 }
 
-
 .sound-card:hover {
-
     transform: translateY(-3px);
 
     border-color: #ddd;
 }
 
-
 .batchim {
-
     font-size: 38px;
 
     font-weight: bold;
@@ -279,9 +382,7 @@ header {
     margin-bottom: 8px;
 }
 
-
 .batchim-name {
-
     font-size: 14px;
 
     color: #666;
@@ -289,9 +390,7 @@ header {
     margin-bottom: 7px;
 }
 
-
 .batchim-sound {
-
     font-size: 14px;
 
     color: #999;
@@ -305,7 +404,6 @@ header {
 ===================== */
 
 .word-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -314,9 +412,7 @@ header {
     gap: 18px;
 }
 
-
 .word-card {
-
     background: white;
 
     border-radius: 18px;
@@ -329,9 +425,7 @@ header {
         0 5px 20px rgba(0,0,0,0.03);
 }
 
-
 .word {
-
     font-size: 32px;
 
     font-weight: bold;
@@ -339,9 +433,7 @@ header {
     margin-bottom: 8px;
 }
 
-
 .meaning {
-
     font-size: 16px;
 
     color: #555;
@@ -349,9 +441,7 @@ header {
     margin-bottom: 7px;
 }
 
-
 .romanization {
-
     font-size: 13px;
 
     color: #999;
@@ -359,9 +449,7 @@ header {
     margin-bottom: 8px;
 }
 
-
 .batchim-info {
-
     font-size: 13px;
 
     color: #777;
@@ -375,10 +463,11 @@ header {
 ===================== */
 
 .sound-button {
-
     border: none;
 
-    background: #f1f1f1;
+    background: #f1eee9;
+
+    color: #71665e;
 
     border-radius: 20px;
 
@@ -387,12 +476,14 @@ header {
     cursor: pointer;
 
     font-size: 14px;
+
+    transition: .2s;
 }
 
-
 .sound-button:hover {
+    background: #e5ded6;
 
-    background: #e5e5e5;
+    transform: scale(1.03);
 }
 
 
@@ -401,11 +492,6 @@ header {
 ===================== */
 
 .notice {
-
-    background: #fffaf3;
-
-    border-radius: 18px;
-
     padding: 25px;
 
     margin-top: 45px;
@@ -413,6 +499,8 @@ header {
     color: #666;
 
     line-height: 1.9;
+
+    background: #fffaf3;
 }
 
 
@@ -421,40 +509,28 @@ header {
 ===================== */
 
 .advanced-section {
-
-    background: white;
-
-    border-radius: 20px;
-
     padding: 40px;
 
     margin-top: 35px;
 
     text-align: center;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.04);
 }
 
-
 .advanced-section h2 {
-
     font-size: 26px;
 
     margin-bottom: 12px;
+
+    color: #665c55;
 }
 
-
 .advanced-section p {
-
     color: #777;
 
     margin-bottom: 25px;
 }
 
-
 .advanced-button {
-
     display: inline-block;
 
     background: #333;
@@ -472,10 +548,43 @@ header {
     transition: 0.2s;
 }
 
-
 .advanced-button:hover {
-
     background: #555;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================
+   返回初學者課程
+===================== */
+
+.home-section {
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+.home-button {
+    display: inline-block;
+
+    color: #756b64;
+
+    text-decoration: none;
+
+    padding: 10px 24px;
+
+    border: 1px solid #ddd4cd;
+
+    border-radius: 25px;
+
+    background: white;
+
+    transition: .2s;
+}
+
+.home-button:hover {
+    background: #f2eee9;
 
     transform: translateY(-2px);
 }
@@ -486,7 +595,6 @@ header {
 ===================== */
 
 footer {
-
     background: white;
 
     text-align: center;
@@ -505,29 +613,40 @@ footer {
    手機版
 ===================== */
 
+@media (max-width: 800px) {
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .rule-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
 @media (max-width: 700px) {
 
     header {
-
         padding: 0 20px;
     }
 
+    .logo {
+        font-size: 17px;
+    }
 
     .title h1 {
-
         font-size: 30px;
     }
 
-
     .sound-grid {
-
         grid-template-columns:
             repeat(3, 1fr);
     }
 
-
     .word-grid {
-
         grid-template-columns:
             1fr 1fr;
     }
@@ -538,22 +657,25 @@ footer {
 @media (max-width: 450px) {
 
     .sound-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
-
     .word-grid {
-
         grid-template-columns:
             1fr;
+    }
+
+    .intro,
+    .how-section,
+    .sound-rule-section,
+    .advanced-section {
+        padding: 25px 20px;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -567,15 +689,15 @@ footer {
 <header>
 
     <div class="logo">
-        🇰🇷 Chocochip Korean
+        🌿 桑多龍學習平台
     </div>
 
 
     <a
-        href="course.html"
+        href="korean/beginner.html"
         class="back"
     >
-        ← 返回課程
+        ← 返回初學者課程
     </a>
 
 </header>
@@ -604,7 +726,7 @@ footer {
 
 
 <!-- =====================
-     課程介紹
+     什麼是收音
 ===================== -->
 
 <section class="intro">
@@ -620,19 +742,25 @@ footer {
         <strong>子音＋母音</strong>
         組成之外，
 
-        <br>
-
         在音節的最下面還可以出現子音。
 
-        <br>
+    </p>
+
+
+    <p>
 
         這個位於音節最後面的子音，
         就叫做
         <strong>받침（收音）</strong>。
 
-        <br>
+    </p>
+
+
+    <p>
 
         收音是韓文閱讀與發音中非常重要的一部分。
+        學會判斷收音的位置之後，
+        就可以進一步練習韓文單字的實際發音。
 
     </p>
 
@@ -641,13 +769,13 @@ footer {
 
 
 <!-- =====================
-     範例
+     收音位置
 ===================== -->
 
 <section class="example">
 
     <div class="example-title">
-        例如：
+        先看看收音在哪裡
     </div>
 
 
@@ -657,7 +785,7 @@ footer {
 
 
     <div class="example-break">
-        ㅎ + ㅏ + ㄴ
+        ㅎ ＋ ㅏ ＋ ㄴ
     </div>
 
 
@@ -673,13 +801,278 @@ footer {
 
 
 <!-- =====================
+     如何收音
+===================== -->
+
+<section class="how-section">
+
+    <h2>
+        如何收音？
+    </h2>
+
+
+    <p>
+
+        看到韓文音節時，
+        可以按照下面三個步驟來判斷。
+
+        不需要一開始就背很多規則，
+        先找到「最下面的子音」即可。
+
+    </p>
+
+
+    <div class="steps">
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                先找音節
+            </h3>
+
+            <p>
+
+                先把一個韓文字拆開，
+                看清楚它是由哪些字母組成。
+
+            </p>
+
+        </div>
+
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                找最下面
+            </h3>
+
+            <p>
+
+                如果音節最下面有子音，
+                那個位置就是收音。
+
+            </p>
+
+        </div>
+
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                練習最後的聲音
+            </h3>
+
+            <p>
+
+                收音位於音節最後，
+                發音時聲音會在這裡收住。
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+     收音怎麼發音
+===================== -->
+
+<section class="sound-rule-section">
+
+    <h2>
+        收音怎麼發音？
+    </h2>
+
+
+    <p class="rule-intro">
+
+        收音和我們平常看到的子音發音不完全一樣。
+        位於音節最後時，
+        許多子音會以較短、較弱的方式收住，
+        不需要把聲音完整地「爆破」出來。
+
+    </p>
+
+
+    <div class="rule-grid">
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㄱ・ㅋ・ㄲ
+            </div>
+
+            <div class="sound">
+                收音音值：ㄱ
+            </div>
+
+            <div class="example-mini">
+                국 → guk
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㄴ
+            </div>
+
+            <div class="sound">
+                收音音值：ㄴ
+            </div>
+
+            <div class="example-mini">
+                산 → san
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㄷ・ㅅ・ㅆ<br>
+                ㅈ・ㅊ・ㅌ・ㅎ
+            </div>
+
+            <div class="sound">
+                收音音值：ㄷ
+            </div>
+
+            <div class="example-mini">
+                옷 → ot
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㄹ
+            </div>
+
+            <div class="sound">
+                收音音值：ㄹ
+            </div>
+
+            <div class="example-mini">
+                달 → dal
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㅁ
+            </div>
+
+            <div class="sound">
+                收音音值：ㅁ
+            </div>
+
+            <div class="example-mini">
+                밤 → bam
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㅂ・ㅍ
+            </div>
+
+            <div class="sound">
+                收音音值：ㅂ
+            </div>
+
+            <div class="example-mini">
+                밥 → bap
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                ㅇ
+            </div>
+
+            <div class="sound">
+                收音音值：ㅇ
+            </div>
+
+            <div class="example-mini">
+                공 → gong
+            </div>
+
+        </div>
+
+
+
+        <div class="rule-card">
+
+            <div class="letters">
+                記住
+            </div>
+
+            <div class="sound">
+                先找位置，再練聲音
+            </div>
+
+            <div class="example-mini">
+                慢慢練習即可
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
      01｜常見收音
 ===================== -->
 
 <h2 class="section-title">
-
     01｜常見收音
-
 </h2>
 
 
@@ -687,6 +1080,10 @@ footer {
 
     先認識韓文中常見的收音，
     再進一步練習實際單字。
+
+    <br>
+
+    點擊「發音」可以聽韓文發音。
 
 </p>
 
@@ -700,13 +1097,11 @@ footer {
 
 
 <!-- =====================
-     02｜有收音的單字
+     02｜收音單字
 ===================== -->
 
 <h2 class="section-title">
-
     02｜收音單字練習
-
 </h2>
 
 
@@ -738,10 +1133,12 @@ footer {
 <div class="notice">
 
     <strong>
-        💡 學習提醒
+        💡 收音學習提醒
     </strong>
 
+
     <br><br>
+
 
     閱讀韓文單字時，
     可以先觀察每個音節的最下面。
@@ -753,10 +1150,17 @@ footer {
 
     <br><br>
 
-    先確認文字，
-    再聽發音，
-    最後跟著朗讀，
-    會比較容易掌握收音。
+    建議學習順序：
+
+    <strong>
+        看文字 → 找收音 → 聽發音 → 跟著朗讀
+    </strong>
+
+    <br>
+
+    先把基本收音讀熟，
+    再進一步學習連音、
+    鼻音化、硬音化等發音變化。
 
 </div>
 
@@ -780,9 +1184,11 @@ footer {
 
         <br>
 
-        內容包含
-        <strong>硬音化、氣音化</strong>
-        等進階發音規則。
+        內容可以進一步包含
+        <strong>
+            連音、鼻音化、硬音化、氣音化
+        </strong>
+        等規則。
 
     </p>
 
@@ -796,21 +1202,35 @@ footer {
 
 </section>
 
-      <section class="home-section">
 
-    <a href="index.html" class="home-button">
-        ← 回首頁
+
+<!-- =====================
+     返回初學者課程
+===================== -->
+
+<section class="home-section">
+
+    <a
+        href="korean/beginner.html"
+        class="home-button"
+    >
+        ← 返回初學者課程
     </a>
 
 </section>
+
 
 </main>
 
 
 
+<!-- =====================
+     Footer
+===================== -->
+
 <footer>
 
-    © 2026 Chocochip Korean
+    © 2026 桑多龍學習平台
 
 </footer>
 
@@ -1079,9 +1499,9 @@ createWordCards(
     words
 );
 
+
 </script>
 
 
 </body>
-
 </html>
