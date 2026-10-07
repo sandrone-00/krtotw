@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>基本母音｜桑多龍學習平台</title>
+
+
+  <style>
+
+    /* ========================================
+       基本設定
+    ======================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+      background: #faf7f1;
+
+      color: #5f5148;
+
+      overflow-x: hidden;
+    }
+
+
+    /* ========================================
+       背景裝飾
+    ======================================== */
+
+    .deco {
+
+      position: fixed;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      opacity: 0.7;
+    }
+
+
+    .circle1 {
+
+      width: 160px;
+      height: 160px;
+
+      border-radius: 50%;
+
+      background: #e8e0ef;
+
+      top: 90px;
+      left: -70px;
+    }
+
+
+    .circle2 {
+
+      width: 130px;
+      height: 130px;
+
+      border-radius: 50%;
+
+      background: #dce8e5;
+
+      right: -50px;
+      top: 380px;
+    }
+
+
+    .circle3 {
+
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+
+      background: #eee1d5;
+
+      left: 8%;
+      bottom: 30px;
+    }
+
+
+    .star {
+
+      position: fixed;
+
+      font-size: 28px;
+
+      color: #b9a8c9;
+    }
+
+
+    .star1 {
+
+      top: 150px;
+      right: 12%;
+    }
+
+
+    .star2 {
+
+      bottom: 180px;
+      left: 7%;
+    }
+
+
+    .heart {
+
+      position: fixed;
+
+      font-size: 25px;
+
+      color: #d7aeb5;
+    }
+
+
+    .heart1 {
+
+      top: 430px;
+      left: 8%;
+    }
+
+
+    .heart2 {
+
+      bottom: 100px;
+      right: 10%;
+    }
+
+
+    /* ========================================
+       Header
+    ======================================== */
+
+    header {
+
+      width: 100%;
+
+      padding: 20px 30px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+    }
+
+
+    .logo {
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      color: #665a52;
+
+      letter-spacing: 1px;
+    }
+
+
+    .back-course {
+
+      display: inline-block;
+
+      padding: 10px 18px;
+
+      border-radius: 30px;
+
+      background: #eee8e0;
+
+      color: #74675e;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: 0.2s;
+
+      white-space: nowrap;
+    }
+
+
+    .back-course:hover {
+
+      background: #e3d9cf;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ========================================
+       主內容
+    ======================================== */
+
+    .container {
+
+      width: min(1080px, 92%);
+
+      margin: 20px auto 70px;
+    }
+
+
+    /* ========================================
+       頁面標題
+    ======================================== */
+
+    .intro {
+
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+
+    .intro-icon {
+
+      font-size: 50px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .intro h1 {
+
+      margin: 0;
+
+      font-size: 32px;
+
+      color: #5d514b;
+
+      letter-spacing: 2px;
+    }
+
+
+    .intro p {
+
+      margin: 13px 0 0;
+
+      font-size: 16px;
+
+      color: #8a7b71;
+
+      line-height: 1.8;
+    }
+
+
+    /* ========================================
+       區塊
+    ======================================== */
+
+    .section {
+
+      margin-bottom: 48px;
+    }
+
+
+    .section-title {
+
+      text-align: center;
+
+      margin-bottom: 22px;
+    }
+
+
+    .section-title h2 {
+
+      margin: 0;
+
+      font-size: 23px;
+
+      color: #5e5149;
+    }
+
+
+    .section-title p {
+
+      margin: 8px 0 0;
+
+      font-size: 14px;
+
+      color: #978a80;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================
+       說明卡
+    ======================================== */
+
+    .info-card {
+
+      background: rgba(255, 253, 249, 0.96);
+
+      border: 2px solid #e3dbd2;
+
+      border-radius: 24px;
+
+      padding: 28px;
+
+      box-shadow:
+        0 7px 18px rgba(113, 95, 80, 0.07);
+
+      line-height: 1.9;
+
+      font-size: 15px;
+    }
+
+
+    .info-highlight {
+
+      margin-top: 18px;
+
+      padding: 16px 18px;
+
+      background: #f5e9ec;
+
+      border-radius: 16px;
+
+      color: #805d66;
+
+      font-size: 14px;
+    }
+
+
+    .red {
+
+      color: #c84f5b;
+
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       第一區：母音卡片
+    ======================================== */
+
+    .vowel-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 17px;
+    }
+
+
+    .vowel-card {
+
+      background:
+        rgba(255, 253, 249, 0.97);
+
+      border: 2px solid #e3dbd2;
+
+      border-radius: 21px;
+
+      padding: 22px 12px;
+
+      text-align: center;
+
+      box-shadow:
+        0 6px 15px rgba(113, 95, 80, 0.06);
+
+      transition: 0.2s;
+    }
+
+
+    .vowel-card:hover {
+
+      transform: translateY(-4px);
+
+      border-color: #cbbbd5;
+
+      box-shadow:
+        0 10px 20px rgba(113, 95, 80, 0.1);
+    }
+
+
+    .vowel-symbol {
+
+      font-size: 50px;
+
+      font-weight: 600;
+
+      color: #5e5149;
+
+      margin-bottom: 8px;
+    }
+
+
+    .vowel-korean {
+
+      font-size: 15px;
+
+      color: #82756d;
+
+      margin-bottom: 5px;
+    }
+
+
+    .vowel-roman {
+
+      font-size: 13px;
+
+      color: #a18f84;
+
+      margin-bottom: 13px;
+    }
+
+
+    .sound-btn {
+
+      border: none;
+
+      background: #eee8f3;
+
+      color: #75657f;
+
+      padding: 8px 14px;
+
+      border-radius: 20px;
+
+      font-family: inherit;
+
+      font-size: 13px;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+
+    .sound-btn:hover {
+
+      background: #ded3e6;
+
+      transform: translateY(-1px);
+    }
+
+
+    /* ========================================
+       子音＋母音
+    ======================================== */
+
+    .combine-card {
+
+      background:
+        rgba(255, 253, 249, 0.97);
+
+      border: 2px solid #d7d1e2;
+
+      border-radius: 25px;
+
+      padding: 30px;
+
+      text-align: center;
+
+      box-shadow:
+        0 7px 18px rgba(113, 95, 80, 0.07);
+    }
+
+
+    .combine-main {
+
+      font-size: 43px;
+
+      font-weight: 600;
+
+      color: #5e5149;
+
+      margin-bottom: 12px;
+    }
+
+
+    .combine-description {
+
+      color: #897b71;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      margin-bottom: 18px;
+    }
+
+
+    .formula {
+
+      display: inline-block;
+
+      padding: 11px 20px;
+
+      background: #f0ebf4;
+
+      border-radius: 15px;
+
+      color: #75657f;
+
+      font-size: 14px;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* ========================================
+       一個音節一個母音
+    ======================================== */
+
+    .rule-box {
+
+      background: #fffaf4;
+
+      border: 2px solid #e0d5c8;
+
+      border-radius: 24px;
+
+      padding: 26px;
+
+      text-align: center;
+
+      box-shadow:
+        0 7px 18px rgba(113, 95, 80, 0.06);
+
+      margin-bottom: 25px;
+    }
+
+
+    .rule-main {
+
+      font-size: 21px;
+
+      font-weight: 700;
+
+      color: #65574e;
+
+      margin-bottom: 9px;
+    }
+
+
+    .rule-text {
+
+      font-size: 14px;
+
+      color: #897b71;
+
+      line-height: 1.9;
+    }
+
+
+    /* ========================================
+       30 個音節
+    ======================================== */
+
+    .syllable-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 16px;
+    }
+
+
+    .syllable-card {
+
+      background:
+        rgba(255, 253, 249, 0.97);
+
+      border: 2px solid #e3dbd2;
+
+      border-radius: 20px;
+
+      padding: 19px 10px;
+
+      text-align: center;
+
+      box-shadow:
+        0 6px 15px rgba(113, 95, 80, 0.06);
+
+      transition: 0.2s;
+    }
+
+
+    .syllable-card:hover {
+
+      transform: translateY(-4px);
+
+      border-color: #decdd3;
+
+      box-shadow:
+        0 9px 19px rgba(113, 95, 80, 0.1);
+    }
+
+
+    .syllable {
+
+      font-size: 40px;
+
+      font-weight: 600;
+
+      color: #5e5149;
+
+      margin-bottom: 7px;
+    }
+
+
+    .vowel-red {
+
+      color: #c84f5b;
+    }
+
+
+    .syllable-info {
+
+      font-size: 13px;
+
+      color: #93857c;
+
+      margin-bottom: 11px;
+    }
+
+
+    /* ========================================
+       學習提醒
+    ======================================== */
+
+    .tip {
+
+      background: #eee8f3;
+
+      border-radius: 22px;
+
+      padding: 22px;
+
+      text-align: center;
+
+      color: #75657f;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+    }
+
+
+    /* ========================================
+       返回按鈕
+    ======================================== */
+
+    .bottom-area {
+
+      text-align: center;
+
+      margin-top: 45px;
+    }
+
+
+    .bottom-btn {
+
+      display: inline-block;
+
+      padding: 12px 25px;
+
+      border-radius: 30px;
+
+      background: #eee8e0;
+
+      color: #74675e;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: 0.2s;
+    }
+
+
+    .bottom-btn:hover {
+
+      background: #e4dbd1;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ========================================
+       Footer
+    ======================================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px 15px 35px;
+
+      font-size: 13px;
+
+      color: #a0948b;
+    }
+
+
+    /* ========================================
+       RWD
+    ======================================== */
+
+    @media (max-width: 850px) {
+
+      .vowel-grid {
+
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+
+      .syllable-grid {
+
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      header {
+
+        padding: 18px 15px;
+      }
+
+
+      .logo {
+
+        font-size: 16px;
+      }
+
+
+      .back-course {
+
+        padding: 8px 13px;
+
+        font-size: 13px;
+      }
+
+
+      .intro h1 {
+
+        font-size: 26px;
+      }
+
+
+      .intro p {
+
+        font-size: 14px;
+      }
+
+
+      .vowel-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .syllable-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .vowel-symbol {
+
+        font-size: 44px;
+      }
+
+
+      .syllable {
+
+        font-size: 36px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+       背景
+  ======================================== -->
+
+  <div class="deco circle1"></div>
+
+  <div class="deco circle2"></div>
+
+  <div class="deco circle3"></div>
+
+  <div class="deco star star1">✦</div>
+
+  <div class="deco star star2">✧</div>
+
+  <div class="deco heart heart1">♡</div>
+
+  <div class="deco heart heart2">♡</div>
+
+
+
+  <!-- ========================================
+       Header
+  ======================================== -->
+
+  <header>
+
+    <div class="logo">
+      🌿 桑多龍學習平台
+    </div>
+
+
+    <a
+      href="korean/beginner.html"
+      class="back-course"
+    >
+      ← 返回課程
+    </a>
+
+  </header>
+
+
+
+  <!-- ========================================
+       Main
+  ======================================== -->
+
+  <main class="container">
+
+
+    <!-- ======================================
+         頁面標題
+    ======================================= -->
+
+    <section class="intro">
+
+      <div class="intro-icon">
+        🌱
+      </div>
+
+      <h1>
+        基本母音
+      </h1>
+
+      <p>
+        認識韓文母音的樣子與發音，<br>
+        再練習子音與母音的組合。
+      </p>
+
+    </section>
+
+
+
+    <!-- ======================================
+         01 母音介紹
+    ======================================= -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          01｜認識韓文母音
+        </h2>
+
+        <p>
+          先熟悉母音的形狀，再開始練習發音。
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        韓文的母音是組成音節的重要部分。
+
+        <br>
+
+        初學時，可以先從
+        <span class="red">
+          10 個基本母音
+        </span>
+        開始認識。
+
+        <br><br>
+
+        當我們把子音和母音放在一起，
+        就可以組成一個完整的韓文字音節。
+
+        <div class="info-highlight">
+
+          💡 例如：
+
+          <strong>
+            ㄱ ＋ ㅏ → 가
+          </strong>
+
+          <br>
+
+          ㄱ 是子音，
+
+          <span class="red">
+            ㅏ 是母音
+          </span>。
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         02 十個基本母音
+    ======================================= -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          02｜10 個基本母音
+        </h2>
+
+        <p>
+          點擊「🔊 發音」聽聽看每個母音的聲音。
+        </p>
+
+      </div>
+
+
+      <div class="vowel-grid">
+
+
+        <!-- ㅏ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅏ
+          </div>
+
+          <div class="vowel-korean">
+            아
+          </div>
+
+          <div class="vowel-roman">
+            a
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('아')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅑ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅑ
+          </div>
+
+          <div class="vowel-korean">
+            야
+          </div>
+
+          <div class="vowel-roman">
+            ya
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('야')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅓ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅓ
+          </div>
+
+          <div class="vowel-korean">
+            어
+          </div>
+
+          <div class="vowel-roman">
+            eo
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('어')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅕ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅕ
+          </div>
+
+          <div class="vowel-korean">
+            여
+          </div>
+
+          <div class="vowel-roman">
+            yeo
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('여')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅗ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅗ
+          </div>
+
+          <div class="vowel-korean">
+            오
+          </div>
+
+          <div class="vowel-roman">
+            o
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('오')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅛ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅛ
+          </div>
+
+          <div class="vowel-korean">
+            요
+          </div>
+
+          <div class="vowel-roman">
+            yo
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('요')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅜ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅜ
+          </div>
+
+          <div class="vowel-korean">
+            우
+          </div>
+
+          <div class="vowel-roman">
+            u
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('우')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅠ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅠ
+          </div>
+
+          <div class="vowel-korean">
+            유
+          </div>
+
+          <div class="vowel-roman">
+            yu
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('유')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅡ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅡ
+          </div>
+
+          <div class="vowel-korean">
+            으
+          </div>
+
+          <div class="vowel-roman">
+            eu
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('으')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- ㅣ -->
+
+        <div class="vowel-card">
+
+          <div class="vowel-symbol">
+            ㅣ
+          </div>
+
+          <div class="vowel-korean">
+            이
+          </div>
+
+          <div class="vowel-roman">
+            i
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('이')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         03 子音＋母音
+    ======================================= -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          03｜子音＋母音
+        </h2>
+
+        <p>
+          把子音和母音組合起來，就能形成一個音節。
+        </p>
+
+      </div>
+
+
+      <div class="combine-card">
+
+        <div class="combine-main">
+
+          ㄱ ＋
+          <span class="red">ㅏ</span>
+          →
+          가
+
+        </div>
+
+
+        <div class="combine-description">
+
+          ㄱ 是子音
+
+          <br>
+
+          <span class="red">
+            ㅏ 是母音
+          </span>
+
+          <br>
+
+          組合之後形成「가」這個音節。
+
+        </div>
+
+
+        <div class="formula">
+
+          子音 ＋ 母音 → 一個音節
+
+        </div>
+
+        <br>
+
+
+        <button
+          class="sound-btn"
+          onclick="playSound('가')"
+        >
+          🔊 聽 가 的發音
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         04 一個音節一個母音
+    ======================================= -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          04｜一個音節只能有一個母音
+        </h2>
+
+        <p>
+          練習找出韓文字裡面的母音。
+        </p>
+
+      </div>
+
+
+      <div class="rule-box">
+
+        <div class="rule-main">
+
+          一個韓文音節，只會有一個母音。
+
+        </div>
+
+
+        <div class="rule-text">
+
+          看到韓文字時，可以先找出其中的母音。
+
+          <br>
+
+          下面準備了
+
+          <span class="red">
+            30 個音節
+          </span>
+
+          讓你練習。
+
+          <br>
+
+          每一個音節的母音都會用
+          <span class="red">
+            紅色
+          </span>
+          標示。
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ====================================
+           30 個音節練習
+           每個基本母音各 3 次
+      ===================================== -->
+
+      <div class="syllable-grid">
+
+
+        <!-- 01 ㅏ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄱ<span class="vowel-red">ㅏ</span>
+          </div>
+
+          <div class="syllable-info">
+            가｜母音：ㅏ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('가')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 02 ㅓ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄴ<span class="vowel-red">ㅓ</span>
+          </div>
+
+          <div class="syllable-info">
+            너｜母音：ㅓ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('너')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 03 ㅗ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄷ<span class="vowel-red">ㅗ</span>
+          </div>
+
+          <div class="syllable-info">
+            도｜母音：ㅗ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('도')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 04 ㅜ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄹ<span class="vowel-red">ㅜ</span>
+          </div>
+
+          <div class="syllable-info">
+            루｜母音：ㅜ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('루')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 05 ㅣ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅁ<span class="vowel-red">ㅣ</span>
+          </div>
+
+          <div class="syllable-info">
+            미｜母音：ㅣ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('미')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 06 ㅑ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅂ<span class="vowel-red">ㅑ</span>
+          </div>
+
+          <div class="syllable-info">
+            뱌｜母音：ㅑ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('뱌')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 07 ㅕ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅅ<span class="vowel-red">ㅕ</span>
+          </div>
+
+          <div class="syllable-info">
+            셔｜母音：ㅕ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('셔')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 08 ㅛ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅈ<span class="vowel-red">ㅛ</span>
+          </div>
+
+          <div class="syllable-info">
+            죠｜母音：ㅛ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('죠')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 09 ㅠ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅊ<span class="vowel-red">ㅠ</span>
+          </div>
+
+          <div class="syllable-info">
+            츄｜母音：ㅠ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('츄')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 10 ㅡ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅋ<span class="vowel-red">ㅡ</span>
+          </div>
+
+          <div class="syllable-info">
+            크｜母音：ㅡ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('크')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 11 ㅏ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅌ<span class="vowel-red">ㅏ</span>
+          </div>
+
+          <div class="syllable-info">
+            타｜母音：ㅏ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('타')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 12 ㅓ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅍ<span class="vowel-red">ㅓ</span>
+          </div>
+
+          <div class="syllable-info">
+            퍼｜母音：ㅓ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('퍼')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 13 ㅗ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅎ<span class="vowel-red">ㅗ</span>
+          </div>
+
+          <div class="syllable-info">
+            호｜母音：ㅗ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('호')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 14 ㅜ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄱ<span class="vowel-red">ㅜ</span>
+          </div>
+
+          <div class="syllable-info">
+            구｜母音：ㅜ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('구')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 15 ㅣ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄴ<span class="vowel-red">ㅣ</span>
+          </div>
+
+          <div class="syllable-info">
+            니｜母音：ㅣ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('니')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 16 ㅑ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄷ<span class="vowel-red">ㅑ</span>
+          </div>
+
+          <div class="syllable-info">
+            댜｜母音：ㅑ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('댜')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 17 ㅕ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄹ<span class="vowel-red">ㅕ</span>
+          </div>
+
+          <div class="syllable-info">
+            려｜母音：ㅕ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('려')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 18 ㅛ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅁ<span class="vowel-red">ㅛ</span>
+          </div>
+
+          <div class="syllable-info">
+            묘｜母音：ㅛ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('묘')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 19 ㅠ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅂ<span class="vowel-red">ㅠ</span>
+          </div>
+
+          <div class="syllable-info">
+            뷰｜母音：ㅠ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('뷰')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 20 ㅡ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅅ<span class="vowel-red">ㅡ</span>
+          </div>
+
+          <div class="syllable-info">
+            스｜母音：ㅡ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('스')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 21 ㅏ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅈ<span class="vowel-red">ㅏ</span>
+          </div>
+
+          <div class="syllable-info">
+            자｜母音：ㅏ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('자')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 22 ㅓ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅊ<span class="vowel-red">ㅓ</span>
+          </div>
+
+          <div class="syllable-info">
+            처｜母音：ㅓ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('처')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 23 ㅗ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅋ<span class="vowel-red">ㅗ</span>
+          </div>
+
+          <div class="syllable-info">
+            코｜母音：ㅗ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('코')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 24 ㅜ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅌ<span class="vowel-red">ㅜ</span>
+          </div>
+
+          <div class="syllable-info">
+            투｜母音：ㅜ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('투')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 25 ㅣ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅍ<span class="vowel-red">ㅣ</span>
+          </div>
+
+          <div class="syllable-info">
+            피｜母音：ㅣ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('피')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 26 ㅑ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㅎ<span class="vowel-red">ㅑ</span>
+          </div>
+
+          <div class="syllable-info">
+            햐｜母音：ㅑ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('햐')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 27 ㅕ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄱ<span class="vowel-red">ㅕ</span>
+          </div>
+
+          <div class="syllable-info">
+            겨｜母音：ㅕ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('겨')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 28 ㅛ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄴ<span class="vowel-red">ㅛ</span>
+          </div>
+
+          <div class="syllable-info">
+            뇨｜母音：ㅛ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('뇨')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 29 ㅠ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄷ<span class="vowel-red">ㅠ</span>
+          </div>
+
+          <div class="syllable-info">
+            듀｜母音：ㅠ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('듀')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+        <!-- 30 ㅡ -->
+
+        <div class="syllable-card">
+
+          <div class="syllable">
+            ㄹ<span class="vowel-red">ㅡ</span>
+          </div>
+
+          <div class="syllable-info">
+            르｜母音：ㅡ
+          </div>
+
+          <button
+            class="sound-btn"
+            onclick="playSound('르')"
+          >
+            🔊 發音
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         學習提醒
+    ======================================= -->
+
+    <section class="section">
+
+      <div class="tip">
+
+        🌱
+
+        <strong>
+          學習小提醒
+        </strong>
+
+        <br><br>
+
+        看到一個韓文字時，
+
+        <span class="red">
+          先找出母音
+        </span>。
+
+        <br>
+
+        例如：
+
+        가
+
+        → 找到
+
+        <span class="red">
+          ㅏ
+        </span>
+
+        → 這就是這個音節裡的母音。
+
+        <br><br>
+
+        先熟悉母音的位置，
+        再慢慢練習子音＋母音的組合。
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         返回課程
+    ======================================= -->
+
+    <div class="bottom-area">
+
+      <a
+        href="korean/beginner.html"
+        class="bottom-btn"
+      >
+        ← 返回初學者課程
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- ========================================
+       Footer
+  ======================================== -->
+
+  <footer>
+
+    © 2026 桑多龍學習平台
+
+  </footer>
+
+
+
+  <!-- ========================================
+       發音功能
+  ======================================== -->
+
+  <script>
+
+    function playSound(text) {
+
+      if (
+        !("speechSynthesis" in window)
+      ) {
+
+        alert(
+          "目前的瀏覽器不支援語音播放功能。"
+        );
+
+        return;
+      }
+
+
+      const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+      speech.lang = "ko-KR";
+
+
+      speech.rate = 0.7;
+
+
+      speech.pitch = 1;
+
+
+      speechSynthesis.cancel();
+
+
+      speechSynthesis.speak(speech);
+
+    }
+
+  </script>
+
+
+</body>
+</html>
